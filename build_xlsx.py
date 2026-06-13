@@ -68,6 +68,8 @@ for grp, datum, spieltag, home, away, win, res, wert, played in D.GROUP_MATCHES:
 for col, w in zip("ABCDEFG", [8, 13, 10, 30, 20, 14, 12]):
     ws.column_dimensions[col].width = w
 ws.freeze_panes = "A5"
+# Filter-/Sortier-Dropdowns ueber alle Spalten der Kopfzeile
+ws.auto_filter.ref = f"A{hr}:G{hr + len(D.GROUP_MATCHES)}"
 
 # ---- Blatt 2: Gruppentabellen-Prognose ----
 ws2 = wb.create_sheet("Gruppentabellen-Prognose")
@@ -88,6 +90,7 @@ for row in D.STANDINGS:
     r += 1
 for col, w in zip("ABCDE", [8, 16, 16, 16, 16]):
     ws2.column_dimensions[col].width = w
+ws2.auto_filter.ref = f"A3:E{3 + len(D.STANDINGS)}"
 
 # ---- Blatt 3: K.-o.-Prognose ----
 ws3 = wb.create_sheet("K.-o.-Prognose")
