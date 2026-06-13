@@ -1,6 +1,6 @@
 # WM 2026 – Prognose aller noch zu spielenden Begegnungen
 
-**Stand:** 12. Juni 2026 · **Turnier:** 11.06.–19.07.2026 in USA, Kanada & Mexiko · 48 Teams, 12 Gruppen (A–L)
+**Stand:** 13. Juni 2026 (nach den Spielen vom 11./12.06.) · **Turnier:** 11.06.–19.07.2026 in USA, Kanada & Mexiko · 48 Teams, 12 Gruppen (A–L)
 
 > ⚠️ **Wichtiger Hinweis:** Dies sind subjektive, modellgestützte Schätzungen – **keine** echten Ergebnisse. Fußball ist nicht exakt vorhersagbar. Die **Wertigkeit** (in %) ist meine persönliche Einschätzung der **Verlässlichkeit** des jeweiligen Tipps, nicht die mathematische Siegwahrscheinlichkeit. Datums­angaben nach offiziellem Spielplan; Anstoßzeiten variieren je Zeitzone.
 
@@ -12,7 +12,8 @@
 |---|---|---|---|
 | 11.06. | Mexiko – Südafrika | 2:0 | A |
 | 11.06. | Südkorea – Tschechien | 2:1 | A |
-| 12.06. | Kanada – Bosnien-Herz. | 0:5 | B |
+| 12.06. | Kanada – Bosnien-Herz. | 1:1 | B |
+| 12.06. | USA – Paraguay | 4:1 | D |
 
 ---
 
@@ -21,18 +22,18 @@
 ### Gruppe A — Mexiko, Südkorea, Tschechien, Südafrika
 | Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wertigkeit |
 |---|---|---|---|---|---|
-| 18.06. | 2 | Mexiko – Südkorea | Mexiko | 2:1 | 55 % |
-| 18.06. | 2 | Tschechien – Südafrika | Tschechien | 1:0 | 55 % |
+| 18.06. | 2 | Mexiko – Südkorea | Mexiko | 2:1 | 52 % |
+| 18.06. | 2 | Tschechien – Südafrika | Tschechien | 2:0 | 60 % |
 | 24.06. | 3 | Mexiko – Tschechien | Mexiko | 2:0 | 60 % |
-| 24.06. | 3 | Südkorea – Südafrika | Südkorea | 2:0 | 65 % |
+| 24.06. | 3 | Südkorea – Südafrika | Südkorea | 2:0 | 68 % |
 
 ### Gruppe B — Kanada, Schweiz, Bosnien-Herz., Katar
 | Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wertigkeit |
 |---|---|---|---|---|---|
 | 13.06. | 1 | Katar – Schweiz | Schweiz | 0:2 | 70 % |
-| 18.06. | 2 | Kanada – Katar | Kanada | 2:0 | 60 % |
-| 18.06. | 2 | Bosnien-Herz. – Schweiz | Schweiz | 1:2 | 50 % |
-| 24.06. | 3 | Kanada – Schweiz | Schweiz | 1:2 | 50 % |
+| 18.06. | 2 | Kanada – Katar | Kanada | 2:0 | 62 % |
+| 18.06. | 2 | Bosnien-Herz. – Schweiz | Schweiz | 1:2 | 52 % |
+| 24.06. | 3 | Kanada – Schweiz | Unentschieden | 1:1 | 45 % |
 | 24.06. | 3 | Bosnien-Herz. – Katar | Bosnien | 2:0 | 62 % |
 
 ### Gruppe C — Brasilien, Marokko, Schottland, Haiti
@@ -48,12 +49,11 @@
 ### Gruppe D — USA, Türkei, Paraguay, Australien
 | Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wertigkeit |
 |---|---|---|---|---|---|
-| 12.06. | 1 | USA – Paraguay | USA | 2:1 | 52 % |
 | 13.06. | 1 | Australien – Türkei | Türkei | 1:2 | 55 % |
-| 19.06. | 2 | USA – Australien | USA | 2:0 | 62 % |
-| 19.06. | 2 | Paraguay – Türkei | Türkei | 1:2 | 53 % |
-| 25.06. | 3 | USA – Türkei | Türkei | 1:2 | 48 % |
-| 25.06. | 3 | Paraguay – Australien | Paraguay | 1:0 | 52 % |
+| 19.06. | 2 | USA – Australien | USA | 2:0 | 65 % |
+| 19.06. | 2 | Paraguay – Türkei | Türkei | 1:2 | 55 % |
+| 25.06. | 3 | USA – Türkei | USA | 2:1 | 52 % |
+| 25.06. | 3 | Paraguay – Australien | Paraguay | 1:0 | 50 % |
 
 ### Gruppe E — Deutschland, Ecuador, Elfenbeinküste, Curaçao
 | Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wertigkeit |
@@ -141,9 +141,9 @@
 
 ## Prognostizierte Qualifikanten für die K.-o.-Phase (32 Teams)
 
-**Gruppensieger (12):** Mexiko, Schweiz, Brasilien, Türkei, Deutschland, Niederlande, Belgien, Spanien, Frankreich, Argentinien, Portugal, England
+**Gruppensieger (12):** Mexiko, Schweiz, Brasilien, USA, Deutschland, Niederlande, Belgien, Spanien, Frankreich, Argentinien, Portugal, England
 
-**Gruppenzweite (12):** Südkorea, Bosnien, Marokko, USA, Ecuador, Japan, Ägypten, Uruguay, Norwegen, Österreich, Kolumbien, Kroatien
+**Gruppenzweite (12):** Südkorea, Bosnien, Marokko, Türkei, Ecuador, Japan, Ägypten, Uruguay, Norwegen, Österreich, Kolumbien, Kroatien
 
 **Beste 8 Gruppendritte (Auswahl):** Senegal, Elfenbeinküste, Algerien, Schottland, Schweden, Ghana, Iran, Tschechien
 *(ausgeschieden als schwächste Dritte: Kanada, Paraguay, Saudi-Arabien, DR Kongo)*
