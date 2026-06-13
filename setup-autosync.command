@@ -2,7 +2,7 @@
 # WM2026 Auto-Sync Einrichtung (macOS).
 # Doppelklick im Finder ODER im Terminal:  zsh setup-autosync.command
 # Richtet einen launchd-Dienst ein, der dieses Repo automatisch per "git pull"
-# aktualisiert (alle 30 Minuten + bei jeder Anmeldung). iCloud verteilt die
+# aktualisiert (alle 10 Minuten + bei jeder Anmeldung). iCloud verteilt die
 # aktualisierten Dateien danach automatisch auf alle Geraete.
 set -e
 
@@ -27,7 +27,7 @@ cat > "$PLIST" <<EOF
   <key>Label</key><string>com.wm2026.sync</string>
   <key>ProgramArguments</key>
   <array><string>$HOME/.wm2026-sync.sh</string></array>
-  <key>StartInterval</key><integer>1800</integer>
+  <key>StartInterval</key><integer>600</integer>
   <key>RunAtLoad</key><true/>
   <key>StandardOutPath</key><string>$HOME/Library/Logs/wm2026-sync.log</string>
   <key>StandardErrorPath</key><string>$HOME/Library/Logs/wm2026-sync.log</string>
@@ -41,7 +41,7 @@ launchctl load "$PLIST"
 
 echo "✅ WM2026 Auto-Sync aktiv."
 echo "   Repo:     $REPO_DIR"
-echo "   Intervall: alle 30 Minuten + bei jeder Anmeldung"
+echo "   Intervall: alle 10 Minuten + bei jeder Anmeldung"
 echo "   Log:      ~/Library/Logs/wm2026-sync.log"
 echo ""
 echo "Zum Deaktivieren spaeter:"
