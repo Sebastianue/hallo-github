@@ -1,6 +1,6 @@
 # WM 2026 – Prognose aller noch zu spielenden Begegnungen
 
-**Stand:** 13. Juni 2026 (quoten-/ranking-kalibriert, nach den Spielen vom 11./12.06.) · **Turnier:** 11.06.–19.07.2026 in USA, Kanada & Mexiko · 48 Teams, 12 Gruppen (A–L)
+**Stand:** 13. Juni 2026 (kalibriert mit Buchmacher-Quoten, FIFA-Rangliste & Transfermarkt-Kaderwerten; nach den Spielen vom 11./12.06.) · **Turnier:** 11.06.–19.07.2026 in USA, Kanada & Mexiko · 48 Teams, 12 Gruppen (A–L)
 
 > ⚠️ **Hinweis:** Subjektive, modellgestützte Schätzungen – **keine** echten Ergebnisse. Die **Wertigkeit** (%) ist die Verlässlichkeit des Tipps (gestützt auf Buchmacher-Quoten, FIFA-Rangliste und Turnierform), nicht die mathematische Siegwahrscheinlichkeit. Hohe Werte nur bei klarem Klassenunterschied; echte 50/50-Spiele bleiben bewusst moderat.
 
@@ -157,17 +157,17 @@
 | Runde | Datum | Prognose | Wertigkeit |
 |---|---|---|---|
 | Achtelfinale (Best 32) | 28.06.–03.07.2026 | Topnationen ziehen ein | 62 % |
-| Achtelfinale (Best 16) | 04.07.–07.07.2026 | ESP, FRA, ENG, BRA, ARG, GER, POR, NED | 52 % |
-| Viertelfinale | 09.07.–11.07.2026 | Spanien, Frankreich, England, Argentinien | 46 % |
+| Achtelfinale (Best 16) | 04.07.–07.07.2026 | FRA, ESP, ENG, BRA, ARG, POR, GER, NED | 52 % |
+| Viertelfinale | 09.07.–11.07.2026 | Frankreich, Spanien, England, Argentinien | 46 % |
 | Halbfinale 1 | 14.07.2026 | Spanien schlägt Argentinien | 40 % |
 | Halbfinale 2 | 15.07.2026 | Frankreich schlägt England | 39 % |
 | Spiel um Platz 3 | 18.07.2026 | Argentinien – England 2:1 | 35 % |
-| Finale | 19.07.2026 | Spanien – Frankreich | 34 % |
-| Weltmeister 2026 | 19.07.2026 | Spanien (Finalsieg 2:1) | 20 % |
+| Finale | 19.07.2026 | Frankreich – Spanien | 34 % |
+| Weltmeister 2026 | 19.07.2026 | Frankreich (Finalsieg 2:1) | 20 % |
 
 **Titel-Favoriten-Ranking (Buchmacher-Quoten 06/2026):**
-1. Spanien (~16 %) · 2. Frankreich (~15 %) · 3. England (~11 %) · 4. Brasilien (~9 %) · 5. Argentinien (~9 %) · 6. Deutschland (~6 %) · 7. Portugal (~5 %) · 8. Niederlande (~4 %)
+1. Frankreich (~16 %) · 2. Spanien (~15 %) · 3. England (~12 %) · 4. Brasilien (~9 %) · 5. Argentinien (~9 %) · 6. Portugal (~6 %) · 7. Deutschland (~5 %) · 8. Niederlande (~4 %)
 
 ---
 
-*Quellen u. a.: FIFA-Weltrangliste, Buchmacher-/Marktquoten (Oddspedia, ESPN, Polymarket), Wikipedia, ESPN, Sky Sports, kicker, sportschau. Prognosen subjektiv und ohne Gewähr.*
+*Quellen u. a.: FIFA-Weltrangliste, Buchmacher-/Marktquoten (Oddspedia, ESPN, Polymarket), Transfermarkt-Kaderwerte, Wikipedia, Sky Sports, kicker, sportschau. Prognosen subjektiv und ohne Gewähr.*

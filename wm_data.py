@@ -9,7 +9,7 @@ Kalibrierung: Wertigkeit gestuetzt auf Buchmacher-Quoten + FIFA-Rangliste
 Klassenunterschied; echte 50/50-Spiele bleiben bewusst moderat.
 """
 
-STAND = "13. Juni 2026 (quoten-/ranking-kalibriert, nach den Spielen vom 11./12.06.)"
+STAND = "13. Juni 2026 (kalibriert mit Buchmacher-Quoten, FIFA-Rangliste & Transfermarkt-Kaderwerten; nach den Spielen vom 11./12.06.)"
 
 # Bereits gespielte Spiele: (datum, begegnung, ergebnis, gruppe)
 PLAYED = [
@@ -123,23 +123,24 @@ STANDINGS = [
 ]
 
 # K.-o.-Phase: (runde, datum, prognose, wertigkeit%)
-# An die Buchmacher-Quoten 06/2026 angepasst: Spanien & Frankreich Top-Favoriten.
+# Top kalibriert mit Buchmacher-Quoten 06/2026 + Transfermarkt-Kaderwerten:
+# Frankreich (wertvollster Kader) hauchduenn vor Spanien.
 KO = [
     ("Achtelfinale (Best 32)", "28.06.–03.07.2026", "Topnationen ziehen ein", 62),
-    ("Achtelfinale (Best 16)", "04.07.–07.07.2026", "ESP, FRA, ENG, BRA, ARG, GER, POR, NED", 52),
-    ("Viertelfinale", "09.07.–11.07.2026", "Spanien, Frankreich, England, Argentinien", 46),
+    ("Achtelfinale (Best 16)", "04.07.–07.07.2026", "FRA, ESP, ENG, BRA, ARG, POR, GER, NED", 52),
+    ("Viertelfinale", "09.07.–11.07.2026", "Frankreich, Spanien, England, Argentinien", 46),
     ("Halbfinale 1", "14.07.2026", "Spanien schlägt Argentinien", 40),
     ("Halbfinale 2", "15.07.2026", "Frankreich schlägt England", 39),
     ("Spiel um Platz 3", "18.07.2026", "Argentinien – England 2:1", 35),
-    ("Finale", "19.07.2026", "Spanien – Frankreich", 34),
-    ("Weltmeister 2026", "19.07.2026", "Spanien (Finalsieg 2:1)", 20),
+    ("Finale", "19.07.2026", "Frankreich – Spanien", 34),
+    ("Weltmeister 2026", "19.07.2026", "Frankreich (Finalsieg 2:1)", 20),
 ]
 
-# Titel-Ranking (de-vigte Buchmacher-Quoten 06/2026): (rang, team, titelchance%)
+# Titel-Ranking (Mix aus Buchmacher-Quoten 06/2026 + Transfermarkt-Kaderwert): (rang, team, titelchance%)
 RANKING = [
-    (1, "Spanien", 16), (2, "Frankreich", 15), (3, "England", 11),
-    (4, "Brasilien", 9), (5, "Argentinien", 9), (6, "Deutschland", 6),
-    (7, "Portugal", 5), (8, "Niederlande", 4),
+    (1, "Frankreich", 16), (2, "Spanien", 15), (3, "England", 12),
+    (4, "Brasilien", 9), (5, "Argentinien", 9), (6, "Portugal", 6),
+    (7, "Deutschland", 5), (8, "Niederlande", 4),
 ]
 
 # Halbzeit-Stand der bereits gespielten Spiele: (heim, gast) -> (fuehrung, hz_ergebnis)

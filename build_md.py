@@ -59,7 +59,7 @@ w(" · ".join(f"{rang}. {team} (~{chance} %)" for rang, team, chance in D.RANKIN
 
 w("---\n")
 w("*Quellen u. a.: FIFA-Weltrangliste, Buchmacher-/Marktquoten (Oddspedia, ESPN, Polymarket), "
-  "Wikipedia, ESPN, Sky Sports, kicker, sportschau. Prognosen subjektiv und ohne Gewähr.*")
+  "Transfermarkt-Kaderwerte, Wikipedia, Sky Sports, kicker, sportschau. Prognosen subjektiv und ohne Gewähr.*")
 
 with open("WM-2026-Prognose.md", "w", encoding="utf-8") as f:
     f.write("\n".join(L) + "\n")
