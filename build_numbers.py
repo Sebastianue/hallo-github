@@ -15,14 +15,17 @@ def main():
     sheet.name = "Gruppenphase"
     t = sheet.tables[0]
     t.name = "Gruppenphase"
-    headers = ["Gruppe", "Datum", "Spieltag", "Begegnung", "Sieger-Tipp", "Ergebnis-Tipp", "Wertigkeit %"]
+    headers = ["Gruppe", "Datum", "Spieltag", "Begegnung", "Sieger-Tipp", "Ergebnis-Tipp",
+               "Wertigkeit %", "HZ-Führung", "HZ-Ergebnis", "HZ-Wert. %"]
     for c, h in enumerate(headers):
         t.write(0, c, h)
         t.set_cell_style(0, c, hdr)
-    for ri, (g, datum, st, home, away, win, res, wert, isplayed) in enumerate(D.GROUP_MATCHES, start=1):
+    for ri, (g, datum, st, home, away, win, res, wert, isplayed,
+             ht_lead, ht_res, ht_wert) in enumerate(D.GROUP_MATCHES_HT, start=1):
         row = [g, datum, st, f"{home} - {away}",
                f"{win} (gespielt)" if isplayed else win,
-               res, "—" if isplayed else wert]
+               res, "—" if isplayed else wert,
+               ht_lead, ht_res, "—" if ht_wert is None else ht_wert]
         for c, val in enumerate(row):
             t.write(ri, c, val)
             if isplayed:

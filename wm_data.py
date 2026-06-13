@@ -141,3 +141,40 @@ RANKING = [
     (4, "Brasilien", 9), (5, "Argentinien", 9), (6, "Deutschland", 6),
     (7, "Portugal", 5), (8, "Niederlande", 4),
 ]
+
+# Halbzeit-Stand der bereits gespielten Spiele: (heim, gast) -> (fuehrung, hz_ergebnis)
+PLAYED_HT = {
+    ("Mexiko", "Südafrika"): ("Mexiko", "1:0"),
+    ("Südkorea", "Tschechien"): ("Unentschieden", "0:0"),
+    ("Kanada", "Bosnien-Herz."): ("Bosnien-Herz.", "0:1"),
+    ("USA", "Paraguay"): ("USA", "3:0"),
+}
+
+
+def _half_time(win, res, wert, played, home, away):
+    """Leitet Halbzeit-Fuehrung, HZ-Ergebnis und HZ-Wertigkeit ab.
+    Heuristik: enge Partien stehen zur Pause meist unentschieden;
+    klare Favoriten fuehren knapp. HZ-Tipp ist eigenstaendig (oft stabiler
+    als das exakte Endergebnis)."""
+    if played:
+        lead, hs = PLAYED_HT.get((home, away), ("?", "?"))
+        return lead, hs, None
+    a, b = (int(x) for x in res.split(":"))
+    margin = abs(a - b)
+    if wert <= 58:  # enge Partie -> zur Pause haeufig unentschieden
+        return "Unentschieden", "0:0", 52
+    lead = win
+    if margin >= 3:
+        hs = "2:0" if a > b else "0:2"
+    else:
+        hs = "1:0" if a > b else "0:1"
+    return lead, hs, max(48, min(70, wert - 12))
+
+
+# Erweiterte Spielliste inkl. Halbzeit-Feldern (12 Felder):
+# (gruppe, datum, spieltag, heim, gast, sieger, ergebnis, wertigkeit%, gespielt,
+#  hz_fuehrung, hz_ergebnis, hz_wertigkeit%)
+GROUP_MATCHES_HT = [
+    (g, d, s, h, a, win, res, wert, played, *_half_time(win, res, wert, played, h, a))
+    for (g, d, s, h, a, win, res, wert, played) in GROUP_MATCHES
+]

@@ -32,19 +32,21 @@ ws = wb.active
 ws.title = "Gruppenphase"
 ws["A1"] = "WM 2026 – Prognose der Gruppenspiele"
 ws["A1"].font = TITLE_FONT
-ws.merge_cells("A1:G1")
+ws.merge_cells("A1:J1")
 ws["A2"] = f"Stand {D.STAND} · Wertigkeit = subjektive Verlässlichkeit des Tipps (keine echte Wahrscheinlichkeit)"
 ws["A2"].font = Font(italic=True, size=9, color="808080")
-ws.merge_cells("A2:G2")
+ws.merge_cells("A2:J2")
 
-headers = ["Gruppe", "Datum", "Spieltag", "Begegnung", "Sieger-Tipp", "Ergebnis-Tipp", "Wertigkeit"]
+headers = ["Gruppe", "Datum", "Spieltag", "Begegnung", "Sieger-Tipp", "Ergebnis-Tipp",
+           "Wertigkeit", "HZ-Führung", "HZ-Ergebnis", "HZ-Wert."]
 hr = 4
 for i, h in enumerate(headers, 1):
     ws.cell(row=hr, column=i, value=h)
-style_header(ws, hr, 7)
+style_header(ws, hr, 10)
 
 r = hr + 1
-for grp, datum, spieltag, home, away, win, res, wert, played in D.GROUP_MATCHES:
+for (grp, datum, spieltag, home, away, win, res, wert, played,
+     ht_lead, ht_res, ht_wert) in D.GROUP_MATCHES_HT:
     ws.cell(row=r, column=1, value=grp).alignment = CENTER
     ws.cell(row=r, column=2, value=datum).alignment = CENTER
     ws.cell(row=r, column=3, value=spieltag).alignment = CENTER
@@ -58,18 +60,27 @@ for grp, datum, spieltag, home, away, win, res, wert, played in D.GROUP_MATCHES:
         wcell.value = wert / 100.0
         wcell.number_format = "0 %"
     wcell.alignment = CENTER
-    for c in range(1, 8):
+    ws.cell(row=r, column=8, value=ht_lead).alignment = LEFT
+    ws.cell(row=r, column=9, value=ht_res).alignment = CENTER
+    hwcell = ws.cell(row=r, column=10)
+    if ht_wert is None:
+        hwcell.value = "—"
+    else:
+        hwcell.value = ht_wert / 100.0
+        hwcell.number_format = "0 %"
+    hwcell.alignment = CENTER
+    for c in range(1, 11):
         cell = ws.cell(row=r, column=c)
         cell.border = BORDER
         if played:
             cell.fill = PLAYED_FILL
     r += 1
 
-for col, w in zip("ABCDEFG", [8, 13, 10, 30, 20, 14, 12]):
+for col, w in zip("ABCDEFGHIJ", [8, 13, 10, 30, 20, 14, 11, 16, 13, 10]):
     ws.column_dimensions[col].width = w
 ws.freeze_panes = "A5"
 # Filter-/Sortier-Dropdowns ueber alle Spalten der Kopfzeile
-ws.auto_filter.ref = f"A{hr}:G{hr + len(D.GROUP_MATCHES)}"
+ws.auto_filter.ref = f"A{hr}:J{hr + len(D.GROUP_MATCHES_HT)}"
 
 # ---- Blatt 2: Gruppentabellen-Prognose ----
 ws2 = wb.create_sheet("Gruppentabellen-Prognose")

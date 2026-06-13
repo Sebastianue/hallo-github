@@ -28,13 +28,14 @@ standings = {row[0]: row[1:] for row in D.STANDINGS}
 for g in GROUPS:
     teams = ", ".join(standings[g])
     w(f"### Gruppe {g} — {teams}")
-    w("| Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wertigkeit |")
-    w("|---|---|---|---|---|---|")
-    for grp, datum, st, home, away, win, res, wert, played in D.GROUP_MATCHES:
+    w("| Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wert. | HZ-Führung | HZ-Erg. | HZ-Wert. |")
+    w("|---|---|---|---|---|---|---|---|---|")
+    for (grp, datum, st, home, away, win, res, wert, played,
+         ht_lead, ht_res, ht_wert) in D.GROUP_MATCHES_HT:
         if grp != g or played:
             continue
         d = datum.replace(".2026", ".")
-        w(f"| {d} | {st} | {home} – {away} | {win} | {res} | {wert} % |")
+        w(f"| {d} | {st} | {home} – {away} | {win} | {res} | {wert} % | {ht_lead} | {ht_res} | {ht_wert} % |")
     w("")
 w("*ST = Spieltag*\n")
 
