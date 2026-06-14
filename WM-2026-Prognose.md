@@ -58,7 +58,7 @@
 ### Gruppe E — Deutschland, Ecuador, Elfenbeinküste, Curaçao
 | Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wert. | HZ-Führung | HZ-Erg. | HZ-Wert. |
 |---|---|---|---|---|---|---|---|---|
-| 14.06. | 1 | Deutschland – Curaçao | Deutschland | 3:1 | 70 % | Unentschieden | 1:1 | — |
+| 14.06. | 1 | Deutschland – Curaçao | Deutschland | 4:1 | 85 % | Deutschland | 3:1 | — |
 | 14.06. | 1 | Elfenbeinküste – Ecuador | Ecuador | 0:1 | 50 % | Unentschieden | 0:0 | 52 % |
 | 20.06. | 2 | Deutschland – Elfenbeinküste | Deutschland | 2:1 | 62 % | Deutschland | 1:0 | 50 % |
 | 20.06. | 2 | Curaçao – Ecuador | Ecuador | 0:2 | 78 % | Ecuador | 0:1 | 66 % |

@@ -53,7 +53,7 @@ GROUP_MATCHES = [
     ("D", "25.06.2026", 3, "USA", "Türkei", "USA", "2:1", 58, False),
     ("D", "25.06.2026", 3, "Paraguay", "Australien", "Australien", "1:2", 48, False),
 
-    ("E", "14.06.2026", 1, "Deutschland", "Curaçao", "Deutschland", "3:1", 70, False),
+    ("E", "14.06.2026", 1, "Deutschland", "Curaçao", "Deutschland", "4:1", 85, False),
     ("E", "14.06.2026", 1, "Elfenbeinküste", "Ecuador", "Ecuador", "0:1", 50, False),
     ("E", "20.06.2026", 2, "Deutschland", "Elfenbeinküste", "Deutschland", "2:1", 62, False),
     ("E", "20.06.2026", 2, "Curaçao", "Ecuador", "Ecuador", "0:2", 78, False),
@@ -161,7 +161,7 @@ PLAYED_HT = {
 
 # Laufende Spiele: echter Halbzeitstand, Endergebnis noch offen (Tipp neu berechnet).
 LIVE_HT = {
-    ("Deutschland", "Curaçao"): ("Unentschieden", "1:1"),
+    ("Deutschland", "Curaçao"): ("Deutschland", "3:1"),
 }
 
 
