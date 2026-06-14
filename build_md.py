@@ -35,7 +35,8 @@ for g in GROUPS:
         if grp != g or played:
             continue
         d = datum.replace(".2026", ".")
-        w(f"| {d} | {st} | {home} – {away} | {win} | {res} | {wert} % | {ht_lead} | {ht_res} | {ht_wert} % |")
+        hzw = "—" if ht_wert is None else f"{ht_wert} %"
+        w(f"| {d} | {st} | {home} – {away} | {win} | {res} | {wert} % | {ht_lead} | {ht_res} | {hzw} |")
     w("")
 w("*ST = Spieltag*\n")
 
