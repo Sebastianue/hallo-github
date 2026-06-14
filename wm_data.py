@@ -9,7 +9,7 @@ Kalibrierung: Wertigkeit gestuetzt auf Buchmacher-Quoten + FIFA-Rangliste
 Klassenunterschied; echte 50/50-Spiele bleiben bewusst moderat.
 """
 
-STAND = "13. Juni 2026 (kalibriert mit Buchmacher-Quoten, FIFA-Rangliste & Transfermarkt-Kaderwerten; nach den Spielen vom 11./12.06.)"
+STAND = "14. Juni 2026 (kalibriert mit Buchmacher-Quoten, FIFA-Rangliste & Transfermarkt-Kaderwerten; nach den Spielen vom 11.–13.06.)"
 
 # Bereits gespielte Spiele: (datum, begegnung, ergebnis, gruppe)
 PLAYED = [
@@ -17,6 +17,10 @@ PLAYED = [
     ("11.06.", "Südkorea – Tschechien", "2:1", "A"),
     ("12.06.", "Kanada – Bosnien-Herz.", "1:1", "B"),
     ("12.06.", "USA – Paraguay", "4:1", "D"),
+    ("13.06.", "Katar – Schweiz", "1:1", "B"),
+    ("13.06.", "Brasilien – Marokko", "1:1", "C"),
+    ("13.06.", "Haiti – Schottland", "0:1", "C"),
+    ("13.06.", "Australien – Türkei", "2:0", "D"),
 ]
 
 # Gruppenspiele: (gruppe, datum, spieltag, heim, gast, sieger, ergebnis, wertigkeit%, gespielt?)
@@ -29,25 +33,25 @@ GROUP_MATCHES = [
     ("A", "24.06.2026", 3, "Südkorea", "Südafrika", "Südkorea", "2:0", 72, False),
 
     ("B", "12.06.2026", 1, "Kanada", "Bosnien-Herz.", "Unentschieden", "1:1", None, True),
-    ("B", "13.06.2026", 1, "Katar", "Schweiz", "Schweiz", "0:2", 72, False),
+    ("B", "13.06.2026", 1, "Katar", "Schweiz", "Unentschieden", "1:1", None, True),
     ("B", "18.06.2026", 2, "Kanada", "Katar", "Kanada", "2:0", 64, False),
     ("B", "18.06.2026", 2, "Bosnien-Herz.", "Schweiz", "Schweiz", "1:2", 54, False),
     ("B", "24.06.2026", 3, "Kanada", "Schweiz", "Unentschieden", "1:1", 45, False),
     ("B", "24.06.2026", 3, "Bosnien-Herz.", "Katar", "Bosnien-Herz.", "2:0", 64, False),
 
-    ("C", "13.06.2026", 1, "Brasilien", "Marokko", "Brasilien", "2:1", 55, False),
-    ("C", "13.06.2026", 1, "Haiti", "Schottland", "Schottland", "0:2", 62, False),
+    ("C", "13.06.2026", 1, "Brasilien", "Marokko", "Unentschieden", "1:1", None, True),
+    ("C", "13.06.2026", 1, "Haiti", "Schottland", "Schottland", "0:1", None, True),
     ("C", "19.06.2026", 2, "Brasilien", "Haiti", "Brasilien", "3:0", 83, False),
     ("C", "19.06.2026", 2, "Marokko", "Schottland", "Marokko", "1:0", 58, False),
     ("C", "24.06.2026", 3, "Brasilien", "Schottland", "Brasilien", "2:0", 74, False),
     ("C", "24.06.2026", 3, "Marokko", "Haiti", "Marokko", "2:0", 77, False),
 
     ("D", "12.06.2026", 1, "USA", "Paraguay", "USA", "4:1", None, True),
-    ("D", "13.06.2026", 1, "Australien", "Türkei", "Türkei", "1:2", 55, False),
-    ("D", "19.06.2026", 2, "USA", "Australien", "USA", "2:0", 70, False),
-    ("D", "19.06.2026", 2, "Paraguay", "Türkei", "Türkei", "1:2", 55, False),
-    ("D", "25.06.2026", 3, "USA", "Türkei", "USA", "2:1", 55, False),
-    ("D", "25.06.2026", 3, "Paraguay", "Australien", "Paraguay", "1:0", 50, False),
+    ("D", "13.06.2026", 1, "Australien", "Türkei", "Australien", "2:0", None, True),
+    ("D", "19.06.2026", 2, "USA", "Australien", "USA", "2:1", 58, False),
+    ("D", "19.06.2026", 2, "Paraguay", "Türkei", "Türkei", "1:2", 50, False),
+    ("D", "25.06.2026", 3, "USA", "Türkei", "USA", "2:1", 58, False),
+    ("D", "25.06.2026", 3, "Paraguay", "Australien", "Australien", "1:2", 48, False),
 
     ("E", "14.06.2026", 1, "Deutschland", "Curaçao", "Deutschland", "3:0", 88, False),
     ("E", "14.06.2026", 1, "Elfenbeinküste", "Ecuador", "Ecuador", "0:1", 50, False),
@@ -111,7 +115,7 @@ STANDINGS = [
     ("A", "Mexiko", "Südkorea", "Tschechien", "Südafrika"),
     ("B", "Schweiz", "Bosnien-Herz.", "Kanada", "Katar"),
     ("C", "Brasilien", "Marokko", "Schottland", "Haiti"),
-    ("D", "USA", "Türkei", "Paraguay", "Australien"),
+    ("D", "USA", "Australien", "Türkei", "Paraguay"),
     ("E", "Deutschland", "Ecuador", "Elfenbeinküste", "Curaçao"),
     ("F", "Niederlande", "Japan", "Schweden", "Tunesien"),
     ("G", "Belgien", "Ägypten", "Iran", "Neuseeland"),
@@ -149,6 +153,10 @@ PLAYED_HT = {
     ("Südkorea", "Tschechien"): ("Unentschieden", "0:0"),
     ("Kanada", "Bosnien-Herz."): ("Bosnien-Herz.", "0:1"),
     ("USA", "Paraguay"): ("USA", "3:0"),
+    ("Katar", "Schweiz"): ("Schweiz", "0:1"),
+    ("Brasilien", "Marokko"): ("Unentschieden", "1:1"),
+    ("Haiti", "Schottland"): ("Schottland", "0:1"),
+    ("Australien", "Türkei"): ("Australien", "1:0"),
 }
 
 

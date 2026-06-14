@@ -3,8 +3,8 @@
 import wm_data as D
 
 GROUPS = "ABCDEFGHIJKL"
-THIRDS_ADVANCE = "Senegal, Elfenbeinküste, Algerien, Schottland, Schweden, Ghana, Iran, Tschechien"
-THIRDS_OUT = "Kanada, Paraguay, Saudi-Arabien, DR Kongo"
+THIRDS_ADVANCE = "Senegal, Elfenbeinküste, Algerien, Schottland, Türkei, Schweden, Ghana, Iran"
+THIRDS_OUT = "Tschechien, Kanada, Saudi-Arabien, DR Kongo"
 
 L = []
 w = L.append

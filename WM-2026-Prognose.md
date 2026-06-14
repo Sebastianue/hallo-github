@@ -1,6 +1,6 @@
 # WM 2026 – Prognose aller noch zu spielenden Begegnungen
 
-**Stand:** 13. Juni 2026 (kalibriert mit Buchmacher-Quoten, FIFA-Rangliste & Transfermarkt-Kaderwerten; nach den Spielen vom 11./12.06.) · **Turnier:** 11.06.–19.07.2026 in USA, Kanada & Mexiko · 48 Teams, 12 Gruppen (A–L)
+**Stand:** 14. Juni 2026 (kalibriert mit Buchmacher-Quoten, FIFA-Rangliste & Transfermarkt-Kaderwerten; nach den Spielen vom 11.–13.06.) · **Turnier:** 11.06.–19.07.2026 in USA, Kanada & Mexiko · 48 Teams, 12 Gruppen (A–L)
 
 > ⚠️ **Hinweis:** Subjektive, modellgestützte Schätzungen – **keine** echten Ergebnisse. Die **Wertigkeit** (%) ist die Verlässlichkeit des Tipps (gestützt auf Buchmacher-Quoten, FIFA-Rangliste und Turnierform), nicht die mathematische Siegwahrscheinlichkeit. Hohe Werte nur bei klarem Klassenunterschied; echte 50/50-Spiele bleiben bewusst moderat.
 
@@ -14,6 +14,10 @@
 | 11.06. | Südkorea – Tschechien | 2:1 | A |
 | 12.06. | Kanada – Bosnien-Herz. | 1:1 | B |
 | 12.06. | USA – Paraguay | 4:1 | D |
+| 13.06. | Katar – Schweiz | 1:1 | B |
+| 13.06. | Brasilien – Marokko | 1:1 | C |
+| 13.06. | Haiti – Schottland | 0:1 | C |
+| 13.06. | Australien – Türkei | 2:0 | D |
 
 ---
 
@@ -30,7 +34,6 @@
 ### Gruppe B — Schweiz, Bosnien-Herz., Kanada, Katar
 | Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wert. | HZ-Führung | HZ-Erg. | HZ-Wert. |
 |---|---|---|---|---|---|---|---|---|
-| 13.06. | 1 | Katar – Schweiz | Schweiz | 0:2 | 72 % | Schweiz | 0:1 | 60 % |
 | 18.06. | 2 | Kanada – Katar | Kanada | 2:0 | 64 % | Kanada | 1:0 | 52 % |
 | 18.06. | 2 | Bosnien-Herz. – Schweiz | Schweiz | 1:2 | 54 % | Unentschieden | 0:0 | 52 % |
 | 24.06. | 3 | Kanada – Schweiz | Unentschieden | 1:1 | 45 % | Unentschieden | 0:0 | 52 % |
@@ -39,21 +42,18 @@
 ### Gruppe C — Brasilien, Marokko, Schottland, Haiti
 | Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wert. | HZ-Führung | HZ-Erg. | HZ-Wert. |
 |---|---|---|---|---|---|---|---|---|
-| 13.06. | 1 | Brasilien – Marokko | Brasilien | 2:1 | 55 % | Unentschieden | 0:0 | 52 % |
-| 13.06. | 1 | Haiti – Schottland | Schottland | 0:2 | 62 % | Schottland | 0:1 | 50 % |
 | 19.06. | 2 | Brasilien – Haiti | Brasilien | 3:0 | 83 % | Brasilien | 2:0 | 70 % |
 | 19.06. | 2 | Marokko – Schottland | Marokko | 1:0 | 58 % | Unentschieden | 0:0 | 52 % |
 | 24.06. | 3 | Brasilien – Schottland | Brasilien | 2:0 | 74 % | Brasilien | 1:0 | 62 % |
 | 24.06. | 3 | Marokko – Haiti | Marokko | 2:0 | 77 % | Marokko | 1:0 | 65 % |
 
-### Gruppe D — USA, Türkei, Paraguay, Australien
+### Gruppe D — USA, Australien, Türkei, Paraguay
 | Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wert. | HZ-Führung | HZ-Erg. | HZ-Wert. |
 |---|---|---|---|---|---|---|---|---|
-| 13.06. | 1 | Australien – Türkei | Türkei | 1:2 | 55 % | Unentschieden | 0:0 | 52 % |
-| 19.06. | 2 | USA – Australien | USA | 2:0 | 70 % | USA | 1:0 | 58 % |
-| 19.06. | 2 | Paraguay – Türkei | Türkei | 1:2 | 55 % | Unentschieden | 0:0 | 52 % |
-| 25.06. | 3 | USA – Türkei | USA | 2:1 | 55 % | Unentschieden | 0:0 | 52 % |
-| 25.06. | 3 | Paraguay – Australien | Paraguay | 1:0 | 50 % | Unentschieden | 0:0 | 52 % |
+| 19.06. | 2 | USA – Australien | USA | 2:1 | 58 % | Unentschieden | 0:0 | 52 % |
+| 19.06. | 2 | Paraguay – Türkei | Türkei | 1:2 | 50 % | Unentschieden | 0:0 | 52 % |
+| 25.06. | 3 | USA – Türkei | USA | 2:1 | 58 % | Unentschieden | 0:0 | 52 % |
+| 25.06. | 3 | Paraguay – Australien | Australien | 1:2 | 48 % | Unentschieden | 0:0 | 52 % |
 
 ### Gruppe E — Deutschland, Ecuador, Elfenbeinküste, Curaçao
 | Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wert. | HZ-Führung | HZ-Erg. | HZ-Wert. |
@@ -143,10 +143,10 @@
 
 **Gruppensieger (12):** Mexiko, Schweiz, Brasilien, USA, Deutschland, Niederlande, Belgien, Spanien, Frankreich, Argentinien, Portugal, England
 
-**Gruppenzweite (12):** Südkorea, Bosnien-Herz., Marokko, Türkei, Ecuador, Japan, Ägypten, Uruguay, Norwegen, Österreich, Kolumbien, Kroatien
+**Gruppenzweite (12):** Südkorea, Bosnien-Herz., Marokko, Australien, Ecuador, Japan, Ägypten, Uruguay, Norwegen, Österreich, Kolumbien, Kroatien
 
-**Beste 8 Gruppendritte (Auswahl):** Senegal, Elfenbeinküste, Algerien, Schottland, Schweden, Ghana, Iran, Tschechien
-*(ausgeschieden als schwächste Dritte: Kanada, Paraguay, Saudi-Arabien, DR Kongo)*
+**Beste 8 Gruppendritte (Auswahl):** Senegal, Elfenbeinküste, Algerien, Schottland, Türkei, Schweden, Ghana, Iran
+*(ausgeschieden als schwächste Dritte: Tschechien, Kanada, Saudi-Arabien, DR Kongo)*
 
 > ⚠️ Die exakten K.-o.-Paarungen hängen von den Endtabellen und der FIFA-Zuordnung der acht Gruppendritten ab und lassen sich seriös nicht vorab fixieren. Daher unten eine Turnierverlaufs-Prognose statt fiktiver exakter Paarungen.
 
