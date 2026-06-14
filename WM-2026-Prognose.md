@@ -18,6 +18,8 @@
 | 13.06. | Brasilien – Marokko | 1:1 | C |
 | 13.06. | Haiti – Schottland | 0:1 | C |
 | 13.06. | Australien – Türkei | 2:0 | D |
+| 14.06. | Deutschland – Curaçao | 7:1 | E |
+| 14.06. | Niederlande – Japan | 2:2 | F |
 
 ---
 
@@ -58,7 +60,6 @@
 ### Gruppe E — Deutschland, Ecuador, Elfenbeinküste, Curaçao
 | Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wert. | HZ-Führung | HZ-Erg. | HZ-Wert. |
 |---|---|---|---|---|---|---|---|---|
-| 14.06. | 1 | Deutschland – Curaçao | Deutschland | 4:1 | 85 % | Deutschland | 3:1 | — |
 | 14.06. | 1 | Elfenbeinküste – Ecuador | Ecuador | 0:1 | 50 % | Unentschieden | 0:0 | 52 % |
 | 20.06. | 2 | Deutschland – Elfenbeinküste | Deutschland | 2:1 | 62 % | Deutschland | 1:0 | 50 % |
 | 20.06. | 2 | Curaçao – Ecuador | Ecuador | 0:2 | 78 % | Ecuador | 0:1 | 66 % |
@@ -68,7 +69,6 @@
 ### Gruppe F — Niederlande, Japan, Schweden, Tunesien
 | Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wert. | HZ-Führung | HZ-Erg. | HZ-Wert. |
 |---|---|---|---|---|---|---|---|---|
-| 14.06. | 1 | Niederlande – Japan | Niederlande | 2:1 | 60 % | Niederlande | 1:0 | 48 % |
 | 14.06. | 1 | Schweden – Tunesien | Schweden | 1:0 | 55 % | Unentschieden | 0:0 | 52 % |
 | 20.06. | 2 | Niederlande – Schweden | Niederlande | 2:1 | 62 % | Niederlande | 1:0 | 50 % |
 | 20.06. | 2 | Japan – Tunesien | Japan | 2:0 | 66 % | Japan | 1:0 | 54 % |
@@ -167,6 +167,27 @@
 
 **Titel-Favoriten-Ranking (Buchmacher-Quoten 06/2026):**
 1. Frankreich (~16 %) · 2. Spanien (~15 %) · 3. England (~12 %) · 4. Brasilien (~9 %) · 5. Argentinien (~9 %) · 6. Portugal (~6 %) · 7. Deutschland (~5 %) · 8. Niederlande (~4 %)
+
+---
+
+## Bilanz – meine bisherige Trefferquote (ehrlich)
+
+- **Sieger-Tipp korrekt:** 5 von 9  (~56 %)
+- **Halbzeit-Führung korrekt:** 7 von 9  (~78 %)  ← verlässlichste Größe
+- **Exaktes Endergebnis korrekt:** 2 von 9  (~22 %)  ← statistisch kaum planbar
+
+| Datum | Begegnung | Mein Vorab-Tipp | Echt | Sieger | HZ |
+|---|---|---|---|---|---|
+| 11.06. | Mexiko – Südafrika | Mexiko 2:0 | 2:0 | ✓ | ✓ |
+| 11.06. | Südkorea – Tschechien | Südkorea 2:1 | 2:1 | ✓ | ✓ |
+| 12.06. | Kanada – Bosnien-Herz. | (Datenfehler) | 1:1 | – | – |
+| 12.06. | USA – Paraguay | USA 2:1 | 4:1 | ✓ | ✓ |
+| 13.06. | Katar – Schweiz | Schweiz 0:2 | 1:1 | ✗ | ✓ |
+| 13.06. | Brasilien – Marokko | Brasilien 2:1 | 1:1 | ✗ | ✓ |
+| 13.06. | Haiti – Schottland | Schottland 0:2 | 0:1 | ✓ | ✓ |
+| 13.06. | Australien – Türkei | Türkei 2:1 | 0:2 (Australien) | ✗ | ✗ |
+| 14.06. | Deutschland – Curaçao | Deutschland 3:0 | 7:1 | ✓ | ✓ |
+| 14.06. | Niederlande – Japan | Niederlande 2:1 | 2:2 | ✗ | ✗ |
 
 ---
 

@@ -144,5 +144,34 @@ for rang, team, chance in D.RANKING:
 for col, w in zip("ABCD", [22, 18, 36, 14]):
     ws3.column_dimensions[col].width = w
 
+# ---- Blatt 4: Bilanz / Trefferquote ----
+ws4 = wb.create_sheet("Bilanz")
+ws4["A1"] = "Bilanz – meine bisherige Trefferquote (ehrlich)"
+ws4["A1"].font = TITLE_FONT
+ws4.merge_cells("A1:F1")
+sk, sg, hk, hg, ex = D.review_summary()
+ws4["A2"] = (f"Sieger korrekt: {sk}/{sg} (~{round(100*sk/sg)} %) · "
+             f"Halbzeit-Führung korrekt: {hk}/{hg} (~{round(100*hk/hg)} %) · "
+             f"Exaktes Ergebnis: {ex}/{sg} (~{round(100*ex/sg)} %)")
+ws4["A2"].font = Font(italic=True, size=10, color="404040")
+ws4.merge_cells("A2:F2")
+for i, h in enumerate(["Datum", "Begegnung", "Mein Vorab-Tipp", "Echt", "Sieger", "HZ"], 1):
+    ws4.cell(row=4, column=i, value=h)
+style_header(ws4, 4, 6)
+mark = lambda x: "✓" if x is True else ("✗" if x is False else "–")
+r = 5
+for datum, beg, tipp, erg, sok, hok in D.REVIEW:
+    ws4.cell(row=r, column=1, value=datum).alignment = CENTER
+    ws4.cell(row=r, column=2, value=beg).alignment = LEFT
+    ws4.cell(row=r, column=3, value=tipp).alignment = LEFT
+    ws4.cell(row=r, column=4, value=erg).alignment = CENTER
+    ws4.cell(row=r, column=5, value=mark(sok)).alignment = CENTER
+    ws4.cell(row=r, column=6, value=mark(hok)).alignment = CENTER
+    for c in range(1, 7):
+        ws4.cell(row=r, column=c).border = BORDER
+    r += 1
+for col, w in zip("ABCDEF", [9, 26, 18, 16, 8, 6]):
+    ws4.column_dimensions[col].width = w
+
 wb.save("WM-2026-Prognose.xlsx")
 print("WM-2026-Prognose.xlsx erstellt")

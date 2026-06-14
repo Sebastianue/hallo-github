@@ -74,6 +74,25 @@ def main():
     t3.num_header_rows = 1
     t3.num_header_cols = 0
 
+    # ---- Blatt 4: Bilanz / Trefferquote ----
+    doc.add_sheet("Bilanz", "Bilanz")
+    s4 = doc.sheets[-1]
+    t4 = s4.tables[0]
+    sk, sg, hk, hg, ex = D.review_summary()
+    t4.write(0, 0, f"Trefferquote: Sieger {sk}/{sg} (~{round(100*sk/sg)} %) · "
+                   f"HZ-Führung {hk}/{hg} (~{round(100*hk/hg)} %) · "
+                   f"Exakt {ex}/{sg} (~{round(100*ex/sg)} %)")
+    t4.set_cell_style(0, 0, grp)
+    for c, h in enumerate(["Datum", "Begegnung", "Mein Vorab-Tipp", "Echt", "Sieger", "HZ"]):
+        t4.write(2, c, h)
+        t4.set_cell_style(2, c, hdr)
+    mark = lambda x: "OK" if x is True else ("X" if x is False else "-")
+    for ri, (datum, beg, tipp, erg, sok, hok) in enumerate(D.REVIEW, start=3):
+        for c, val in enumerate([datum, beg, tipp, erg, mark(sok), mark(hok)]):
+            t4.write(ri, c, val)
+    t4.num_header_rows = 1
+    t4.num_header_cols = 0
+
     doc.save("WM-2026-Prognose.numbers")
     print("WM-2026-Prognose.numbers erstellt")
 

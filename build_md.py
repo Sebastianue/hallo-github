@@ -58,6 +58,18 @@ w("")
 w("**Titel-Favoriten-Ranking (Buchmacher-Quoten 06/2026):**")
 w(" · ".join(f"{rang}. {team} (~{chance} %)" for rang, team, chance in D.RANKING) + "\n")
 
+w("---\n\n## Bilanz – meine bisherige Trefferquote (ehrlich)\n")
+sk, sg, hk, hg, ex = D.review_summary()
+w(f"- **Sieger-Tipp korrekt:** {sk} von {sg}  (~{round(100*sk/sg)} %)")
+w(f"- **Halbzeit-Führung korrekt:** {hk} von {hg}  (~{round(100*hk/hg)} %)  ← verlässlichste Größe")
+w(f"- **Exaktes Endergebnis korrekt:** {ex} von {sg}  (~{round(100*ex/sg)} %)  ← statistisch kaum planbar\n")
+w("| Datum | Begegnung | Mein Vorab-Tipp | Echt | Sieger | HZ |")
+w("|---|---|---|---|---|---|")
+for datum, beg, tipp, erg, sok, hok in D.REVIEW:
+    mark = lambda x: "✓" if x is True else ("✗" if x is False else "–")
+    w(f"| {datum} | {beg} | {tipp} | {erg} | {mark(sok)} | {mark(hok)} |")
+w("")
+
 w("---\n")
 w("*Quellen u. a.: FIFA-Weltrangliste, Buchmacher-/Marktquoten (Oddspedia, ESPN, Polymarket), "
   "Transfermarkt-Kaderwerte, Wikipedia, Sky Sports, kicker, sportschau. Prognosen subjektiv und ohne Gewähr.*")

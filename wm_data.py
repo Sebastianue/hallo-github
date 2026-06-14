@@ -21,6 +21,8 @@ PLAYED = [
     ("13.06.", "Brasilien – Marokko", "1:1", "C"),
     ("13.06.", "Haiti – Schottland", "0:1", "C"),
     ("13.06.", "Australien – Türkei", "2:0", "D"),
+    ("14.06.", "Deutschland – Curaçao", "7:1", "E"),
+    ("14.06.", "Niederlande – Japan", "2:2", "F"),
 ]
 
 # Gruppenspiele: (gruppe, datum, spieltag, heim, gast, sieger, ergebnis, wertigkeit%, gespielt?)
@@ -53,14 +55,14 @@ GROUP_MATCHES = [
     ("D", "25.06.2026", 3, "USA", "Türkei", "USA", "2:1", 58, False),
     ("D", "25.06.2026", 3, "Paraguay", "Australien", "Australien", "1:2", 48, False),
 
-    ("E", "14.06.2026", 1, "Deutschland", "Curaçao", "Deutschland", "4:1", 85, False),
+    ("E", "14.06.2026", 1, "Deutschland", "Curaçao", "Deutschland", "7:1", None, True),
     ("E", "14.06.2026", 1, "Elfenbeinküste", "Ecuador", "Ecuador", "0:1", 50, False),
     ("E", "20.06.2026", 2, "Deutschland", "Elfenbeinküste", "Deutschland", "2:1", 62, False),
     ("E", "20.06.2026", 2, "Curaçao", "Ecuador", "Ecuador", "0:2", 78, False),
     ("E", "25.06.2026", 3, "Deutschland", "Ecuador", "Deutschland", "2:1", 60, False),
     ("E", "25.06.2026", 3, "Curaçao", "Elfenbeinküste", "Elfenbeinküste", "0:2", 77, False),
 
-    ("F", "14.06.2026", 1, "Niederlande", "Japan", "Niederlande", "2:1", 60, False),
+    ("F", "14.06.2026", 1, "Niederlande", "Japan", "Unentschieden", "2:2", None, True),
     ("F", "14.06.2026", 1, "Schweden", "Tunesien", "Schweden", "1:0", 55, False),
     ("F", "20.06.2026", 2, "Niederlande", "Schweden", "Niederlande", "2:1", 62, False),
     ("F", "20.06.2026", 2, "Japan", "Tunesien", "Japan", "2:0", 66, False),
@@ -157,12 +159,12 @@ PLAYED_HT = {
     ("Brasilien", "Marokko"): ("Unentschieden", "1:1"),
     ("Haiti", "Schottland"): ("Schottland", "0:1"),
     ("Australien", "Türkei"): ("Australien", "1:0"),
+    ("Deutschland", "Curaçao"): ("Deutschland", "3:1"),
+    ("Niederlande", "Japan"): ("Unentschieden", "0:0"),
 }
 
 # Laufende Spiele: echter Halbzeitstand, Endergebnis noch offen (Tipp neu berechnet).
-LIVE_HT = {
-    ("Deutschland", "Curaçao"): ("Deutschland", "3:1"),
-}
+LIVE_HT = {}
 
 
 def _half_time(win, res, wert, played, home, away):
@@ -186,6 +188,32 @@ def _half_time(win, res, wert, played, home, away):
     else:
         hs = "1:0" if a > b else "0:1"
     return lead, hs, max(48, min(70, wert - 12))
+
+
+# Ehrliche Trefferquote: (datum, begegnung, mein_vorab_tipp, echtes_ergebnis,
+#  sieger_richtig, halbzeit_fuehrung_richtig)  -- None = nicht bewertbar
+REVIEW = [
+    ("11.06.", "Mexiko – Südafrika", "Mexiko 2:0", "2:0", True, True),
+    ("11.06.", "Südkorea – Tschechien", "Südkorea 2:1", "2:1", True, True),
+    ("12.06.", "Kanada – Bosnien-Herz.", "(Datenfehler)", "1:1", None, None),
+    ("12.06.", "USA – Paraguay", "USA 2:1", "4:1", True, True),
+    ("13.06.", "Katar – Schweiz", "Schweiz 0:2", "1:1", False, True),
+    ("13.06.", "Brasilien – Marokko", "Brasilien 2:1", "1:1", False, True),
+    ("13.06.", "Haiti – Schottland", "Schottland 0:2", "0:1", True, True),
+    ("13.06.", "Australien – Türkei", "Türkei 2:1", "0:2 (Australien)", False, False),
+    ("14.06.", "Deutschland – Curaçao", "Deutschland 3:0", "7:1", True, True),
+    ("14.06.", "Niederlande – Japan", "Niederlande 2:1", "2:2", False, False),
+]
+
+
+def review_summary():
+    """Liefert (sieger_korrekt, sieger_gesamt, hz_korrekt, hz_gesamt, exakt_korrekt)."""
+    sk = sum(1 for r in REVIEW if r[4] is True)
+    sg = sum(1 for r in REVIEW if r[4] is not None)
+    hk = sum(1 for r in REVIEW if r[5] is True)
+    hg = sum(1 for r in REVIEW if r[5] is not None)
+    ex = sum(1 for r in REVIEW if r[2].split(" ")[-1] == r[3])  # exaktes Ergebnis
+    return sk, sg, hk, hg, ex
 
 
 # Erweiterte Spielliste inkl. Halbzeit-Feldern (12 Felder):
