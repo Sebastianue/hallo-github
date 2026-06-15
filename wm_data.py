@@ -1,118 +1,175 @@
 # -*- coding: utf-8 -*-
-"""Gemeinsame Datenbasis fuer die WM-2026-Prognose (Quelle fuer Excel und Numbers).
+"""Gemeinsame Datenbasis fuer die WM-2026-Prognose (Quelle fuer Excel, Numbers, Markdown).
 
-Bei jeder Neuberechnung nur dieses Modul anpassen, dann build_xlsx.py
-und build_numbers.py erneut ausfuehren.
+Aufbau:
+- GROUP_MATCHES: enthaelt IMMER nur den TIPP (Sieger, exaktes Ergebnis, Wertigkeit).
+- ACTUAL: echtes Resultat eines Spiels, sobald gespielt -> (Endstand, Sieger, HZ-Fuehrung, HZ-Stand).
+- GROUP_MATCHES_FULL: kombiniert Tipp + echtes Ergebnis + Treffer-Check (von den Buildern genutzt).
 
-Kalibrierung: Wertigkeit gestuetzt auf Buchmacher-Quoten + FIFA-Rangliste
-(Stand 06/2026) + bisherige Turnierergebnisse. Hohe Werte nur bei klarem
-Klassenunterschied; echte 50/50-Spiele bleiben bewusst moderat.
+Bei jeder Neuberechnung: Tipps in GROUP_MATCHES und Ergebnisse in ACTUAL pflegen.
+Kalibrierung: Buchmacher-Quoten + FIFA-Rangliste + Transfermarkt-Kaderwerte + Turnierform.
+Fokus liegt auf Sieger- und Halbzeit-Tipp; das exakte Endergebnis ist statistisch kaum planbar.
 """
 
 STAND = "15. Juni 2026 (kalibriert mit Buchmacher-Quoten, FIFA-Rangliste & Transfermarkt-Kaderwerten; nach allen Spielen bis 14.06.)"
 
-# Bereits gespielte Spiele: (datum, begegnung, ergebnis, gruppe)
-PLAYED = [
-    ("11.06.", "Mexiko – Südafrika", "2:0", "A"),
-    ("11.06.", "Südkorea – Tschechien", "2:1", "A"),
-    ("12.06.", "Kanada – Bosnien-Herz.", "1:1", "B"),
-    ("12.06.", "USA – Paraguay", "4:1", "D"),
-    ("13.06.", "Katar – Schweiz", "1:1", "B"),
-    ("13.06.", "Brasilien – Marokko", "1:1", "C"),
-    ("13.06.", "Haiti – Schottland", "0:1", "C"),
-    ("13.06.", "Australien – Türkei", "2:0", "D"),
-    ("14.06.", "Deutschland – Curaçao", "7:1", "E"),
-    ("14.06.", "Elfenbeinküste – Ecuador", "1:0", "E"),
-    ("14.06.", "Niederlande – Japan", "2:2", "F"),
-    ("14.06.", "Schweden – Tunesien", "5:1", "F"),
-]
-
-# Gruppenspiele: (gruppe, datum, spieltag, heim, gast, sieger, ergebnis, wertigkeit%, gespielt?)
+# TIPPS je Spiel: (gruppe, datum, spieltag, heim, gast, sieger_tipp, ergebnis_tipp, wertigkeit%)
+# sieger_tipp == "Unentschieden" fuer Remis-Tipp, "—" = kein Tipp abgegeben.
 GROUP_MATCHES = [
-    ("A", "11.06.2026", 1, "Mexiko", "Südafrika", "Mexiko", "2:0", None, True),
-    ("A", "11.06.2026", 1, "Südkorea", "Tschechien", "Südkorea", "2:1", None, True),
-    ("A", "18.06.2026", 2, "Mexiko", "Südkorea", "Mexiko", "2:1", 52, False),
-    ("A", "18.06.2026", 2, "Tschechien", "Südafrika", "Tschechien", "2:0", 66, False),
-    ("A", "24.06.2026", 3, "Mexiko", "Tschechien", "Mexiko", "2:0", 64, False),
-    ("A", "24.06.2026", 3, "Südkorea", "Südafrika", "Südkorea", "2:0", 72, False),
+    ("A", "11.06.2026", 1, "Mexiko", "Südafrika", "Mexiko", "2:0", 60),
+    ("A", "11.06.2026", 1, "Südkorea", "Tschechien", "Südkorea", "2:1", 60),
+    ("A", "18.06.2026", 2, "Mexiko", "Südkorea", "Mexiko", "2:1", 52),
+    ("A", "18.06.2026", 2, "Tschechien", "Südafrika", "Tschechien", "2:0", 66),
+    ("A", "24.06.2026", 3, "Mexiko", "Tschechien", "Mexiko", "2:0", 64),
+    ("A", "24.06.2026", 3, "Südkorea", "Südafrika", "Südkorea", "2:0", 72),
 
-    ("B", "12.06.2026", 1, "Kanada", "Bosnien-Herz.", "Unentschieden", "1:1", None, True),
-    ("B", "13.06.2026", 1, "Katar", "Schweiz", "Unentschieden", "1:1", None, True),
-    ("B", "18.06.2026", 2, "Kanada", "Katar", "Kanada", "2:0", 64, False),
-    ("B", "18.06.2026", 2, "Bosnien-Herz.", "Schweiz", "Schweiz", "1:2", 54, False),
-    ("B", "24.06.2026", 3, "Kanada", "Schweiz", "Unentschieden", "1:1", 45, False),
-    ("B", "24.06.2026", 3, "Bosnien-Herz.", "Katar", "Bosnien-Herz.", "2:0", 64, False),
+    ("B", "12.06.2026", 1, "Kanada", "Bosnien-Herz.", "—", "—", None),
+    ("B", "13.06.2026", 1, "Katar", "Schweiz", "Schweiz", "0:2", 72),
+    ("B", "18.06.2026", 2, "Kanada", "Katar", "Kanada", "2:0", 64),
+    ("B", "18.06.2026", 2, "Bosnien-Herz.", "Schweiz", "Schweiz", "1:2", 54),
+    ("B", "24.06.2026", 3, "Kanada", "Schweiz", "Unentschieden", "1:1", 45),
+    ("B", "24.06.2026", 3, "Bosnien-Herz.", "Katar", "Bosnien-Herz.", "2:0", 64),
 
-    ("C", "13.06.2026", 1, "Brasilien", "Marokko", "Unentschieden", "1:1", None, True),
-    ("C", "13.06.2026", 1, "Haiti", "Schottland", "Schottland", "0:1", None, True),
-    ("C", "19.06.2026", 2, "Brasilien", "Haiti", "Brasilien", "3:0", 83, False),
-    ("C", "19.06.2026", 2, "Marokko", "Schottland", "Marokko", "1:0", 58, False),
-    ("C", "24.06.2026", 3, "Brasilien", "Schottland", "Brasilien", "2:0", 74, False),
-    ("C", "24.06.2026", 3, "Marokko", "Haiti", "Marokko", "2:0", 77, False),
+    ("C", "13.06.2026", 1, "Brasilien", "Marokko", "Brasilien", "2:1", 55),
+    ("C", "13.06.2026", 1, "Haiti", "Schottland", "Schottland", "0:2", 62),
+    ("C", "19.06.2026", 2, "Brasilien", "Haiti", "Brasilien", "3:0", 83),
+    ("C", "19.06.2026", 2, "Marokko", "Schottland", "Marokko", "1:0", 58),
+    ("C", "24.06.2026", 3, "Brasilien", "Schottland", "Brasilien", "2:0", 74),
+    ("C", "24.06.2026", 3, "Marokko", "Haiti", "Marokko", "2:0", 77),
 
-    ("D", "12.06.2026", 1, "USA", "Paraguay", "USA", "4:1", None, True),
-    ("D", "13.06.2026", 1, "Australien", "Türkei", "Australien", "2:0", None, True),
-    ("D", "19.06.2026", 2, "USA", "Australien", "USA", "2:1", 58, False),
-    ("D", "19.06.2026", 2, "Paraguay", "Türkei", "Türkei", "1:2", 50, False),
-    ("D", "25.06.2026", 3, "USA", "Türkei", "USA", "2:1", 58, False),
-    ("D", "25.06.2026", 3, "Paraguay", "Australien", "Australien", "1:2", 48, False),
+    ("D", "12.06.2026", 1, "USA", "Paraguay", "USA", "2:1", 52),
+    ("D", "13.06.2026", 1, "Australien", "Türkei", "Türkei", "1:2", 55),
+    ("D", "19.06.2026", 2, "USA", "Australien", "USA", "2:1", 58),
+    ("D", "19.06.2026", 2, "Paraguay", "Türkei", "Türkei", "1:2", 50),
+    ("D", "25.06.2026", 3, "USA", "Türkei", "USA", "2:1", 58),
+    ("D", "25.06.2026", 3, "Paraguay", "Australien", "Australien", "1:2", 48),
 
-    ("E", "14.06.2026", 1, "Deutschland", "Curaçao", "Deutschland", "7:1", None, True),
-    ("E", "14.06.2026", 1, "Elfenbeinküste", "Ecuador", "Elfenbeinküste", "1:0", None, True),
-    ("E", "20.06.2026", 2, "Deutschland", "Elfenbeinküste", "Deutschland", "2:1", 56, False),
-    ("E", "20.06.2026", 2, "Curaçao", "Ecuador", "Ecuador", "0:2", 78, False),
-    ("E", "25.06.2026", 3, "Deutschland", "Ecuador", "Deutschland", "2:1", 60, False),
-    ("E", "25.06.2026", 3, "Curaçao", "Elfenbeinküste", "Elfenbeinküste", "0:2", 77, False),
+    ("E", "14.06.2026", 1, "Deutschland", "Curaçao", "Deutschland", "3:0", 88),
+    ("E", "14.06.2026", 1, "Elfenbeinküste", "Ecuador", "Ecuador", "0:1", 50),
+    ("E", "20.06.2026", 2, "Deutschland", "Elfenbeinküste", "Deutschland", "2:1", 56),
+    ("E", "20.06.2026", 2, "Curaçao", "Ecuador", "Ecuador", "0:2", 78),
+    ("E", "25.06.2026", 3, "Deutschland", "Ecuador", "Deutschland", "2:1", 60),
+    ("E", "25.06.2026", 3, "Curaçao", "Elfenbeinküste", "Elfenbeinküste", "0:2", 77),
 
-    ("F", "14.06.2026", 1, "Niederlande", "Japan", "Unentschieden", "2:2", None, True),
-    ("F", "14.06.2026", 1, "Schweden", "Tunesien", "Schweden", "5:1", None, True),
-    ("F", "20.06.2026", 2, "Niederlande", "Schweden", "Niederlande", "2:1", 56, False),
-    ("F", "20.06.2026", 2, "Japan", "Tunesien", "Japan", "2:0", 66, False),
-    ("F", "25.06.2026", 3, "Niederlande", "Tunesien", "Niederlande", "2:0", 74, False),
-    ("F", "25.06.2026", 3, "Japan", "Schweden", "Japan", "2:1", 52, False),
+    ("F", "14.06.2026", 1, "Niederlande", "Japan", "Niederlande", "2:1", 60),
+    ("F", "14.06.2026", 1, "Schweden", "Tunesien", "Schweden", "1:0", 55),
+    ("F", "20.06.2026", 2, "Niederlande", "Schweden", "Niederlande", "2:1", 56),
+    ("F", "20.06.2026", 2, "Japan", "Tunesien", "Japan", "2:0", 66),
+    ("F", "25.06.2026", 3, "Niederlande", "Tunesien", "Niederlande", "2:0", 74),
+    ("F", "25.06.2026", 3, "Japan", "Schweden", "Japan", "2:1", 52),
 
-    ("G", "15.06.2026", 1, "Belgien", "Ägypten", "Belgien", "2:1", 62, False),
-    ("G", "15.06.2026", 1, "Iran", "Neuseeland", "Iran", "2:0", 70, False),
-    ("G", "21.06.2026", 2, "Belgien", "Iran", "Belgien", "2:0", 64, False),
-    ("G", "21.06.2026", 2, "Ägypten", "Neuseeland", "Ägypten", "2:0", 70, False),
-    ("G", "26.06.2026", 3, "Belgien", "Neuseeland", "Belgien", "3:0", 85, False),
-    ("G", "26.06.2026", 3, "Ägypten", "Iran", "Ägypten", "1:0", 48, False),
+    ("G", "15.06.2026", 1, "Belgien", "Ägypten", "Belgien", "2:1", 62),
+    ("G", "15.06.2026", 1, "Iran", "Neuseeland", "Iran", "2:0", 70),
+    ("G", "21.06.2026", 2, "Belgien", "Iran", "Belgien", "2:0", 64),
+    ("G", "21.06.2026", 2, "Ägypten", "Neuseeland", "Ägypten", "2:0", 70),
+    ("G", "26.06.2026", 3, "Belgien", "Neuseeland", "Belgien", "3:0", 85),
+    ("G", "26.06.2026", 3, "Ägypten", "Iran", "Ägypten", "1:0", 48),
 
-    ("H", "15.06.2026", 1, "Spanien", "Kap Verde", "Spanien", "3:0", 88, False),
-    ("H", "15.06.2026", 1, "Saudi-Arabien", "Uruguay", "Uruguay", "0:2", 66, False),
-    ("H", "21.06.2026", 2, "Spanien", "Saudi-Arabien", "Spanien", "3:0", 83, False),
-    ("H", "21.06.2026", 2, "Kap Verde", "Uruguay", "Uruguay", "0:2", 73, False),
-    ("H", "26.06.2026", 3, "Spanien", "Uruguay", "Spanien", "2:1", 62, False),
-    ("H", "26.06.2026", 3, "Kap Verde", "Saudi-Arabien", "Saudi-Arabien", "0:1", 46, False),
+    ("H", "15.06.2026", 1, "Spanien", "Kap Verde", "Spanien", "3:0", 88),
+    ("H", "15.06.2026", 1, "Saudi-Arabien", "Uruguay", "Uruguay", "0:2", 66),
+    ("H", "21.06.2026", 2, "Spanien", "Saudi-Arabien", "Spanien", "3:0", 83),
+    ("H", "21.06.2026", 2, "Kap Verde", "Uruguay", "Uruguay", "0:2", 73),
+    ("H", "26.06.2026", 3, "Spanien", "Uruguay", "Spanien", "2:1", 62),
+    ("H", "26.06.2026", 3, "Kap Verde", "Saudi-Arabien", "Saudi-Arabien", "0:1", 46),
 
-    ("I", "16.06.2026", 1, "Frankreich", "Senegal", "Frankreich", "2:1", 58, False),
-    ("I", "16.06.2026", 1, "Irak", "Norwegen", "Norwegen", "0:2", 70, False),
-    ("I", "22.06.2026", 2, "Frankreich", "Irak", "Frankreich", "3:0", 82, False),
-    ("I", "22.06.2026", 2, "Senegal", "Norwegen", "Norwegen", "1:2", 50, False),
-    ("I", "26.06.2026", 3, "Frankreich", "Norwegen", "Frankreich", "2:1", 56, False),
-    ("I", "26.06.2026", 3, "Senegal", "Irak", "Senegal", "2:0", 72, False),
+    ("I", "16.06.2026", 1, "Frankreich", "Senegal", "Frankreich", "2:1", 58),
+    ("I", "16.06.2026", 1, "Irak", "Norwegen", "Norwegen", "0:2", 70),
+    ("I", "22.06.2026", 2, "Frankreich", "Irak", "Frankreich", "3:0", 82),
+    ("I", "22.06.2026", 2, "Senegal", "Norwegen", "Norwegen", "1:2", 50),
+    ("I", "26.06.2026", 3, "Frankreich", "Norwegen", "Frankreich", "2:1", 56),
+    ("I", "26.06.2026", 3, "Senegal", "Irak", "Senegal", "2:0", 72),
 
-    ("J", "16.06.2026", 1, "Argentinien", "Algerien", "Argentinien", "2:0", 72, False),
-    ("J", "16.06.2026", 1, "Österreich", "Jordanien", "Österreich", "2:0", 68, False),
-    ("J", "22.06.2026", 2, "Argentinien", "Österreich", "Argentinien", "2:1", 66, False),
-    ("J", "22.06.2026", 2, "Algerien", "Jordanien", "Algerien", "2:0", 64, False),
-    ("J", "27.06.2026", 3, "Argentinien", "Jordanien", "Argentinien", "3:0", 88, False),
-    ("J", "27.06.2026", 3, "Algerien", "Österreich", "Österreich", "1:2", 50, False),
+    ("J", "16.06.2026", 1, "Argentinien", "Algerien", "Argentinien", "2:0", 72),
+    ("J", "16.06.2026", 1, "Österreich", "Jordanien", "Österreich", "2:0", 68),
+    ("J", "22.06.2026", 2, "Argentinien", "Österreich", "Argentinien", "2:1", 66),
+    ("J", "22.06.2026", 2, "Algerien", "Jordanien", "Algerien", "2:0", 64),
+    ("J", "27.06.2026", 3, "Argentinien", "Jordanien", "Argentinien", "3:0", 88),
+    ("J", "27.06.2026", 3, "Algerien", "Österreich", "Österreich", "1:2", 50),
 
-    ("K", "17.06.2026", 1, "Portugal", "DR Kongo", "Portugal", "2:0", 72, False),
-    ("K", "17.06.2026", 1, "Usbekistan", "Kolumbien", "Kolumbien", "0:2", 66, False),
-    ("K", "23.06.2026", 2, "Portugal", "Usbekistan", "Portugal", "2:0", 75, False),
-    ("K", "23.06.2026", 2, "DR Kongo", "Kolumbien", "Kolumbien", "0:2", 68, False),
-    ("K", "27.06.2026", 3, "Portugal", "Kolumbien", "Portugal", "2:1", 54, False),
-    ("K", "27.06.2026", 3, "DR Kongo", "Usbekistan", "DR Kongo", "1:0", 52, False),
+    ("K", "17.06.2026", 1, "Portugal", "DR Kongo", "Portugal", "2:0", 72),
+    ("K", "17.06.2026", 1, "Usbekistan", "Kolumbien", "Kolumbien", "0:2", 66),
+    ("K", "23.06.2026", 2, "Portugal", "Usbekistan", "Portugal", "2:0", 75),
+    ("K", "23.06.2026", 2, "DR Kongo", "Kolumbien", "Kolumbien", "0:2", 68),
+    ("K", "27.06.2026", 3, "Portugal", "Kolumbien", "Portugal", "2:1", 54),
+    ("K", "27.06.2026", 3, "DR Kongo", "Usbekistan", "DR Kongo", "1:0", 52),
 
-    ("L", "17.06.2026", 1, "England", "Kroatien", "England", "2:1", 56, False),
-    ("L", "17.06.2026", 1, "Ghana", "Panama", "Ghana", "1:0", 56, False),
-    ("L", "23.06.2026", 2, "England", "Ghana", "England", "2:0", 72, False),
-    ("L", "23.06.2026", 2, "Kroatien", "Panama", "Kroatien", "2:0", 72, False),
-    ("L", "27.06.2026", 3, "England", "Panama", "England", "3:0", 85, False),
-    ("L", "27.06.2026", 3, "Kroatien", "Ghana", "Kroatien", "2:1", 58, False),
+    ("L", "17.06.2026", 1, "England", "Kroatien", "England", "2:1", 56),
+    ("L", "17.06.2026", 1, "Ghana", "Panama", "Ghana", "1:0", 56),
+    ("L", "23.06.2026", 2, "England", "Ghana", "England", "2:0", 72),
+    ("L", "23.06.2026", 2, "Kroatien", "Panama", "Kroatien", "2:0", 72),
+    ("L", "27.06.2026", 3, "England", "Panama", "England", "3:0", 85),
+    ("L", "27.06.2026", 3, "Kroatien", "Ghana", "Kroatien", "2:1", 58),
 ]
+
+# ECHTE Resultate gespielter Spiele: (heim, gast) -> (endstand, sieger, hz_fuehrung, hz_stand)
+ACTUAL = {
+    ("Mexiko", "Südafrika"): ("2:0", "Mexiko", "Mexiko", "1:0"),
+    ("Südkorea", "Tschechien"): ("2:1", "Südkorea", "Unentschieden", "0:0"),
+    ("Kanada", "Bosnien-Herz."): ("1:1", "Unentschieden", "Bosnien-Herz.", "0:1"),
+    ("USA", "Paraguay"): ("4:1", "USA", "USA", "3:0"),
+    ("Katar", "Schweiz"): ("1:1", "Unentschieden", "Schweiz", "0:1"),
+    ("Brasilien", "Marokko"): ("1:1", "Unentschieden", "Unentschieden", "1:1"),
+    ("Haiti", "Schottland"): ("0:1", "Schottland", "Schottland", "0:1"),
+    ("Australien", "Türkei"): ("2:0", "Australien", "Australien", "1:0"),
+    ("Deutschland", "Curaçao"): ("7:1", "Deutschland", "Deutschland", "3:1"),
+    ("Elfenbeinküste", "Ecuador"): ("1:0", "Elfenbeinküste", "Unentschieden", "0:0"),
+    ("Niederlande", "Japan"): ("2:2", "Unentschieden", "Unentschieden", "0:0"),
+    ("Schweden", "Tunesien"): ("5:1", "Schweden", "Schweden", "2:1"),
+}
+
+
+def _half_time_tip(sieger, erg, wert):
+    """HZ-Tipp (Fuehrung, Stand, Wertigkeit) aus dem FT-Tipp ableiten.
+    Enge Partien -> zur Pause meist unentschieden; klare Favoriten fuehren knapp."""
+    if sieger == "—":
+        return "—", "—", None
+    if sieger == "Unentschieden":
+        return "Unentschieden", "0:0", 52
+    a, b = (int(x) for x in erg.split(":"))
+    margin = abs(a - b)
+    if wert is not None and wert <= 58:
+        return "Unentschieden", "0:0", 52
+    if margin >= 3:
+        hs = "2:0" if a > b else "0:2"
+    else:
+        hs = "1:0" if a > b else "0:1"
+    hw = max(48, min(70, wert - 12)) if wert else None
+    return sieger, hs, hw
+
+
+def _build_full():
+    rows = []
+    for g, datum, st, home, away, sieger, erg, wert in GROUP_MATCHES:
+        hz_lead, hz_score, hz_wert = _half_time_tip(sieger, erg, wert)
+        played = (home, away) in ACTUAL
+        endstand = sieger_ok = hz_ok = None
+        if played:
+            endstand, real_winner, real_hz_lead, _ = ACTUAL[(home, away)]
+            if sieger != "—":
+                sieger_ok = (sieger == real_winner)
+                hz_ok = (hz_lead == real_hz_lead)
+        rows.append((g, datum, st, home, away, sieger, erg, wert,
+                     hz_lead, hz_score, hz_wert, played, endstand, sieger_ok, hz_ok))
+    return rows
+
+
+GROUP_MATCHES_FULL = _build_full()
+
+
+def review_summary():
+    """(sieger_korrekt, sieger_gesamt, hz_korrekt, hz_gesamt, exakt_korrekt, exakt_gesamt)."""
+    sk = sg = hk = hg = ex = eg = 0
+    for r in GROUP_MATCHES_FULL:
+        sieger, erg, played, endstand, sok, hok = r[5], r[6], r[11], r[12], r[13], r[14]
+        if played and sok is not None:
+            sg += 1
+            sk += 1 if sok else 0
+            hg += 1
+            hk += 1 if hok else 0
+            eg += 1
+            ex += 1 if erg == endstand else 0
+    return sk, sg, hk, hg, ex, eg
+
 
 # Prognostizierte Endplatzierung: (gruppe, 1., 2., 3., 4.)
 STANDINGS = [
@@ -131,8 +188,6 @@ STANDINGS = [
 ]
 
 # K.-o.-Phase: (runde, datum, prognose, wertigkeit%)
-# Top kalibriert mit Buchmacher-Quoten 06/2026 + Transfermarkt-Kaderwerten:
-# Frankreich (wertvollster Kader) hauchduenn vor Spanien.
 KO = [
     ("Achtelfinale (Best 32)", "28.06.–03.07.2026", "Topnationen ziehen ein", 62),
     ("Achtelfinale (Best 16)", "04.07.–07.07.2026", "FRA, ESP, ENG, BRA, ARG, POR, GER, NED", 52),
@@ -144,88 +199,9 @@ KO = [
     ("Weltmeister 2026", "19.07.2026", "Frankreich (Finalsieg 2:1)", 20),
 ]
 
-# Titel-Ranking (Mix aus Buchmacher-Quoten 06/2026 + Transfermarkt-Kaderwert): (rang, team, titelchance%)
+# Titel-Ranking (Buchmacher-Quoten + Transfermarkt-Kaderwert): (rang, team, titelchance%)
 RANKING = [
     (1, "Frankreich", 16), (2, "Spanien", 15), (3, "England", 12),
     (4, "Brasilien", 9), (5, "Argentinien", 9), (6, "Portugal", 6),
     (7, "Deutschland", 5), (8, "Niederlande", 4),
-]
-
-# Halbzeit-Stand der bereits gespielten Spiele: (heim, gast) -> (fuehrung, hz_ergebnis)
-PLAYED_HT = {
-    ("Mexiko", "Südafrika"): ("Mexiko", "1:0"),
-    ("Südkorea", "Tschechien"): ("Unentschieden", "0:0"),
-    ("Kanada", "Bosnien-Herz."): ("Bosnien-Herz.", "0:1"),
-    ("USA", "Paraguay"): ("USA", "3:0"),
-    ("Katar", "Schweiz"): ("Schweiz", "0:1"),
-    ("Brasilien", "Marokko"): ("Unentschieden", "1:1"),
-    ("Haiti", "Schottland"): ("Schottland", "0:1"),
-    ("Australien", "Türkei"): ("Australien", "1:0"),
-    ("Deutschland", "Curaçao"): ("Deutschland", "3:1"),
-    ("Elfenbeinküste", "Ecuador"): ("Unentschieden", "0:0"),
-    ("Niederlande", "Japan"): ("Unentschieden", "0:0"),
-    ("Schweden", "Tunesien"): ("Schweden", "2:1"),
-}
-
-# Laufende Spiele: echter Halbzeitstand, Endergebnis noch offen (Tipp neu berechnet).
-LIVE_HT = {}
-
-
-def _half_time(win, res, wert, played, home, away):
-    """Leitet Halbzeit-Fuehrung, HZ-Ergebnis und HZ-Wertigkeit ab.
-    Heuristik: enge Partien stehen zur Pause meist unentschieden;
-    klare Favoriten fuehren knapp. HZ-Tipp ist eigenstaendig (oft stabiler
-    als das exakte Endergebnis)."""
-    if played:
-        lead, hs = PLAYED_HT.get((home, away), ("?", "?"))
-        return lead, hs, None
-    if (home, away) in LIVE_HT:  # laeuft gerade: echter Halbzeitstand
-        lead, hs = LIVE_HT[(home, away)]
-        return lead, hs, None
-    a, b = (int(x) for x in res.split(":"))
-    margin = abs(a - b)
-    if wert <= 58:  # enge Partie -> zur Pause haeufig unentschieden
-        return "Unentschieden", "0:0", 52
-    lead = win
-    if margin >= 3:
-        hs = "2:0" if a > b else "0:2"
-    else:
-        hs = "1:0" if a > b else "0:1"
-    return lead, hs, max(48, min(70, wert - 12))
-
-
-# Ehrliche Trefferquote: (datum, begegnung, mein_vorab_tipp, echtes_ergebnis,
-#  sieger_richtig, halbzeit_fuehrung_richtig)  -- None = nicht bewertbar
-REVIEW = [
-    ("11.06.", "Mexiko – Südafrika", "Mexiko 2:0", "2:0", True, True),
-    ("11.06.", "Südkorea – Tschechien", "Südkorea 2:1", "2:1", True, True),
-    ("12.06.", "Kanada – Bosnien-Herz.", "(Datenfehler)", "1:1", None, None),
-    ("12.06.", "USA – Paraguay", "USA 2:1", "4:1", True, True),
-    ("13.06.", "Katar – Schweiz", "Schweiz 0:2", "1:1", False, True),
-    ("13.06.", "Brasilien – Marokko", "Brasilien 2:1", "1:1", False, True),
-    ("13.06.", "Haiti – Schottland", "Schottland 0:2", "0:1", True, True),
-    ("13.06.", "Australien – Türkei", "Türkei 2:1", "0:2 (Australien)", False, False),
-    ("14.06.", "Deutschland – Curaçao", "Deutschland 3:0", "7:1", True, True),
-    ("14.06.", "Elfenbeinküste – Ecuador", "Ecuador 0:1", "1:0 (Elfenbeinküste)", False, True),
-    ("14.06.", "Niederlande – Japan", "Niederlande 2:1", "2:2", False, False),
-    ("14.06.", "Schweden – Tunesien", "Schweden 1:0", "5:1", True, False),
-]
-
-
-def review_summary():
-    """Liefert (sieger_korrekt, sieger_gesamt, hz_korrekt, hz_gesamt, exakt_korrekt)."""
-    sk = sum(1 for r in REVIEW if r[4] is True)
-    sg = sum(1 for r in REVIEW if r[4] is not None)
-    hk = sum(1 for r in REVIEW if r[5] is True)
-    hg = sum(1 for r in REVIEW if r[5] is not None)
-    ex = sum(1 for r in REVIEW if r[2].split(" ")[-1] == r[3])  # exaktes Ergebnis
-    return sk, sg, hk, hg, ex
-
-
-# Erweiterte Spielliste inkl. Halbzeit-Feldern (12 Felder):
-# (gruppe, datum, spieltag, heim, gast, sieger, ergebnis, wertigkeit%, gespielt,
-#  hz_fuehrung, hz_ergebnis, hz_wertigkeit%)
-GROUP_MATCHES_HT = [
-    (g, d, s, h, a, win, res, wert, played, *_half_time(win, res, wert, played, h, a))
-    for (g, d, s, h, a, win, res, wert, played) in GROUP_MATCHES
 ]

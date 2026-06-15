@@ -9,45 +9,53 @@ THIRDS_OUT = "Tschechien, Kanada, Saudi-Arabien, DR Kongo"
 L = []
 w = L.append
 
-w("# WM 2026 – Prognose aller noch zu spielenden Begegnungen\n")
+
+def treffer(played, sok):
+    if not played:
+        return "offen"
+    if sok is None:
+        return "–"
+    return "✓" if sok else "✗"
+
+
+w("# WM 2026 – Prognose: Tipp vs. echtes Ergebnis\n")
 w(f"**Stand:** {D.STAND} · **Turnier:** 11.06.–19.07.2026 in USA, Kanada & Mexiko · 48 Teams, 12 Gruppen (A–L)\n")
-w("> ⚠️ **Hinweis:** Subjektive, modellgestützte Schätzungen – **keine** echten Ergebnisse. "
-  "Die **Wertigkeit** (%) ist die Verlässlichkeit des Tipps (gestützt auf Buchmacher-Quoten, "
-  "FIFA-Rangliste und Turnierform), nicht die mathematische Siegwahrscheinlichkeit. "
-  "Hohe Werte nur bei klarem Klassenunterschied; echte 50/50-Spiele bleiben bewusst moderat.\n")
+w("> ⚠️ **Fokus auf Sieger- und Halbzeit-Tipp + Wertigkeit (Tendenz).** Das exakte Endergebnis "
+  "ist statistisch kaum planbar und steht nur noch als kleine Nebenangabe dabei. In jeder Zeile siehst "
+  "du, **was ich getippt habe** und – sobald gespielt – **wie es wirklich ausging** (Spalten Endstand-echt und Treffer).\n")
 
-w("---\n\n## Bereits gespielt\n")
-w("| Datum | Begegnung | Ergebnis | Gruppe |")
-w("|---|---|---|---|")
-for datum, beg, erg, grp in D.PLAYED:
-    w(f"| {datum} | {beg} | {erg} | {grp} |")
-w("")
+sk, sg, hk, hg, ex, eg = D.review_summary()
+w("**Bisherige Trefferquote:** "
+  f"Sieger **{sk}/{sg}** (~{round(100*sk/sg)} %) · "
+  f"Halbzeit-Führung **{hk}/{hg}** (~{round(100*hk/hg)} %) · "
+  f"exaktes Ergebnis **{ex}/{eg}** (~{round(100*ex/eg)} %)\n")
 
-w("---\n\n## Gruppenphase – noch zu spielende Begegnungen\n")
+w("---\n\n## Gruppenphase – Tipps & Ergebnisse\n")
 standings = {row[0]: row[1:] for row in D.STANDINGS}
 for g in GROUPS:
     teams = ", ".join(standings[g])
     w(f"### Gruppe {g} — {teams}")
-    w("| Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wert. | HZ-Führung | HZ-Erg. | HZ-Wert. |")
+    w("| Datum | ST | Begegnung | Sieger-Tipp | HZ-Tipp | Wert. | Endstand (echt) | Treffer | Erg.-Tipp |")
     w("|---|---|---|---|---|---|---|---|---|")
-    for (grp, datum, st, home, away, win, res, wert, played,
-         ht_lead, ht_res, ht_wert) in D.GROUP_MATCHES_HT:
-        if grp != g or played:
+    for (grp, datum, st, home, away, sieger, erg, wert, hz_lead, hz_score,
+         hz_wert, played, endstand, sok, hok) in D.GROUP_MATCHES_FULL:
+        if grp != g:
             continue
         d = datum.replace(".2026", ".")
-        hzw = "—" if ht_wert is None else f"{ht_wert} %"
-        w(f"| {d} | {st} | {home} – {away} | {win} | {res} | {wert} % | {ht_lead} | {ht_res} | {hzw} |")
+        hz = hz_lead if hz_lead == "—" else f"{hz_lead} ({hz_score})"
+        wv = "—" if wert is None else f"{wert} %"
+        es = endstand if played else "offen"
+        w(f"| {d} | {st} | {home} – {away} | {sieger} | {hz} | {wv} | {es} | {treffer(played, sok)} | {erg} |")
     w("")
-w("*ST = Spieltag*\n")
+w("*ST = Spieltag · 'offen' = noch nicht gespielt · Erg.-Tipp = exakter Ergebnis-Tipp (unsicher)*\n")
 
 w("---\n\n## Prognostizierte Qualifikanten für die K.-o.-Phase (32 Teams)\n")
 w("**Gruppensieger (12):** " + ", ".join(standings[g][0] for g in GROUPS) + "\n")
 w("**Gruppenzweite (12):** " + ", ".join(standings[g][1] for g in GROUPS) + "\n")
 w(f"**Beste 8 Gruppendritte (Auswahl):** {THIRDS_ADVANCE}")
 w(f"*(ausgeschieden als schwächste Dritte: {THIRDS_OUT})*\n")
-w("> ⚠️ Die exakten K.-o.-Paarungen hängen von den Endtabellen und der FIFA-Zuordnung der "
-  "acht Gruppendritten ab und lassen sich seriös nicht vorab fixieren. Daher unten eine "
-  "Turnierverlaufs-Prognose statt fiktiver exakter Paarungen.\n")
+w("> ⚠️ Die exakten K.-o.-Paarungen hängen von Endtabellen und FIFA-Zuordnung der acht Dritten ab "
+  "und lassen sich seriös nicht vorab fixieren. Daher unten eine Turnierverlaufs-Prognose.\n")
 
 w("---\n\n## K.-o.-Phase – Turnierverlaufs-Prognose\n")
 w("| Runde | Datum | Prognose | Wertigkeit |")
@@ -55,20 +63,8 @@ w("|---|---|---|---|")
 for runde, datum, prog, wert in D.KO:
     w(f"| {runde} | {datum} | {prog} | {wert} % |")
 w("")
-w("**Titel-Favoriten-Ranking (Buchmacher-Quoten 06/2026):**")
+w("**Titel-Favoriten-Ranking (Buchmacher + Transfermarkt):**")
 w(" · ".join(f"{rang}. {team} (~{chance} %)" for rang, team, chance in D.RANKING) + "\n")
-
-w("---\n\n## Bilanz – meine bisherige Trefferquote (ehrlich)\n")
-sk, sg, hk, hg, ex = D.review_summary()
-w(f"- **Sieger-Tipp korrekt:** {sk} von {sg}  (~{round(100*sk/sg)} %)")
-w(f"- **Halbzeit-Führung korrekt:** {hk} von {hg}  (~{round(100*hk/hg)} %)  ← verlässlichste Größe")
-w(f"- **Exaktes Endergebnis korrekt:** {ex} von {sg}  (~{round(100*ex/sg)} %)  ← statistisch kaum planbar\n")
-w("| Datum | Begegnung | Mein Vorab-Tipp | Echt | Sieger | HZ |")
-w("|---|---|---|---|---|---|")
-for datum, beg, tipp, erg, sok, hok in D.REVIEW:
-    mark = lambda x: "✓" if x is True else ("✗" if x is False else "–")
-    w(f"| {datum} | {beg} | {tipp} | {erg} | {mark(sok)} | {mark(hok)} |")
-w("")
 
 w("---\n")
 w("*Quellen u. a.: FIFA-Weltrangliste, Buchmacher-/Marktquoten (Oddspedia, ESPN, Polymarket), "

@@ -12,6 +12,8 @@ TITLE_FONT = Font(bold=True, size=14, color="1F4E78")
 GRP_FILL = PatternFill("solid", fgColor="D9E1F2")
 GRP_FONT = Font(bold=True, size=11, color="1F4E78")
 PLAYED_FILL = PatternFill("solid", fgColor="E2EFDA")
+OK_FILL = PatternFill("solid", fgColor="C6EFCE")
+BAD_FILL = PatternFill("solid", fgColor="FFC7CE")
 CENTER = Alignment(horizontal="center", vertical="center")
 LEFT = Alignment(horizontal="left", vertical="center")
 thin = Side(style="thin", color="BFBFBF")
@@ -30,57 +32,56 @@ def style_header(ws, row, ncols):
 # ---- Blatt 1: Gruppenphase ----
 ws = wb.active
 ws.title = "Gruppenphase"
-ws["A1"] = "WM 2026 – Prognose der Gruppenspiele"
+ws["A1"] = "WM 2026 – Prognose der Gruppenspiele (Tipp vs. echtes Ergebnis)"
 ws["A1"].font = TITLE_FONT
 ws.merge_cells("A1:J1")
-ws["A2"] = f"Stand {D.STAND} · Wertigkeit = subjektive Verlässlichkeit des Tipps (keine echte Wahrscheinlichkeit)"
+ws["A2"] = f"Stand {D.STAND} · Fokus: Sieger- & Halbzeit-Tipp + Wertigkeit (Tendenz). Exaktes Ergebnis nur als Nebenangabe."
 ws["A2"].font = Font(italic=True, size=9, color="808080")
 ws.merge_cells("A2:J2")
 
-headers = ["Gruppe", "Datum", "Spieltag", "Begegnung", "Sieger-Tipp", "Ergebnis-Tipp",
-           "Wertigkeit", "HZ-Führung", "HZ-Ergebnis", "HZ-Wert."]
+headers = ["Gruppe", "Datum", "ST", "Begegnung", "Sieger-Tipp", "HZ-Tipp (Führung)",
+           "Wertigkeit", "Endstand (echt)", "Treffer", "Erg.-Tipp (unsicher)"]
 hr = 4
 for i, h in enumerate(headers, 1):
     ws.cell(row=hr, column=i, value=h)
 style_header(ws, hr, 10)
 
 r = hr + 1
-for (grp, datum, spieltag, home, away, win, res, wert, played,
-     ht_lead, ht_res, ht_wert) in D.GROUP_MATCHES_HT:
-    ws.cell(row=r, column=1, value=grp).alignment = CENTER
+for (g, datum, st, home, away, sieger, erg, wert,
+     hz_lead, hz_score, hz_wert, played, endstand, sok, hok) in D.GROUP_MATCHES_FULL:
+    ws.cell(row=r, column=1, value=g).alignment = CENTER
     ws.cell(row=r, column=2, value=datum).alignment = CENTER
-    ws.cell(row=r, column=3, value=spieltag).alignment = CENTER
+    ws.cell(row=r, column=3, value=st).alignment = CENTER
     ws.cell(row=r, column=4, value=f"{home} - {away}").alignment = LEFT
-    ws.cell(row=r, column=5, value=(f"{win} (gespielt)" if played else win)).alignment = LEFT
-    ws.cell(row=r, column=6, value=res).alignment = CENTER
-    wcell = ws.cell(row=r, column=7)
-    if played:
-        wcell.value = "—"
+    ws.cell(row=r, column=5, value=sieger).alignment = LEFT
+    ws.cell(row=r, column=6, value=(hz_lead if hz_lead == "—" else f"{hz_lead} ({hz_score})")).alignment = LEFT
+    wc = ws.cell(row=r, column=7)
+    if wert is None:
+        wc.value = "—"
     else:
-        wcell.value = wert / 100.0
-        wcell.number_format = "0 %"
-    wcell.alignment = CENTER
-    ws.cell(row=r, column=8, value=ht_lead).alignment = LEFT
-    ws.cell(row=r, column=9, value=ht_res).alignment = CENTER
-    hwcell = ws.cell(row=r, column=10)
-    if ht_wert is None:
-        hwcell.value = "—"
-    else:
-        hwcell.value = ht_wert / 100.0
-        hwcell.number_format = "0 %"
-    hwcell.alignment = CENTER
+        wc.value = wert / 100.0
+        wc.number_format = "0 %"
+    wc.alignment = CENTER
+    ws.cell(row=r, column=8, value=(endstand if played else "offen")).alignment = CENTER
+    treffer = "offen" if not played else ("–" if sok is None else ("✓" if sok else "✗"))
+    tcell = ws.cell(row=r, column=9, value=treffer)
+    tcell.alignment = CENTER
+    ws.cell(row=r, column=10, value=erg).alignment = CENTER
     for c in range(1, 11):
         cell = ws.cell(row=r, column=c)
         cell.border = BORDER
         if played:
             cell.fill = PLAYED_FILL
+    if played and sok is True:
+        tcell.fill = OK_FILL
+    elif played and sok is False:
+        tcell.fill = BAD_FILL
     r += 1
 
-for col, w in zip("ABCDEFGHIJ", [8, 13, 10, 30, 20, 14, 11, 16, 13, 10]):
+for col, w in zip("ABCDEFGHIJ", [8, 12, 5, 28, 16, 18, 11, 14, 9, 18]):
     ws.column_dimensions[col].width = w
 ws.freeze_panes = "A5"
-# Filter-/Sortier-Dropdowns ueber alle Spalten der Kopfzeile
-ws.auto_filter.ref = f"A{hr}:J{hr + len(D.GROUP_MATCHES_HT)}"
+ws.auto_filter.ref = f"A{hr}:J{hr + len(D.GROUP_MATCHES_FULL)}"
 
 # ---- Blatt 2: Gruppentabellen-Prognose ----
 ws2 = wb.create_sheet("Gruppentabellen-Prognose")
@@ -101,20 +102,16 @@ for row in D.STANDINGS:
     r += 1
 for col, w in zip("ABCDE", [8, 16, 16, 16, 16]):
     ws2.column_dimensions[col].width = w
-ws2.auto_filter.ref = f"A3:E{3 + len(D.STANDINGS)}"
 
 # ---- Blatt 3: K.-o.-Prognose ----
 ws3 = wb.create_sheet("K.-o.-Prognose")
 ws3["A1"] = "K.-o.-Phase – Turnierverlaufs-Prognose"
 ws3["A1"].font = TITLE_FONT
 ws3.merge_cells("A1:D1")
-ws3["A2"] = "Exakte Paarungen hängen von Endtabellen + FIFA-Zuordnung der 8 besten Dritten ab und sind nicht seriös vorab fixierbar."
-ws3["A2"].font = Font(italic=True, size=9, color="808080")
-ws3.merge_cells("A2:D2")
 for i, h in enumerate(["Runde", "Datum", "Prognose", "Wertigkeit"], 1):
-    ws3.cell(row=4, column=i, value=h)
-style_header(ws3, 4, 4)
-r = 5
+    ws3.cell(row=3, column=i, value=h)
+style_header(ws3, 3, 4)
+r = 4
 for runde, datum, prog, wert in D.KO:
     ws3.cell(row=r, column=1, value=runde).alignment = LEFT
     ws3.cell(row=r, column=2, value=datum).alignment = CENTER
@@ -125,7 +122,6 @@ for runde, datum, prog, wert in D.KO:
     for c in range(1, 5):
         ws3.cell(row=r, column=c).border = BORDER
     r += 1
-
 ws3.cell(row=r + 1, column=1, value="Titel-Favoriten-Ranking").font = GRP_FONT
 r += 2
 for i, h in enumerate(["Rang", "Team", "Titelchance"], 1):
@@ -149,28 +145,30 @@ ws4 = wb.create_sheet("Bilanz")
 ws4["A1"] = "Bilanz – meine bisherige Trefferquote (ehrlich)"
 ws4["A1"].font = TITLE_FONT
 ws4.merge_cells("A1:F1")
-sk, sg, hk, hg, ex = D.review_summary()
+sk, sg, hk, hg, ex, eg = D.review_summary()
 ws4["A2"] = (f"Sieger korrekt: {sk}/{sg} (~{round(100*sk/sg)} %) · "
              f"Halbzeit-Führung korrekt: {hk}/{hg} (~{round(100*hk/hg)} %) · "
-             f"Exaktes Ergebnis: {ex}/{sg} (~{round(100*ex/sg)} %)")
+             f"Exaktes Ergebnis: {ex}/{eg} (~{round(100*ex/eg)} %)")
 ws4["A2"].font = Font(italic=True, size=10, color="404040")
 ws4.merge_cells("A2:F2")
-for i, h in enumerate(["Datum", "Begegnung", "Mein Vorab-Tipp", "Echt", "Sieger", "HZ"], 1):
+for i, h in enumerate(["Datum", "Begegnung", "Sieger-Tipp", "Endstand (echt)", "Sieger", "HZ"], 1):
     ws4.cell(row=4, column=i, value=h)
 style_header(ws4, 4, 6)
-mark = lambda x: "✓" if x is True else ("✗" if x is False else "–")
 r = 5
-for datum, beg, tipp, erg, sok, hok in D.REVIEW:
-    ws4.cell(row=r, column=1, value=datum).alignment = CENTER
-    ws4.cell(row=r, column=2, value=beg).alignment = LEFT
-    ws4.cell(row=r, column=3, value=tipp).alignment = LEFT
-    ws4.cell(row=r, column=4, value=erg).alignment = CENTER
-    ws4.cell(row=r, column=5, value=mark(sok)).alignment = CENTER
-    ws4.cell(row=r, column=6, value=mark(hok)).alignment = CENTER
+for (g, datum, st, home, away, sieger, erg, wert,
+     hz_lead, hz_score, hz_wert, played, endstand, sok, hok) in D.GROUP_MATCHES_FULL:
+    if not played:
+        continue
+    ws4.cell(row=r, column=1, value=datum[:6]).alignment = CENTER
+    ws4.cell(row=r, column=2, value=f"{home} - {away}").alignment = LEFT
+    ws4.cell(row=r, column=3, value=(sieger if sieger == "—" else f"{sieger} {erg}")).alignment = LEFT
+    ws4.cell(row=r, column=4, value=endstand).alignment = CENTER
+    ws4.cell(row=r, column=5, value=("–" if sok is None else ("✓" if sok else "✗"))).alignment = CENTER
+    ws4.cell(row=r, column=6, value=("–" if hok is None else ("✓" if hok else "✗"))).alignment = CENTER
     for c in range(1, 7):
         ws4.cell(row=r, column=c).border = BORDER
     r += 1
-for col, w in zip("ABCDEF", [9, 26, 18, 16, 8, 6]):
+for col, w in zip("ABCDEF", [9, 26, 18, 14, 8, 6]):
     ws4.column_dimensions[col].width = w
 
 wb.save("WM-2026-Prognose.xlsx")

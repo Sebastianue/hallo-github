@@ -1,141 +1,136 @@
-# WM 2026 – Prognose aller noch zu spielenden Begegnungen
+# WM 2026 – Prognose: Tipp vs. echtes Ergebnis
 
 **Stand:** 15. Juni 2026 (kalibriert mit Buchmacher-Quoten, FIFA-Rangliste & Transfermarkt-Kaderwerten; nach allen Spielen bis 14.06.) · **Turnier:** 11.06.–19.07.2026 in USA, Kanada & Mexiko · 48 Teams, 12 Gruppen (A–L)
 
-> ⚠️ **Hinweis:** Subjektive, modellgestützte Schätzungen – **keine** echten Ergebnisse. Die **Wertigkeit** (%) ist die Verlässlichkeit des Tipps (gestützt auf Buchmacher-Quoten, FIFA-Rangliste und Turnierform), nicht die mathematische Siegwahrscheinlichkeit. Hohe Werte nur bei klarem Klassenunterschied; echte 50/50-Spiele bleiben bewusst moderat.
+> ⚠️ **Fokus auf Sieger- und Halbzeit-Tipp + Wertigkeit (Tendenz).** Das exakte Endergebnis ist statistisch kaum planbar und steht nur noch als kleine Nebenangabe dabei. In jeder Zeile siehst du, **was ich getippt habe** und – sobald gespielt – **wie es wirklich ausging** (Spalten Endstand-echt und Treffer).
+
+**Bisherige Trefferquote:** Sieger **6/11** (~55 %) · Halbzeit-Führung **6/11** (~55 %) · exaktes Ergebnis **2/11** (~18 %)
 
 ---
 
-## Bereits gespielt
-
-| Datum | Begegnung | Ergebnis | Gruppe |
-|---|---|---|---|
-| 11.06. | Mexiko – Südafrika | 2:0 | A |
-| 11.06. | Südkorea – Tschechien | 2:1 | A |
-| 12.06. | Kanada – Bosnien-Herz. | 1:1 | B |
-| 12.06. | USA – Paraguay | 4:1 | D |
-| 13.06. | Katar – Schweiz | 1:1 | B |
-| 13.06. | Brasilien – Marokko | 1:1 | C |
-| 13.06. | Haiti – Schottland | 0:1 | C |
-| 13.06. | Australien – Türkei | 2:0 | D |
-| 14.06. | Deutschland – Curaçao | 7:1 | E |
-| 14.06. | Elfenbeinküste – Ecuador | 1:0 | E |
-| 14.06. | Niederlande – Japan | 2:2 | F |
-| 14.06. | Schweden – Tunesien | 5:1 | F |
-
----
-
-## Gruppenphase – noch zu spielende Begegnungen
+## Gruppenphase – Tipps & Ergebnisse
 
 ### Gruppe A — Mexiko, Südkorea, Tschechien, Südafrika
-| Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wert. | HZ-Führung | HZ-Erg. | HZ-Wert. |
+| Datum | ST | Begegnung | Sieger-Tipp | HZ-Tipp | Wert. | Endstand (echt) | Treffer | Erg.-Tipp |
 |---|---|---|---|---|---|---|---|---|
-| 18.06. | 2 | Mexiko – Südkorea | Mexiko | 2:1 | 52 % | Unentschieden | 0:0 | 52 % |
-| 18.06. | 2 | Tschechien – Südafrika | Tschechien | 2:0 | 66 % | Tschechien | 1:0 | 54 % |
-| 24.06. | 3 | Mexiko – Tschechien | Mexiko | 2:0 | 64 % | Mexiko | 1:0 | 52 % |
-| 24.06. | 3 | Südkorea – Südafrika | Südkorea | 2:0 | 72 % | Südkorea | 1:0 | 60 % |
+| 11.06. | 1 | Mexiko – Südafrika | Mexiko | Mexiko (1:0) | 60 % | 2:0 | ✓ | 2:0 |
+| 11.06. | 1 | Südkorea – Tschechien | Südkorea | Südkorea (1:0) | 60 % | 2:1 | ✓ | 2:1 |
+| 18.06. | 2 | Mexiko – Südkorea | Mexiko | Unentschieden (0:0) | 52 % | offen | offen | 2:1 |
+| 18.06. | 2 | Tschechien – Südafrika | Tschechien | Tschechien (1:0) | 66 % | offen | offen | 2:0 |
+| 24.06. | 3 | Mexiko – Tschechien | Mexiko | Mexiko (1:0) | 64 % | offen | offen | 2:0 |
+| 24.06. | 3 | Südkorea – Südafrika | Südkorea | Südkorea (1:0) | 72 % | offen | offen | 2:0 |
 
 ### Gruppe B — Schweiz, Bosnien-Herz., Kanada, Katar
-| Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wert. | HZ-Führung | HZ-Erg. | HZ-Wert. |
+| Datum | ST | Begegnung | Sieger-Tipp | HZ-Tipp | Wert. | Endstand (echt) | Treffer | Erg.-Tipp |
 |---|---|---|---|---|---|---|---|---|
-| 18.06. | 2 | Kanada – Katar | Kanada | 2:0 | 64 % | Kanada | 1:0 | 52 % |
-| 18.06. | 2 | Bosnien-Herz. – Schweiz | Schweiz | 1:2 | 54 % | Unentschieden | 0:0 | 52 % |
-| 24.06. | 3 | Kanada – Schweiz | Unentschieden | 1:1 | 45 % | Unentschieden | 0:0 | 52 % |
-| 24.06. | 3 | Bosnien-Herz. – Katar | Bosnien-Herz. | 2:0 | 64 % | Bosnien-Herz. | 1:0 | 52 % |
+| 12.06. | 1 | Kanada – Bosnien-Herz. | — | — | — | 1:1 | – | — |
+| 13.06. | 1 | Katar – Schweiz | Schweiz | Schweiz (0:1) | 72 % | 1:1 | ✗ | 0:2 |
+| 18.06. | 2 | Kanada – Katar | Kanada | Kanada (1:0) | 64 % | offen | offen | 2:0 |
+| 18.06. | 2 | Bosnien-Herz. – Schweiz | Schweiz | Unentschieden (0:0) | 54 % | offen | offen | 1:2 |
+| 24.06. | 3 | Kanada – Schweiz | Unentschieden | Unentschieden (0:0) | 45 % | offen | offen | 1:1 |
+| 24.06. | 3 | Bosnien-Herz. – Katar | Bosnien-Herz. | Bosnien-Herz. (1:0) | 64 % | offen | offen | 2:0 |
 
 ### Gruppe C — Brasilien, Marokko, Schottland, Haiti
-| Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wert. | HZ-Führung | HZ-Erg. | HZ-Wert. |
+| Datum | ST | Begegnung | Sieger-Tipp | HZ-Tipp | Wert. | Endstand (echt) | Treffer | Erg.-Tipp |
 |---|---|---|---|---|---|---|---|---|
-| 19.06. | 2 | Brasilien – Haiti | Brasilien | 3:0 | 83 % | Brasilien | 2:0 | 70 % |
-| 19.06. | 2 | Marokko – Schottland | Marokko | 1:0 | 58 % | Unentschieden | 0:0 | 52 % |
-| 24.06. | 3 | Brasilien – Schottland | Brasilien | 2:0 | 74 % | Brasilien | 1:0 | 62 % |
-| 24.06. | 3 | Marokko – Haiti | Marokko | 2:0 | 77 % | Marokko | 1:0 | 65 % |
+| 13.06. | 1 | Brasilien – Marokko | Brasilien | Unentschieden (0:0) | 55 % | 1:1 | ✗ | 2:1 |
+| 13.06. | 1 | Haiti – Schottland | Schottland | Schottland (0:1) | 62 % | 0:1 | ✓ | 0:2 |
+| 19.06. | 2 | Brasilien – Haiti | Brasilien | Brasilien (2:0) | 83 % | offen | offen | 3:0 |
+| 19.06. | 2 | Marokko – Schottland | Marokko | Unentschieden (0:0) | 58 % | offen | offen | 1:0 |
+| 24.06. | 3 | Brasilien – Schottland | Brasilien | Brasilien (1:0) | 74 % | offen | offen | 2:0 |
+| 24.06. | 3 | Marokko – Haiti | Marokko | Marokko (1:0) | 77 % | offen | offen | 2:0 |
 
 ### Gruppe D — USA, Australien, Türkei, Paraguay
-| Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wert. | HZ-Führung | HZ-Erg. | HZ-Wert. |
+| Datum | ST | Begegnung | Sieger-Tipp | HZ-Tipp | Wert. | Endstand (echt) | Treffer | Erg.-Tipp |
 |---|---|---|---|---|---|---|---|---|
-| 19.06. | 2 | USA – Australien | USA | 2:1 | 58 % | Unentschieden | 0:0 | 52 % |
-| 19.06. | 2 | Paraguay – Türkei | Türkei | 1:2 | 50 % | Unentschieden | 0:0 | 52 % |
-| 25.06. | 3 | USA – Türkei | USA | 2:1 | 58 % | Unentschieden | 0:0 | 52 % |
-| 25.06. | 3 | Paraguay – Australien | Australien | 1:2 | 48 % | Unentschieden | 0:0 | 52 % |
+| 12.06. | 1 | USA – Paraguay | USA | Unentschieden (0:0) | 52 % | 4:1 | ✓ | 2:1 |
+| 13.06. | 1 | Australien – Türkei | Türkei | Unentschieden (0:0) | 55 % | 2:0 | ✗ | 1:2 |
+| 19.06. | 2 | USA – Australien | USA | Unentschieden (0:0) | 58 % | offen | offen | 2:1 |
+| 19.06. | 2 | Paraguay – Türkei | Türkei | Unentschieden (0:0) | 50 % | offen | offen | 1:2 |
+| 25.06. | 3 | USA – Türkei | USA | Unentschieden (0:0) | 58 % | offen | offen | 2:1 |
+| 25.06. | 3 | Paraguay – Australien | Australien | Unentschieden (0:0) | 48 % | offen | offen | 1:2 |
 
 ### Gruppe E — Deutschland, Elfenbeinküste, Ecuador, Curaçao
-| Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wert. | HZ-Führung | HZ-Erg. | HZ-Wert. |
+| Datum | ST | Begegnung | Sieger-Tipp | HZ-Tipp | Wert. | Endstand (echt) | Treffer | Erg.-Tipp |
 |---|---|---|---|---|---|---|---|---|
-| 20.06. | 2 | Deutschland – Elfenbeinküste | Deutschland | 2:1 | 56 % | Unentschieden | 0:0 | 52 % |
-| 20.06. | 2 | Curaçao – Ecuador | Ecuador | 0:2 | 78 % | Ecuador | 0:1 | 66 % |
-| 25.06. | 3 | Deutschland – Ecuador | Deutschland | 2:1 | 60 % | Deutschland | 1:0 | 48 % |
-| 25.06. | 3 | Curaçao – Elfenbeinküste | Elfenbeinküste | 0:2 | 77 % | Elfenbeinküste | 0:1 | 65 % |
+| 14.06. | 1 | Deutschland – Curaçao | Deutschland | Deutschland (2:0) | 88 % | 7:1 | ✓ | 3:0 |
+| 14.06. | 1 | Elfenbeinküste – Ecuador | Ecuador | Unentschieden (0:0) | 50 % | 1:0 | ✗ | 0:1 |
+| 20.06. | 2 | Deutschland – Elfenbeinküste | Deutschland | Unentschieden (0:0) | 56 % | offen | offen | 2:1 |
+| 20.06. | 2 | Curaçao – Ecuador | Ecuador | Ecuador (0:1) | 78 % | offen | offen | 0:2 |
+| 25.06. | 3 | Deutschland – Ecuador | Deutschland | Deutschland (1:0) | 60 % | offen | offen | 2:1 |
+| 25.06. | 3 | Curaçao – Elfenbeinküste | Elfenbeinküste | Elfenbeinküste (0:1) | 77 % | offen | offen | 0:2 |
 
 ### Gruppe F — Niederlande, Schweden, Japan, Tunesien
-| Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wert. | HZ-Führung | HZ-Erg. | HZ-Wert. |
+| Datum | ST | Begegnung | Sieger-Tipp | HZ-Tipp | Wert. | Endstand (echt) | Treffer | Erg.-Tipp |
 |---|---|---|---|---|---|---|---|---|
-| 20.06. | 2 | Niederlande – Schweden | Niederlande | 2:1 | 56 % | Unentschieden | 0:0 | 52 % |
-| 20.06. | 2 | Japan – Tunesien | Japan | 2:0 | 66 % | Japan | 1:0 | 54 % |
-| 25.06. | 3 | Niederlande – Tunesien | Niederlande | 2:0 | 74 % | Niederlande | 1:0 | 62 % |
-| 25.06. | 3 | Japan – Schweden | Japan | 2:1 | 52 % | Unentschieden | 0:0 | 52 % |
+| 14.06. | 1 | Niederlande – Japan | Niederlande | Niederlande (1:0) | 60 % | 2:2 | ✗ | 2:1 |
+| 14.06. | 1 | Schweden – Tunesien | Schweden | Unentschieden (0:0) | 55 % | 5:1 | ✓ | 1:0 |
+| 20.06. | 2 | Niederlande – Schweden | Niederlande | Unentschieden (0:0) | 56 % | offen | offen | 2:1 |
+| 20.06. | 2 | Japan – Tunesien | Japan | Japan (1:0) | 66 % | offen | offen | 2:0 |
+| 25.06. | 3 | Niederlande – Tunesien | Niederlande | Niederlande (1:0) | 74 % | offen | offen | 2:0 |
+| 25.06. | 3 | Japan – Schweden | Japan | Unentschieden (0:0) | 52 % | offen | offen | 2:1 |
 
 ### Gruppe G — Belgien, Ägypten, Iran, Neuseeland
-| Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wert. | HZ-Führung | HZ-Erg. | HZ-Wert. |
+| Datum | ST | Begegnung | Sieger-Tipp | HZ-Tipp | Wert. | Endstand (echt) | Treffer | Erg.-Tipp |
 |---|---|---|---|---|---|---|---|---|
-| 15.06. | 1 | Belgien – Ägypten | Belgien | 2:1 | 62 % | Belgien | 1:0 | 50 % |
-| 15.06. | 1 | Iran – Neuseeland | Iran | 2:0 | 70 % | Iran | 1:0 | 58 % |
-| 21.06. | 2 | Belgien – Iran | Belgien | 2:0 | 64 % | Belgien | 1:0 | 52 % |
-| 21.06. | 2 | Ägypten – Neuseeland | Ägypten | 2:0 | 70 % | Ägypten | 1:0 | 58 % |
-| 26.06. | 3 | Belgien – Neuseeland | Belgien | 3:0 | 85 % | Belgien | 2:0 | 70 % |
-| 26.06. | 3 | Ägypten – Iran | Ägypten | 1:0 | 48 % | Unentschieden | 0:0 | 52 % |
+| 15.06. | 1 | Belgien – Ägypten | Belgien | Belgien (1:0) | 62 % | offen | offen | 2:1 |
+| 15.06. | 1 | Iran – Neuseeland | Iran | Iran (1:0) | 70 % | offen | offen | 2:0 |
+| 21.06. | 2 | Belgien – Iran | Belgien | Belgien (1:0) | 64 % | offen | offen | 2:0 |
+| 21.06. | 2 | Ägypten – Neuseeland | Ägypten | Ägypten (1:0) | 70 % | offen | offen | 2:0 |
+| 26.06. | 3 | Belgien – Neuseeland | Belgien | Belgien (2:0) | 85 % | offen | offen | 3:0 |
+| 26.06. | 3 | Ägypten – Iran | Ägypten | Unentschieden (0:0) | 48 % | offen | offen | 1:0 |
 
 ### Gruppe H — Spanien, Uruguay, Saudi-Arabien, Kap Verde
-| Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wert. | HZ-Führung | HZ-Erg. | HZ-Wert. |
+| Datum | ST | Begegnung | Sieger-Tipp | HZ-Tipp | Wert. | Endstand (echt) | Treffer | Erg.-Tipp |
 |---|---|---|---|---|---|---|---|---|
-| 15.06. | 1 | Spanien – Kap Verde | Spanien | 3:0 | 88 % | Spanien | 2:0 | 70 % |
-| 15.06. | 1 | Saudi-Arabien – Uruguay | Uruguay | 0:2 | 66 % | Uruguay | 0:1 | 54 % |
-| 21.06. | 2 | Spanien – Saudi-Arabien | Spanien | 3:0 | 83 % | Spanien | 2:0 | 70 % |
-| 21.06. | 2 | Kap Verde – Uruguay | Uruguay | 0:2 | 73 % | Uruguay | 0:1 | 61 % |
-| 26.06. | 3 | Spanien – Uruguay | Spanien | 2:1 | 62 % | Spanien | 1:0 | 50 % |
-| 26.06. | 3 | Kap Verde – Saudi-Arabien | Saudi-Arabien | 0:1 | 46 % | Unentschieden | 0:0 | 52 % |
+| 15.06. | 1 | Spanien – Kap Verde | Spanien | Spanien (2:0) | 88 % | offen | offen | 3:0 |
+| 15.06. | 1 | Saudi-Arabien – Uruguay | Uruguay | Uruguay (0:1) | 66 % | offen | offen | 0:2 |
+| 21.06. | 2 | Spanien – Saudi-Arabien | Spanien | Spanien (2:0) | 83 % | offen | offen | 3:0 |
+| 21.06. | 2 | Kap Verde – Uruguay | Uruguay | Uruguay (0:1) | 73 % | offen | offen | 0:2 |
+| 26.06. | 3 | Spanien – Uruguay | Spanien | Spanien (1:0) | 62 % | offen | offen | 2:1 |
+| 26.06. | 3 | Kap Verde – Saudi-Arabien | Saudi-Arabien | Unentschieden (0:0) | 46 % | offen | offen | 0:1 |
 
 ### Gruppe I — Frankreich, Norwegen, Senegal, Irak
-| Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wert. | HZ-Führung | HZ-Erg. | HZ-Wert. |
+| Datum | ST | Begegnung | Sieger-Tipp | HZ-Tipp | Wert. | Endstand (echt) | Treffer | Erg.-Tipp |
 |---|---|---|---|---|---|---|---|---|
-| 16.06. | 1 | Frankreich – Senegal | Frankreich | 2:1 | 58 % | Unentschieden | 0:0 | 52 % |
-| 16.06. | 1 | Irak – Norwegen | Norwegen | 0:2 | 70 % | Norwegen | 0:1 | 58 % |
-| 22.06. | 2 | Frankreich – Irak | Frankreich | 3:0 | 82 % | Frankreich | 2:0 | 70 % |
-| 22.06. | 2 | Senegal – Norwegen | Norwegen | 1:2 | 50 % | Unentschieden | 0:0 | 52 % |
-| 26.06. | 3 | Frankreich – Norwegen | Frankreich | 2:1 | 56 % | Unentschieden | 0:0 | 52 % |
-| 26.06. | 3 | Senegal – Irak | Senegal | 2:0 | 72 % | Senegal | 1:0 | 60 % |
+| 16.06. | 1 | Frankreich – Senegal | Frankreich | Unentschieden (0:0) | 58 % | offen | offen | 2:1 |
+| 16.06. | 1 | Irak – Norwegen | Norwegen | Norwegen (0:1) | 70 % | offen | offen | 0:2 |
+| 22.06. | 2 | Frankreich – Irak | Frankreich | Frankreich (2:0) | 82 % | offen | offen | 3:0 |
+| 22.06. | 2 | Senegal – Norwegen | Norwegen | Unentschieden (0:0) | 50 % | offen | offen | 1:2 |
+| 26.06. | 3 | Frankreich – Norwegen | Frankreich | Unentschieden (0:0) | 56 % | offen | offen | 2:1 |
+| 26.06. | 3 | Senegal – Irak | Senegal | Senegal (1:0) | 72 % | offen | offen | 2:0 |
 
 ### Gruppe J — Argentinien, Österreich, Algerien, Jordanien
-| Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wert. | HZ-Führung | HZ-Erg. | HZ-Wert. |
+| Datum | ST | Begegnung | Sieger-Tipp | HZ-Tipp | Wert. | Endstand (echt) | Treffer | Erg.-Tipp |
 |---|---|---|---|---|---|---|---|---|
-| 16.06. | 1 | Argentinien – Algerien | Argentinien | 2:0 | 72 % | Argentinien | 1:0 | 60 % |
-| 16.06. | 1 | Österreich – Jordanien | Österreich | 2:0 | 68 % | Österreich | 1:0 | 56 % |
-| 22.06. | 2 | Argentinien – Österreich | Argentinien | 2:1 | 66 % | Argentinien | 1:0 | 54 % |
-| 22.06. | 2 | Algerien – Jordanien | Algerien | 2:0 | 64 % | Algerien | 1:0 | 52 % |
-| 27.06. | 3 | Argentinien – Jordanien | Argentinien | 3:0 | 88 % | Argentinien | 2:0 | 70 % |
-| 27.06. | 3 | Algerien – Österreich | Österreich | 1:2 | 50 % | Unentschieden | 0:0 | 52 % |
+| 16.06. | 1 | Argentinien – Algerien | Argentinien | Argentinien (1:0) | 72 % | offen | offen | 2:0 |
+| 16.06. | 1 | Österreich – Jordanien | Österreich | Österreich (1:0) | 68 % | offen | offen | 2:0 |
+| 22.06. | 2 | Argentinien – Österreich | Argentinien | Argentinien (1:0) | 66 % | offen | offen | 2:1 |
+| 22.06. | 2 | Algerien – Jordanien | Algerien | Algerien (1:0) | 64 % | offen | offen | 2:0 |
+| 27.06. | 3 | Argentinien – Jordanien | Argentinien | Argentinien (2:0) | 88 % | offen | offen | 3:0 |
+| 27.06. | 3 | Algerien – Österreich | Österreich | Unentschieden (0:0) | 50 % | offen | offen | 1:2 |
 
 ### Gruppe K — Portugal, Kolumbien, DR Kongo, Usbekistan
-| Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wert. | HZ-Führung | HZ-Erg. | HZ-Wert. |
+| Datum | ST | Begegnung | Sieger-Tipp | HZ-Tipp | Wert. | Endstand (echt) | Treffer | Erg.-Tipp |
 |---|---|---|---|---|---|---|---|---|
-| 17.06. | 1 | Portugal – DR Kongo | Portugal | 2:0 | 72 % | Portugal | 1:0 | 60 % |
-| 17.06. | 1 | Usbekistan – Kolumbien | Kolumbien | 0:2 | 66 % | Kolumbien | 0:1 | 54 % |
-| 23.06. | 2 | Portugal – Usbekistan | Portugal | 2:0 | 75 % | Portugal | 1:0 | 63 % |
-| 23.06. | 2 | DR Kongo – Kolumbien | Kolumbien | 0:2 | 68 % | Kolumbien | 0:1 | 56 % |
-| 27.06. | 3 | Portugal – Kolumbien | Portugal | 2:1 | 54 % | Unentschieden | 0:0 | 52 % |
-| 27.06. | 3 | DR Kongo – Usbekistan | DR Kongo | 1:0 | 52 % | Unentschieden | 0:0 | 52 % |
+| 17.06. | 1 | Portugal – DR Kongo | Portugal | Portugal (1:0) | 72 % | offen | offen | 2:0 |
+| 17.06. | 1 | Usbekistan – Kolumbien | Kolumbien | Kolumbien (0:1) | 66 % | offen | offen | 0:2 |
+| 23.06. | 2 | Portugal – Usbekistan | Portugal | Portugal (1:0) | 75 % | offen | offen | 2:0 |
+| 23.06. | 2 | DR Kongo – Kolumbien | Kolumbien | Kolumbien (0:1) | 68 % | offen | offen | 0:2 |
+| 27.06. | 3 | Portugal – Kolumbien | Portugal | Unentschieden (0:0) | 54 % | offen | offen | 2:1 |
+| 27.06. | 3 | DR Kongo – Usbekistan | DR Kongo | Unentschieden (0:0) | 52 % | offen | offen | 1:0 |
 
 ### Gruppe L — England, Kroatien, Ghana, Panama
-| Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wert. | HZ-Führung | HZ-Erg. | HZ-Wert. |
+| Datum | ST | Begegnung | Sieger-Tipp | HZ-Tipp | Wert. | Endstand (echt) | Treffer | Erg.-Tipp |
 |---|---|---|---|---|---|---|---|---|
-| 17.06. | 1 | England – Kroatien | England | 2:1 | 56 % | Unentschieden | 0:0 | 52 % |
-| 17.06. | 1 | Ghana – Panama | Ghana | 1:0 | 56 % | Unentschieden | 0:0 | 52 % |
-| 23.06. | 2 | England – Ghana | England | 2:0 | 72 % | England | 1:0 | 60 % |
-| 23.06. | 2 | Kroatien – Panama | Kroatien | 2:0 | 72 % | Kroatien | 1:0 | 60 % |
-| 27.06. | 3 | England – Panama | England | 3:0 | 85 % | England | 2:0 | 70 % |
-| 27.06. | 3 | Kroatien – Ghana | Kroatien | 2:1 | 58 % | Unentschieden | 0:0 | 52 % |
+| 17.06. | 1 | England – Kroatien | England | Unentschieden (0:0) | 56 % | offen | offen | 2:1 |
+| 17.06. | 1 | Ghana – Panama | Ghana | Unentschieden (0:0) | 56 % | offen | offen | 1:0 |
+| 23.06. | 2 | England – Ghana | England | England (1:0) | 72 % | offen | offen | 2:0 |
+| 23.06. | 2 | Kroatien – Panama | Kroatien | Kroatien (1:0) | 72 % | offen | offen | 2:0 |
+| 27.06. | 3 | England – Panama | England | England (2:0) | 85 % | offen | offen | 3:0 |
+| 27.06. | 3 | Kroatien – Ghana | Kroatien | Unentschieden (0:0) | 58 % | offen | offen | 2:1 |
 
-*ST = Spieltag*
+*ST = Spieltag · 'offen' = noch nicht gespielt · Erg.-Tipp = exakter Ergebnis-Tipp (unsicher)*
 
 ---
 
@@ -148,7 +143,7 @@
 **Beste 8 Gruppendritte (Auswahl):** Senegal, Elfenbeinküste, Algerien, Schottland, Türkei, Schweden, Ghana, Iran
 *(ausgeschieden als schwächste Dritte: Tschechien, Kanada, Saudi-Arabien, DR Kongo)*
 
-> ⚠️ Die exakten K.-o.-Paarungen hängen von den Endtabellen und der FIFA-Zuordnung der acht Gruppendritten ab und lassen sich seriös nicht vorab fixieren. Daher unten eine Turnierverlaufs-Prognose statt fiktiver exakter Paarungen.
+> ⚠️ Die exakten K.-o.-Paarungen hängen von Endtabellen und FIFA-Zuordnung der acht Dritten ab und lassen sich seriös nicht vorab fixieren. Daher unten eine Turnierverlaufs-Prognose.
 
 ---
 
@@ -165,31 +160,8 @@
 | Finale | 19.07.2026 | Frankreich – Spanien | 34 % |
 | Weltmeister 2026 | 19.07.2026 | Frankreich (Finalsieg 2:1) | 20 % |
 
-**Titel-Favoriten-Ranking (Buchmacher-Quoten 06/2026):**
+**Titel-Favoriten-Ranking (Buchmacher + Transfermarkt):**
 1. Frankreich (~16 %) · 2. Spanien (~15 %) · 3. England (~12 %) · 4. Brasilien (~9 %) · 5. Argentinien (~9 %) · 6. Portugal (~6 %) · 7. Deutschland (~5 %) · 8. Niederlande (~4 %)
-
----
-
-## Bilanz – meine bisherige Trefferquote (ehrlich)
-
-- **Sieger-Tipp korrekt:** 6 von 11  (~55 %)
-- **Halbzeit-Führung korrekt:** 8 von 11  (~73 %)  ← verlässlichste Größe
-- **Exaktes Endergebnis korrekt:** 2 von 11  (~18 %)  ← statistisch kaum planbar
-
-| Datum | Begegnung | Mein Vorab-Tipp | Echt | Sieger | HZ |
-|---|---|---|---|---|---|
-| 11.06. | Mexiko – Südafrika | Mexiko 2:0 | 2:0 | ✓ | ✓ |
-| 11.06. | Südkorea – Tschechien | Südkorea 2:1 | 2:1 | ✓ | ✓ |
-| 12.06. | Kanada – Bosnien-Herz. | (Datenfehler) | 1:1 | – | – |
-| 12.06. | USA – Paraguay | USA 2:1 | 4:1 | ✓ | ✓ |
-| 13.06. | Katar – Schweiz | Schweiz 0:2 | 1:1 | ✗ | ✓ |
-| 13.06. | Brasilien – Marokko | Brasilien 2:1 | 1:1 | ✗ | ✓ |
-| 13.06. | Haiti – Schottland | Schottland 0:2 | 0:1 | ✓ | ✓ |
-| 13.06. | Australien – Türkei | Türkei 2:1 | 0:2 (Australien) | ✗ | ✗ |
-| 14.06. | Deutschland – Curaçao | Deutschland 3:0 | 7:1 | ✓ | ✓ |
-| 14.06. | Elfenbeinküste – Ecuador | Ecuador 0:1 | 1:0 (Elfenbeinküste) | ✗ | ✓ |
-| 14.06. | Niederlande – Japan | Niederlande 2:1 | 2:2 | ✗ | ✗ |
-| 14.06. | Schweden – Tunesien | Schweden 1:0 | 5:1 | ✓ | ✗ |
 
 ---
 
