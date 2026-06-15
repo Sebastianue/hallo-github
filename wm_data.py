@@ -9,7 +9,7 @@ Kalibrierung: Wertigkeit gestuetzt auf Buchmacher-Quoten + FIFA-Rangliste
 Klassenunterschied; echte 50/50-Spiele bleiben bewusst moderat.
 """
 
-STAND = "14. Juni 2026 (kalibriert mit Buchmacher-Quoten, FIFA-Rangliste & Transfermarkt-Kaderwerten; nach den Spielen vom 11.–13.06.)"
+STAND = "15. Juni 2026 (kalibriert mit Buchmacher-Quoten, FIFA-Rangliste & Transfermarkt-Kaderwerten; nach allen Spielen bis 14.06.)"
 
 # Bereits gespielte Spiele: (datum, begegnung, ergebnis, gruppe)
 PLAYED = [
@@ -22,7 +22,9 @@ PLAYED = [
     ("13.06.", "Haiti – Schottland", "0:1", "C"),
     ("13.06.", "Australien – Türkei", "2:0", "D"),
     ("14.06.", "Deutschland – Curaçao", "7:1", "E"),
+    ("14.06.", "Elfenbeinküste – Ecuador", "1:0", "E"),
     ("14.06.", "Niederlande – Japan", "2:2", "F"),
+    ("14.06.", "Schweden – Tunesien", "5:1", "F"),
 ]
 
 # Gruppenspiele: (gruppe, datum, spieltag, heim, gast, sieger, ergebnis, wertigkeit%, gespielt?)
@@ -56,15 +58,15 @@ GROUP_MATCHES = [
     ("D", "25.06.2026", 3, "Paraguay", "Australien", "Australien", "1:2", 48, False),
 
     ("E", "14.06.2026", 1, "Deutschland", "Curaçao", "Deutschland", "7:1", None, True),
-    ("E", "14.06.2026", 1, "Elfenbeinküste", "Ecuador", "Ecuador", "0:1", 50, False),
-    ("E", "20.06.2026", 2, "Deutschland", "Elfenbeinküste", "Deutschland", "2:1", 62, False),
+    ("E", "14.06.2026", 1, "Elfenbeinküste", "Ecuador", "Elfenbeinküste", "1:0", None, True),
+    ("E", "20.06.2026", 2, "Deutschland", "Elfenbeinküste", "Deutschland", "2:1", 56, False),
     ("E", "20.06.2026", 2, "Curaçao", "Ecuador", "Ecuador", "0:2", 78, False),
     ("E", "25.06.2026", 3, "Deutschland", "Ecuador", "Deutschland", "2:1", 60, False),
     ("E", "25.06.2026", 3, "Curaçao", "Elfenbeinküste", "Elfenbeinküste", "0:2", 77, False),
 
     ("F", "14.06.2026", 1, "Niederlande", "Japan", "Unentschieden", "2:2", None, True),
-    ("F", "14.06.2026", 1, "Schweden", "Tunesien", "Schweden", "1:0", 55, False),
-    ("F", "20.06.2026", 2, "Niederlande", "Schweden", "Niederlande", "2:1", 62, False),
+    ("F", "14.06.2026", 1, "Schweden", "Tunesien", "Schweden", "5:1", None, True),
+    ("F", "20.06.2026", 2, "Niederlande", "Schweden", "Niederlande", "2:1", 56, False),
     ("F", "20.06.2026", 2, "Japan", "Tunesien", "Japan", "2:0", 66, False),
     ("F", "25.06.2026", 3, "Niederlande", "Tunesien", "Niederlande", "2:0", 74, False),
     ("F", "25.06.2026", 3, "Japan", "Schweden", "Japan", "2:1", 52, False),
@@ -118,8 +120,8 @@ STANDINGS = [
     ("B", "Schweiz", "Bosnien-Herz.", "Kanada", "Katar"),
     ("C", "Brasilien", "Marokko", "Schottland", "Haiti"),
     ("D", "USA", "Australien", "Türkei", "Paraguay"),
-    ("E", "Deutschland", "Ecuador", "Elfenbeinküste", "Curaçao"),
-    ("F", "Niederlande", "Japan", "Schweden", "Tunesien"),
+    ("E", "Deutschland", "Elfenbeinküste", "Ecuador", "Curaçao"),
+    ("F", "Niederlande", "Schweden", "Japan", "Tunesien"),
     ("G", "Belgien", "Ägypten", "Iran", "Neuseeland"),
     ("H", "Spanien", "Uruguay", "Saudi-Arabien", "Kap Verde"),
     ("I", "Frankreich", "Norwegen", "Senegal", "Irak"),
@@ -160,7 +162,9 @@ PLAYED_HT = {
     ("Haiti", "Schottland"): ("Schottland", "0:1"),
     ("Australien", "Türkei"): ("Australien", "1:0"),
     ("Deutschland", "Curaçao"): ("Deutschland", "3:1"),
+    ("Elfenbeinküste", "Ecuador"): ("Unentschieden", "0:0"),
     ("Niederlande", "Japan"): ("Unentschieden", "0:0"),
+    ("Schweden", "Tunesien"): ("Schweden", "2:1"),
 }
 
 # Laufende Spiele: echter Halbzeitstand, Endergebnis noch offen (Tipp neu berechnet).
@@ -202,7 +206,9 @@ REVIEW = [
     ("13.06.", "Haiti – Schottland", "Schottland 0:2", "0:1", True, True),
     ("13.06.", "Australien – Türkei", "Türkei 2:1", "0:2 (Australien)", False, False),
     ("14.06.", "Deutschland – Curaçao", "Deutschland 3:0", "7:1", True, True),
+    ("14.06.", "Elfenbeinküste – Ecuador", "Ecuador 0:1", "1:0 (Elfenbeinküste)", False, True),
     ("14.06.", "Niederlande – Japan", "Niederlande 2:1", "2:2", False, False),
+    ("14.06.", "Schweden – Tunesien", "Schweden 1:0", "5:1", True, False),
 ]
 
 

@@ -1,6 +1,6 @@
 # WM 2026 – Prognose aller noch zu spielenden Begegnungen
 
-**Stand:** 14. Juni 2026 (kalibriert mit Buchmacher-Quoten, FIFA-Rangliste & Transfermarkt-Kaderwerten; nach den Spielen vom 11.–13.06.) · **Turnier:** 11.06.–19.07.2026 in USA, Kanada & Mexiko · 48 Teams, 12 Gruppen (A–L)
+**Stand:** 15. Juni 2026 (kalibriert mit Buchmacher-Quoten, FIFA-Rangliste & Transfermarkt-Kaderwerten; nach allen Spielen bis 14.06.) · **Turnier:** 11.06.–19.07.2026 in USA, Kanada & Mexiko · 48 Teams, 12 Gruppen (A–L)
 
 > ⚠️ **Hinweis:** Subjektive, modellgestützte Schätzungen – **keine** echten Ergebnisse. Die **Wertigkeit** (%) ist die Verlässlichkeit des Tipps (gestützt auf Buchmacher-Quoten, FIFA-Rangliste und Turnierform), nicht die mathematische Siegwahrscheinlichkeit. Hohe Werte nur bei klarem Klassenunterschied; echte 50/50-Spiele bleiben bewusst moderat.
 
@@ -19,7 +19,9 @@
 | 13.06. | Haiti – Schottland | 0:1 | C |
 | 13.06. | Australien – Türkei | 2:0 | D |
 | 14.06. | Deutschland – Curaçao | 7:1 | E |
+| 14.06. | Elfenbeinküste – Ecuador | 1:0 | E |
 | 14.06. | Niederlande – Japan | 2:2 | F |
+| 14.06. | Schweden – Tunesien | 5:1 | F |
 
 ---
 
@@ -57,20 +59,18 @@
 | 25.06. | 3 | USA – Türkei | USA | 2:1 | 58 % | Unentschieden | 0:0 | 52 % |
 | 25.06. | 3 | Paraguay – Australien | Australien | 1:2 | 48 % | Unentschieden | 0:0 | 52 % |
 
-### Gruppe E — Deutschland, Ecuador, Elfenbeinküste, Curaçao
+### Gruppe E — Deutschland, Elfenbeinküste, Ecuador, Curaçao
 | Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wert. | HZ-Führung | HZ-Erg. | HZ-Wert. |
 |---|---|---|---|---|---|---|---|---|
-| 14.06. | 1 | Elfenbeinküste – Ecuador | Ecuador | 0:1 | 50 % | Unentschieden | 0:0 | 52 % |
-| 20.06. | 2 | Deutschland – Elfenbeinküste | Deutschland | 2:1 | 62 % | Deutschland | 1:0 | 50 % |
+| 20.06. | 2 | Deutschland – Elfenbeinküste | Deutschland | 2:1 | 56 % | Unentschieden | 0:0 | 52 % |
 | 20.06. | 2 | Curaçao – Ecuador | Ecuador | 0:2 | 78 % | Ecuador | 0:1 | 66 % |
 | 25.06. | 3 | Deutschland – Ecuador | Deutschland | 2:1 | 60 % | Deutschland | 1:0 | 48 % |
 | 25.06. | 3 | Curaçao – Elfenbeinküste | Elfenbeinküste | 0:2 | 77 % | Elfenbeinküste | 0:1 | 65 % |
 
-### Gruppe F — Niederlande, Japan, Schweden, Tunesien
+### Gruppe F — Niederlande, Schweden, Japan, Tunesien
 | Datum | ST | Begegnung | Sieger-Tipp | Ergebnis | Wert. | HZ-Führung | HZ-Erg. | HZ-Wert. |
 |---|---|---|---|---|---|---|---|---|
-| 14.06. | 1 | Schweden – Tunesien | Schweden | 1:0 | 55 % | Unentschieden | 0:0 | 52 % |
-| 20.06. | 2 | Niederlande – Schweden | Niederlande | 2:1 | 62 % | Niederlande | 1:0 | 50 % |
+| 20.06. | 2 | Niederlande – Schweden | Niederlande | 2:1 | 56 % | Unentschieden | 0:0 | 52 % |
 | 20.06. | 2 | Japan – Tunesien | Japan | 2:0 | 66 % | Japan | 1:0 | 54 % |
 | 25.06. | 3 | Niederlande – Tunesien | Niederlande | 2:0 | 74 % | Niederlande | 1:0 | 62 % |
 | 25.06. | 3 | Japan – Schweden | Japan | 2:1 | 52 % | Unentschieden | 0:0 | 52 % |
@@ -143,7 +143,7 @@
 
 **Gruppensieger (12):** Mexiko, Schweiz, Brasilien, USA, Deutschland, Niederlande, Belgien, Spanien, Frankreich, Argentinien, Portugal, England
 
-**Gruppenzweite (12):** Südkorea, Bosnien-Herz., Marokko, Australien, Ecuador, Japan, Ägypten, Uruguay, Norwegen, Österreich, Kolumbien, Kroatien
+**Gruppenzweite (12):** Südkorea, Bosnien-Herz., Marokko, Australien, Elfenbeinküste, Schweden, Ägypten, Uruguay, Norwegen, Österreich, Kolumbien, Kroatien
 
 **Beste 8 Gruppendritte (Auswahl):** Senegal, Elfenbeinküste, Algerien, Schottland, Türkei, Schweden, Ghana, Iran
 *(ausgeschieden als schwächste Dritte: Tschechien, Kanada, Saudi-Arabien, DR Kongo)*
@@ -172,9 +172,9 @@
 
 ## Bilanz – meine bisherige Trefferquote (ehrlich)
 
-- **Sieger-Tipp korrekt:** 5 von 9  (~56 %)
-- **Halbzeit-Führung korrekt:** 7 von 9  (~78 %)  ← verlässlichste Größe
-- **Exaktes Endergebnis korrekt:** 2 von 9  (~22 %)  ← statistisch kaum planbar
+- **Sieger-Tipp korrekt:** 6 von 11  (~55 %)
+- **Halbzeit-Führung korrekt:** 8 von 11  (~73 %)  ← verlässlichste Größe
+- **Exaktes Endergebnis korrekt:** 2 von 11  (~18 %)  ← statistisch kaum planbar
 
 | Datum | Begegnung | Mein Vorab-Tipp | Echt | Sieger | HZ |
 |---|---|---|---|---|---|
@@ -187,7 +187,9 @@
 | 13.06. | Haiti – Schottland | Schottland 0:2 | 0:1 | ✓ | ✓ |
 | 13.06. | Australien – Türkei | Türkei 2:1 | 0:2 (Australien) | ✗ | ✗ |
 | 14.06. | Deutschland – Curaçao | Deutschland 3:0 | 7:1 | ✓ | ✓ |
+| 14.06. | Elfenbeinküste – Ecuador | Ecuador 0:1 | 1:0 (Elfenbeinküste) | ✗ | ✓ |
 | 14.06. | Niederlande – Japan | Niederlande 2:1 | 2:2 | ✗ | ✗ |
+| 14.06. | Schweden – Tunesien | Schweden 1:0 | 5:1 | ✓ | ✗ |
 
 ---
 
