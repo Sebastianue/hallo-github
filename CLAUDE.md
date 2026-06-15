@@ -37,4 +37,18 @@ Es dient als Lern- und Experimentierprojekt für GitHub und Claude Code.
 - Erlaubte Befehle ohne Dialog: git, npm, pip, python, node, docker, Lesen
 
 ## Was als nächstes geplant ist
-*(Hier können zukünftige Features und Ziele eingetragen werden)*
+
+### 3D-Druck Geschäftsidee — Wingfoil-Zubehör
+Interesse daran, mit dem Bambu Lab P1S Zubehör für die Wingfoil-/Kitesurfing-Community zu drucken und zu verkaufen.
+
+**Vielversprechende Produkte:**
+- Transportschutz für Foil-Teile (Mastschutz, Kantenschutz, Fuselage-Kappen)
+- Wandhalterungen für Boards und Foils
+- Plumefoil-spezifisches Zubehör (Nischenvorteil durch eigenes Board)
+- Pumpen-Adapter, Fin-Key-Organizer
+
+**Wichtig:** Nur nicht-strukturelle Teile verkaufen — nichts, das unter Last steht.
+**Material:** ASA für Outdoor-Teile (UV- und wasserresistent), kein PLA.
+**Vertrieb:** Etsy, Printables/Cults3D, Facebook-Wingfoil-Gruppen.
+
+→ Thema auf Wunsch vertiefen: Designanforderungen, Produktauswahl, Verkaufstexte.
