@@ -36,6 +36,19 @@ Es dient als Lern- und Experimentierprojekt für GitHub und Claude Code.
 - Stop-Hook: Benachrichtigung wenn Claude fertig ist
 - Erlaubte Befehle ohne Dialog: git, npm, pip, python, node, docker, Lesen
 
+## YouTube-Kanal: Hydro Motion
+- **Kanal:** [youtube.com/@HydroMotionfoil](https://www.youtube.com/@HydroMotionfoil)
+- **Themen:** eFoil, Wingfoiling, Spot-Guides NRW & Niederlande, 3D-Druck-Gadgets
+- **Besonderheit:** Testfahrten anbieten + Plumefoil Promo-Code
+- **Status (Juni 2026):** Pause — Akku und Mast mussten wegen Wassereintritt und Korrosion zurück zu Plumefoil
+
+**Offene Aufgaben am Kanal:**
+- Kanalbeschreibung überarbeiten (Vorschlag liegt vor — Tippfehler, fehlender CTA, Wingfoiling ergänzen)
+- Upload-Rhythmus konkret kommunizieren
+- Plumefoil-Kanal (@plumefoil) zur Vernetzung kontaktieren
+- Behind-the-Scenes-Video über Reparaturproblem als Content nutzen
+- 3D-Druck-Gadgets für Wingfoil entwickeln und im Kanal vorstellen
+
 ## Was als nächstes geplant ist
 
 ### 3D-Druck Geschäftsidee — Wingfoil-Zubehör
