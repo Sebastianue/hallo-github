@@ -1,212 +1,130 @@
 // ================================================================
-// Volvo XC60 Gen1 (2009–2017) – Wireless-Charger-Unterlage
-// Mittelkonsole, Becherhalterbereich unter dem Rollo
+// Volvo XC60 Gen1 (2009-2017) - Wireless-Charger-Unterlage
 // ================================================================
+// Diese .scad ist die GUI-editierbare Variante. Die ausgelieferte
+// STL wird mit generate_stl.py (CadQuery) erzeugt - beide nutzen
+// dieselben Masse und dieselbe Konstruktion.
 //
-// FUNKTION:
-//   • Zwei Zapfen greifen in die hintereinander liegenden Becherhalter
-//   • Solide Brücke zwischen den Zapfen füllt die volle Konsolenbreite
-//   • Charger-Pad liegt bündig versenkt → Rollo schließt über dem Pad
-//   • iPhone 15 Pro liegt in einer Handymulde → kein Verrutschen
-//   • Kabelkanal durch vorderen Zapfen, Austritt seitlich
+// ECHTE FAHRZEUG-MAẞE (gemessen 2026-06-15):
+//   Becher-Innendurchmesser : 85 mm
+//   Becher 1 (tief)         : 100 mm
+//   Becher 2 (flach)        :  86 mm   <- 14 mm flacher!
+//   Achsabstand Mitte-Mitte : 105 mm
+//   Konsole innen (Breite)  :  99 mm
+//   Charger-Pad aussen      :  74 mm
+//   Charger-Pad Dicke       :   9 mm
+//   Kabeldurchmesser        : 3,5 mm
 //
-// HÖHEN-SCHEMA (Seitenansicht):
+// PRINZIP:
+//   * Zwei UNTERSCHIEDLICH lange Zapfen gleichen die Tiefen aus
+//     -> Ablageplatte liegt exakt waagerecht.
+//   * Beide Zapfen stehen auf dem Becherboden auf (kein Absacken).
+//   * Charger liegt buendig versenkt -> Rollo schliesst darueber.
+//   * Charger ist Non-Slip-Silikon -> Handy rutscht nicht.
 //
-//   Konsolen-Oberkante (=Rollo-Ebene):  72 mm ─────────────────
-//   Rollo-Luft:                          2 mm
-//   Einsatz-Oberkante / Pad-Oberkante:  70 mm ═══════════════
-//   Handy-Mulde (3 mm tief):                    ┌───────────┐
-//   Charger-Pad (6 mm tief im Körper):  64 mm   │ Charger  │ 61–67 mm
-//                                               └───────────┘
-//   Einsatz-Unterkante (Boden Becher):   0 mm ─────────────────
-//
-// DRUCKANLEITUNG (Bambulab P1S):
-//   Material    : PETG (hitzebeständig ≤ 80 °C, ideal Autoinnenraum)
-//   Ausrichtung : Handy-Mulde liegt UNTEN auf dem Druckbett → Zapfen
-//                 zeigen nach OBEN. Kein Support nötig. Glatte Sichtfläche.
-//   Layer       : 0,2 mm
-//   Infill      : 25 % Gyroid
-//   Wandstärke  : 3–4 Perimeter
-//
-// !! VOR DEM DRUCK: ALLE MIT "MESSEN!" MARKIERTEN WERTE AM AUTO PRÜFEN !!
-// Schritt 1: Rollo öffnen
-// Schritt 2: Innendurchmesser eines Becherhalters → cup_id
-// Schritt 3: Achsabstand der Becherhalter-Mittelpunkte → cup_abstand
-//            (Becher liegen HINTEREINANDER, also vorne–hinten messen!)
-// Schritt 4: Tiefe der Becherhalter (Rand bis Boden) → cup_tiefe
-// Schritt 5: Breite der Konsolen-Öffnung (links–rechts) → platte_breite
-// Schritt 6: Charger-Pad: Außendurchmesser und Dicke
+// DRUCK (Bambulab P1S):
+//   Material    : PETG
+//   Ausrichtung : Platte flach aufs Druckbett, Zapfen nach OBEN
+//   Supports    : nur in der runden Charger-Mulde
+//   Infill      : 20-25 % Gyroid, 3 Perimeter, 0,2 mm Layer
 // ================================================================
 
-// ───────────────────────────────────────────────────────────────
-//  PARAMETER – HIER ANPASSEN
-// ───────────────────────────────────────────────────────────────
+/* [Becherhalter - GEMESSEN] */
+cup_id          = 85;    // Innendurchmesser Becherhalter
+cup_tiefe_deep  = 100;   // Tiefe Becher 1 (tiefer)
+cup_tiefe_shall = 86;    // Tiefe Becher 2 (flacher)
+cup_abstand     = 105;   // Achsabstand Mitte-Mitte
+cup_spiel       = 1.0;   // Radiales Spiel der Zapfen
 
-/* [BECHERHALTER – MESSEN!] */
-cup_id       = 76;   // MESSEN! Innendurchmesser Becherhalter [mm]
-cup_tiefe    = 72;   // MESSEN! Tiefe Becherhalter (Konsolenrand → Boden) [mm]
-cup_abstand  = 90;   // MESSEN! Achsabstand Mitte–Mitte (vorne–hinten) [mm]
-cup_spiel    = 1.0;  // Spiel am Radius: 0.5 = eng, 1.0 = leicht einzusetzen
+/* [Konsole - GEMESSEN] */
+console_breite  = 99;    // Lichte Weite links-rechts
 
-/* [KONSOLENBREITE – MESSEN!] */
-platte_breite = 113; // MESSEN! Lichte Weite der Konsole links–rechts [mm]
-                     // (etwas kürzer als Rollo-Breite ≈ 117 mm)
+/* [Charger-Pad - GEMESSEN] */
+charger_od      = 74;    // Aussendurchmesser
+charger_h       = 9;     // Dicke
+kabel_od        = 3.5;   // Kabeldurchmesser
 
-/* [WIRELESS CHARGER PAD – MESSEN!] */
-charger_od   = 85;   // MESSEN! Außendurchmesser Charger-Pad [mm]
-charger_h    =  6;   // MESSEN! Dicke des Charger-Pads [mm]
-kabel_od     =  5;   // MESSEN! Kabeldurchmesser [mm]
+/* [System] */
+rollo_luft      = 2.0;   // Luft Pad-Oberkante -> Rollo (Annahme!)
+pad_spiel       = 1.0;   // Spiel um das Pad in der Mulde
+pad_boden       = 3.0;   // Bodenstaerke unter dem Pad
+wand            = 4.0;   // Wandstaerke Hohl-Zapfen
+ecken_r         = 5.0;   // Eckenabrundung Platte
 
-/* [HANDY-MULDE – bei Hülle anpassen] */
-phone_l      = 150;  // Länge Handy inkl. Hülle [mm]  (iPhone 15 Pro nackt: 146,6)
-phone_b      =  74;  // Breite Handy inkl. Hülle [mm]  (iPhone 15 Pro nackt:  70,6)
-phone_mulde_t =  3;  // Tiefe der Handy-Mulde [mm]
+// ---------------- Berechnet ----------------
+zapfen_r    = cup_id / 2 - cup_spiel;        // 41.5
+zapfen_ri   = zapfen_r - wand;               // 37.5
+plate_breite= console_breite - 2;            // 97
+plate_dick  = charger_h + pad_boden;         // 12
+plate_l     = cup_abstand + cup_id;          // 190
+pad_r       = charger_od / 2 + pad_spiel;    // 38
 
-/* [SYSTEM] */
-rollo_luft   = 2.0;  // Luft zwischen Charger-Pad-Oberkante und Rollo [mm]
-ecken_r      = 5;    // Eckenabrundung der Grundplatte [mm]
+z_surface   = cup_tiefe_deep;                // 100 (Rollo-Ebene)
+z_plate_top = z_surface - rollo_luft;        // 98
+z_plate_bot = z_plate_top - plate_dick;      // 86
+z_pocket_bot= z_plate_top - charger_h;       // 89
 
-// ───────────────────────────────────────────────────────────────
-//  BERECHNETE WERTE
-// ───────────────────────────────────────────────────────────────
-zapfen_r  = cup_id / 2 - cup_spiel;  // Zapfenradius (passt in Becher)
-platte_l  = cup_abstand + cup_id;    // Plattenlänge (überspannt beide Becher)
+z_deep_bot  = 0;                             // tiefer Becher
+z_shall_bot = cup_tiefe_deep - cup_tiefe_shall; // 14
+len_deep    = z_plate_bot - z_deep_bot;      // 86
+len_shall   = z_plate_bot - z_shall_bot;     // 72
+y_deep      = -cup_abstand / 2;              // -52.5
+y_shall     =  cup_abstand / 2;              // +52.5
 
-// Gesamthöhe des Einsatzes:
-// Oberkante = Konsolenrand minus Luft fürs Rollo → Charger liegt bündig darunter
-einsatz_h = cup_tiefe - rollo_luft;  // = 70 mm bei Standardwerten
+$fn = 96;
 
-// Tiefe der Charger-Vertiefung (von oben gemessen):
-// Charger sitzt komplett versenkt; Oberkante bündig mit Einsatz-Oberkante
-charger_tiefe = charger_h;  // = 6 mm → Pad-Oberkante = Einsatz-Oberkante ✓
-
-// Tiefe der Handy-Mulde (beginnt ab Einsatz-Oberkante, ÜBER dem Charger):
-// Handy-Mulde überlagert die Charger-Vertiefung:
-// Mulde geht 3 mm tief → Boden liegt 3 mm unterhalb der Oberkante
-// Charger geht 6 mm tief → Boden liegt 6 mm unterhalb der Oberkante
-// Handy liegt im Mulde-Boden (3 mm Tiefe) direkt über Charger ✓
-
-echo(str("=== Volvo XC60 Charger-Einsatz ==="));
-echo(str("Zapfenradius: ", zapfen_r, " mm | Platte: ", platte_breite, " x ", platte_l, " mm"));
-echo(str("Einsatz-Gesamthöhe: ", einsatz_h, " mm | Ziel-Tiefe Becher: ", cup_tiefe, " mm"));
-echo(str("Rollo-Luft über Charger-Pad: ", cup_tiefe - einsatz_h, " mm"));
-
-// ───────────────────────────────────────────────────────────────
-//  HILFSFUNKTION: Abgerundete Box
-// ───────────────────────────────────────────────────────────────
-$fn = 80;
-
-module box_r(b, l, h, r) {
-    hull()
-        for (x = [r - b/2, b/2 - r], y = [r - l/2, l/2 - r])
-            translate([x, y, 0])
-                cylinder(r = r, h = h);
-}
-
-// ───────────────────────────────────────────────────────────────
-//  HAUPTMODELL
-// ───────────────────────────────────────────────────────────────
-module einsatz() {
-    difference() {
-
-        // ═══════════════════════════════════════════════════════
-        // POSITIVFORM: Solider Körper
-        // ═══════════════════════════════════════════════════════
-        union() {
-            // Zapfen vorne (sitzt im vorderen Becherhalter)
-            translate([0, -cup_abstand / 2, 0])
-                cylinder(
-                    h  = einsatz_h,
-                    r  = zapfen_r,
-                    r1 = zapfen_r - 1.5   // leicht konisch → leichter einzuführen
-                );
-
-            // Zapfen hinten (sitzt im hinteren Becherhalter)
-            translate([0, cup_abstand / 2, 0])
-                cylinder(
-                    h  = einsatz_h,
-                    r  = zapfen_r,
-                    r1 = zapfen_r - 1.5
-                );
-
-            // Volle Brücke zwischen den Zapfen (solid, Konsolenbreite)
-            hull() {
-                translate([0, -cup_abstand / 2, 0])
-                    cylinder(h = einsatz_h, r = zapfen_r);
-                translate([0,  cup_abstand / 2, 0])
-                    cylinder(h = einsatz_h, r = zapfen_r);
-            }
-
-            // Obere Ablageplatte (füllt volle Konsolenbreite)
-            hull() {
-                translate([0, -cup_abstand / 2, 0])
-                    cylinder(h = einsatz_h, r = platte_breite / 2 - ecken_r);
-                translate([0,  cup_abstand / 2, 0])
-                    cylinder(h = einsatz_h, r = platte_breite / 2 - ecken_r);
-                // Eckabrundungen der Platte
-                for (y = [-platte_l/2 + ecken_r, platte_l/2 - ecken_r],
-                     x = [-platte_breite/2 + ecken_r, platte_breite/2 - ecken_r])
-                    translate([x, y, 0])
-                        cylinder(h = einsatz_h, r = ecken_r);
-            }
+// ---------------- Module ----------------
+module hohl_zapfen(y, z0, length) {
+    translate([0, y, z0])
+        difference() {
+            cylinder(h = length, r = zapfen_r);
+            translate([0, 0, -0.01])
+                cylinder(h = length - 3, r = zapfen_ri);
         }
-
-        // ═══════════════════════════════════════════════════════
-        // AUSSPARUNGEN (von oben in den Körper gefräst)
-        // ═══════════════════════════════════════════════════════
-
-        // --- Charger-Pad-Vertiefung (rund, von oben) ─────────────────────
-        // Pad liegt vollständig versenkt; Oberkante bündig mit Einsatz-Oberkante
-        translate([0, 0, einsatz_h - charger_tiefe])
-            cylinder(h = charger_tiefe + 0.1, r = charger_od / 2);
-
-        // --- Handy-Mulde (rechteckig, 3 mm tief, liegt über Charger) ─────
-        // Handy liegt in dieser Mulde – Seitenwände verhindern Verrutschen
-        // Mulde ist flacher als Charger → Handy berührt Charger-Oberfläche
-        translate([0, 0, einsatz_h - phone_mulde_t])
-            box_r(phone_b, phone_l, phone_mulde_t + 0.1, 3);
-
-        // --- Kabelkanal: vertikal durch vorderen Zapfen ──────────────────
-        // Charger-Kabel läuft senkrecht vom Pad nach unten durch den Zapfen
-        translate([0, -cup_abstand / 2, -0.1])
-            cylinder(h = einsatz_h + 0.2, r = kabel_od / 2 + 1.0);
-
-        // --- Kabelaustritt: horizontaler Schlitz seitlich am Einsatz ─────
-        // Kabel biegt im Zapfen um und tritt links seitlich aus
-        translate([
-            -(platte_breite / 2 + 0.1),
-            -cup_abstand / 2,
-            kabel_od / 2 + 2          // Kabel-Mitte: 2 mm über Becherboden
-        ])
-            rotate([0, 90, 0])
-                cylinder(
-                    h = platte_breite / 2 - zapfen_r + 5,
-                    r = kabel_od / 2 + 1.0
-                );
-    }
 }
 
-// ───────────────────────────────────────────────────────────────
-//  RENDER
-// ───────────────────────────────────────────────────────────────
-einsatz();
+module platte() {
+    translate([0, 0, z_plate_bot])
+        linear_extrude(plate_dick)
+            offset(r = ecken_r) offset(r = -ecken_r)
+                square([plate_breite, plate_l], center = true);
+}
 
-// ═══════════════════════════════════════════════════════════════
-//  VORSCHAU-OBJEKTE  (% = transparent, NICHT im STL-Export)
-//  In OpenSCAD sichtbar zur Kontrolle; für STL-Export stehen lassen.
-// ═══════════════════════════════════════════════════════════════
+// ---------------- Zusammenbau ----------------
+difference() {
+    union() {
+        hohl_zapfen(y_deep,  z_deep_bot,  len_deep);
+        hohl_zapfen(y_shall, z_shall_bot, len_shall);
+        // Versteifungssteg zwischen den Zapfen (X/Y mittig)
+        translate([-8, -cup_abstand / 2, z_shall_bot])
+            cube([16, cup_abstand, len_shall]);
+        platte();
+    }
 
-// Charger-Pad (dunkelgrau)
-%color("dimgray", 0.65)
-    translate([0, 0, einsatz_h - charger_h / 2])
+    // Charger-Mulde
+    translate([0, 0, z_pocket_bot])
+        cylinder(h = charger_h + 1, r = pad_r);
+
+    // Kabelkanal senkrecht
+    translate([0, 0, z_plate_bot - 1])
+        cylinder(h = charger_h + 2, r = kabel_od / 2 + 1);
+
+    // Kabelaustritt seitlich (+X)
+    translate([0, -(kabel_od + 1.5) / 2, z_plate_bot])
+        cube([plate_breite, kabel_od + 1.5, kabel_od + 1.5]);
+}
+
+// ================================================================
+// VORSCHAU (transparent, nicht im Export)
+// ================================================================
+%color("dimgray", 0.6)
+    translate([0, 0, z_plate_top - charger_h / 2])
         cylinder(h = charger_h, r = charger_od / 2, center = true);
 
-// iPhone 15 Pro (silber)
-%color("silver", 0.4)
-    translate([0, 0, einsatz_h - phone_mulde_t + 8.25 / 2])
-        cube([phone_b, phone_l, 8.25], center = true);
+%color("silver", 0.35)
+    translate([0, 0, z_plate_top + 8.25 / 2])
+        cube([74, 150, 8.25], center = true);
 
-// Rollo-Unterseite (rot = Unterseite des geschlossenen Rollos; Luft sichtbar)
-%color("red", 0.12)
-    translate([0, 0, cup_tiefe + 0.5])
-        cube([platte_breite + 30, platte_l + 30, 1], center = true);
+%color("red", 0.10)
+    translate([0, 0, z_surface + 0.5])
+        cube([plate_breite + 30, plate_l + 30, 1], center = true);

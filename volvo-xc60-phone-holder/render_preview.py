@@ -99,12 +99,12 @@ ax0 = axes[0]
 
 # Abmessungen als Textbox
 dims_text = (
-    f"Plattenbreite  : ~113 mm\n"
-    f"Plattenlänge   : ~166 mm\n"
-    f"Gesamthöhe     : ~70 mm\n"
-    f"Zapfenradius   : 37 mm\n"
-    f"Charger-Ø      : 85 mm\n"
-    f"Handy-Mulde    : 74 × 150 mm\n"
+    f"Platte         : 97 x 190 mm\n"
+    f"Gesamthöhe     : 98 mm\n"
+    f"Zapfen-Radius  : 41,5 mm\n"
+    f"Zapfen tief    : 86 mm (Becher 100)\n"
+    f"Zapfen flach   : 72 mm (Becher  86)\n"
+    f"Charger-Ø      : 74 mm, 9 mm tief\n"
     f"Rollo-Luft     : 2 mm ✓"
 )
 fig.text(
