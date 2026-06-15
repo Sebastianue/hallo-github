@@ -102,6 +102,7 @@ for row in D.STANDINGS:
     r += 1
 for col, w in zip("ABCDE", [8, 16, 16, 16, 16]):
     ws2.column_dimensions[col].width = w
+ws2.auto_filter.ref = f"A3:E{3 + len(D.STANDINGS)}"
 
 # ---- Blatt 3: K.-o.-Prognose ----
 ws3 = wb.create_sheet("K.-o.-Prognose")
@@ -170,6 +171,7 @@ for (g, datum, st, home, away, sieger, erg, wert,
     r += 1
 for col, w in zip("ABCDEF", [9, 26, 18, 14, 8, 6]):
     ws4.column_dimensions[col].width = w
+ws4.auto_filter.ref = f"A4:F{r - 1}"
 
 wb.save("WM-2026-Prognose.xlsx")
 print("WM-2026-Prognose.xlsx erstellt")
