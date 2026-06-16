@@ -1,9 +1,9 @@
-# Modular I/O Card Concept for Yuan SDVoI Devices
-# Modulares I/O-Karten-Konzept für Yuan SDVoI-Geräte
+# Modular I/O Card Concept for Yuan SDVoE Devices
+# Modulares I/O-Karten-Konzept für Yuan SDVoE-Geräte
 
 > Status: Discussion proposal for Yuan / Diskussionsvorlage für Yuan
 > Date / Datum: 2026-06-16
-> Scope / Umfang: SDVoI (Software Defined Video over IP) video transmission
+> Scope / Umfang: SDVoE (Software Defined Video over Ethernet) video transmission
 
 ---
 
@@ -11,7 +11,7 @@
 
 ## 1. Ziel
 
-Wir setzen im Bereich SDVoI (Software Defined Video over IP) heute überwiegend
+Wir setzen im Bereich SDVoE (Software Defined Video over Ethernet) heute überwiegend
 Geräte von Yuan ein. Aktuell müssen wir je nach gewünschter Videoschnittstelle
 (DisplayPort, HDMI oder 12G-SDI) jeweils eine komplett eigene Karte bzw. ein
 eigenes Gerät beschaffen und bevorraten. Das erhöht Varianten­vielfalt,
@@ -62,7 +62,7 @@ Einbau-Plattformen.**
 Die Basis-Baugruppe ist in allen Varianten **physisch und elektrisch
 identisch**. Sie enthält:
 
-- Video-Encoding/-Decoding (SDVoI-Kernfunktion)
+- Video-Encoding/-Decoding (SDVoE-Kernfunktion)
 - IP-/Netzwerk-Anbindung (z. B. 1G/10G, je nach Bandbreitenbedarf)
 - Steuerung/Management (Konfiguration, Firmware-Update, Status)
 - Stromversorgung und Takt
@@ -150,7 +150,7 @@ gemeinsame Formfaktor (Maße, Steckerlage, Kühlung) beide Plattformen abdeckt.
 
 ## 1. Objective
 
-In the SDVoI (Software Defined Video over IP) area we predominantly use Yuan
+In the SDVoE (Software Defined Video over Ethernet) area we predominantly use Yuan
 devices today. At present, depending on the required video interface
 (DisplayPort, HDMI or 12G-SDI) we have to purchase and stock a completely
 separate card or device for each. This increases variant count, inventory,
@@ -200,7 +200,7 @@ platforms.**
 The base assembly is **physically and electrically identical** across all
 variants. It contains:
 
-- Video encoding/decoding (the SDVoI core function)
+- Video encoding/decoding (the SDVoE core function)
 - IP/network connectivity (e.g. 1G/10G, depending on bandwidth needs)
 - Control/management (configuration, firmware update, status)
 - Power supply and clocking

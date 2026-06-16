@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Modular I/O Card Concept for Yuan SDVoE Devices</title>
+<style>
+  @page { size: A4; margin: 20mm; }
+  body { font-family: "Liberation Sans", Arial, sans-serif; font-size: 11pt; color: #1a1a1a; line-height: 1.45; }
+  h1 { font-size: 20pt; color: #0b3d66; border-bottom: 2px solid #0b3d66; padding-bottom: 6px; }
+  h2 { font-size: 14pt; color: #0b3d66; margin-top: 22px; border-bottom: 1px solid #c9d6e2; padding-bottom: 3px; }
+  h3 { font-size: 12pt; color: #14517f; }
+  .meta { font-size: 9.5pt; color: #555; margin: 4px 0 18px 0; }
+  .meta span { display: inline-block; margin-right: 18px; }
+  pre { background: #f4f6f8; border: 1px solid #d6dde4; border-radius: 4px; padding: 10px; font-family: "Liberation Mono", "Courier New", monospace; font-size: 8.5pt; line-height: 1.2; white-space: pre; overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 10pt; }
+  th, td { border: 1px solid #c9d6e2; padding: 6px 8px; text-align: left; vertical-align: top; }
+  th { background: #e8eef4; color: #0b3d66; }
+  ul, ol { margin: 6px 0 6px 0; padding-left: 22px; }
+  li { margin: 3px 0; }
+  code { background: #f4f6f8; padding: 1px 4px; border-radius: 3px; font-family: "Liberation Mono", monospace; font-size: 9.5pt; }
+  strong { color: #0b3d66; }
+</style>
+</head>
+<body>
+
+<h1>Modular I/O Card Concept for Yuan SDVoE Devices</h1>
+<div class="meta">
+  <span><strong>Status:</strong> Discussion proposal for Yuan</span>
+  <span><strong>Date:</strong> 2026-06-16</span>
+  <span><strong>Scope:</strong> SDVoE (Software Defined Video over Ethernet)</span>
+</div>
+
+<h2>1. Objective</h2>
+<p>In the SDVoE (Software Defined Video over Ethernet) area we predominantly use Yuan
+devices today. At present, depending on the required video interface (DisplayPort, HDMI
+or 12G-SDI) we have to purchase and stock a completely separate card or device for each.
+This increases variant count, inventory, spare-part effort and qualification effort.</p>
+
+<p><strong>We would like Yuan to develop a modular product architecture:</strong></p>
+<ul>
+  <li><strong>One common base assembly</strong> (always identical) that contains the entire core
+    function (encoding/decoding, IP/network connectivity, control, power).</li>
+  <li><strong>Interchangeable front-end modules</strong> for the physical video interface:
+    <ul>
+      <li><strong>DP</strong> (DisplayPort)</li>
+      <li><strong>HDMI</strong></li>
+      <li><strong>SDI 12G</strong> (backward compatible to 3G/6G/HD-SDI)</li>
+    </ul>
+  </li>
+  <li>The base assembly shall be usable <strong>in IOI boxes as well as in devices such as Clinios</strong>.</li>
+</ul>
+<p>In short: <strong>one base – three (or more) pluggable interfaces – multiple host platforms.</strong></p>
+
+<h2>2. Concept Overview</h2>
+<pre>
+        +-------------------------------------------------+
+        |            BASE ASSEMBLY (always identical)     |
+        |                                                 |
+        |   [Video codec / FPGA-SoC]   [Network/IP PHY]   |
+        |   [Control / CPU/MCU]        [Power supply]     |
+        |                                                 |
+        |        +-----------------------------+          |
+        |        |   STANDARD MODULE CONNECTOR |          |
+        |        |     (defined interface)     |          |
+        +--------+--------------+--------------+----------+
+                                |
+              +-----------------+-----------------+
+              |                 |                 |
+        +-----------+     +-----------+     +-------------+
+        | DP module |     |HDMI module|     |SDI-12G mod. |
+        | DP PHY    |     | HDMI PHY  |     | 12G-SDI PHY |
+        | DP jack   |     | HDMI jack |     | BNC + EQ/DRV|
+        +-----------+     +-----------+     +-------------+
+
+   Installed in: [ IOI box ]        and        [ Clinios etc. ]
+</pre>
+
+<h2>3. Base Assembly (Common Core)</h2>
+<p>The base assembly is <strong>physically and electrically identical</strong> across all variants. It contains:</p>
+<ul>
+  <li>Video encoding/decoding (the SDVoE core function)</li>
+  <li>IP/network connectivity (e.g. 10G, depending on bandwidth needs)</li>
+  <li>Control/management (configuration, firmware update, status)</li>
+  <li>Power supply and clocking</li>
+  <li><strong>One standardized module connector</strong> towards the front-end module</li>
+</ul>
+<p>Benefit: only <strong>one</strong> base has to be developed, manufactured, qualified, certified and stocked.</p>
+
+<h2>4. Front-End Modules (Interchangeable)</h2>
+<p>Each module is a small daughter card carrying only the <strong>signal-specific front-end</strong>:</p>
+<table>
+  <tr><th>Module</th><th>Interface</th><th>Key components</th></tr>
+  <tr><td>DP module</td><td>DisplayPort</td><td>DP PHY/re-driver, DP connector</td></tr>
+  <tr><td>HDMI module</td><td>HDMI</td><td>HDMI PHY, HDMI connector, HDCP handling</td></tr>
+  <tr><td>SDI-12G module</td><td>12G-SDI (backward compatible)</td><td>12G-SDI PHY, cable equalizer/driver, BNC</td></tr>
+</table>
+<p>Requirements for the modules:</p>
+<ul>
+  <li>Identical mechanical and electrical module connector on all variants</li>
+  <li><strong>Automatic detection</strong> of the inserted module type by the base (module ID / EEPROM / hardware coding)</li>
+  <li>Easy, ideally <strong>tool-free, replacement</strong></li>
+  <li>Optional: hot-plug, or at least a defined swap in the powered-off state</li>
+</ul>
+
+<h2>5. Module Interface (to be defined with Yuan)</h2>
+<p>For the concept to be viable, Yuan must define a <strong>stable, documented interface</strong>
+between base and module. From our point of view the relevant items:</p>
+<ul>
+  <li><strong>Video data path</strong>: a common internal video bus for all modules
+    (e.g. parallel/serial video interface), dimensioned for the highest data rate (12G-SDI / 4K).</li>
+  <li><strong>Control</strong>: I²C/SPI for configuration, EDID/HDCP, module detection.</li>
+  <li><strong>Power</strong>: defined voltages and maximum power per module.</li>
+  <li><strong>Mechanics</strong>: defined connector, height, mounting, tolerances.</li>
+  <li><strong>Detection/ID</strong>: unique identifier per module type + revision level.</li>
+  <li><strong>EMC/signal integrity</strong>: rated up to 12G-SDI / 4K video rates.</li>
+</ul>
+
+<h2>6. Platform Compatibility (IOI Box and Clinios)</h2>
+<p>The same base assembly shall run in different host platforms:</p>
+<ul>
+  <li><strong>IOI box</strong>: external I/O / breakout solution.</li>
+  <li><strong>Clinios</strong> (and comparable devices): integrated platform.</li>
+</ul>
+<p>This leads to the wish for a <strong>common form factor</strong> of the base and – if necessary –
+only <strong>different brackets/faceplates</strong> per platform, not different PCBs. Please clarify
+with Yuan which common form factor (dimensions, connector position, cooling) covers both platforms.</p>
+
+<h2>7. Benefits for Us</h2>
+<ul>
+  <li><strong>Fewer variants</strong>: one base instead of several complete cards.</li>
+  <li><strong>Lower inventory/spare-part cost</strong> and simpler logistics.</li>
+  <li><strong>Faster on-site adaptation</strong> to the required interface.</li>
+  <li><strong>Investment protection</strong>: new interfaces later as an additional module.</li>
+  <li><strong>Unified firmware/management</strong> across all interfaces.</li>
+  <li><strong>Simplified qualification/approval</strong> (the core stays the same).</li>
+</ul>
+
+<h2>8. Open Items / Questions for Yuan</h2>
+<ol>
+  <li>Is such a modular architecture feasible in principle?</li>
+  <li>Which internal video bus/interface is jointly feasible for DP, HDMI <strong>and</strong> 12G-SDI?</li>
+  <li>Which common form factor fits into the IOI box <strong>and</strong> Clinios?</li>
+  <li>How is module detection and EDID/HDCP handling implemented?</li>
+  <li>Hot-plug possible, or swap only when powered off?</li>
+  <li>Roadmap/time horizon and minimum order quantities (MOQ)?</li>
+  <li>Can existing Yuan building blocks/designs be reused?</li>
+</ol>
+
+<h2>9. Requested Feedback from Yuan</h2>
+<ul>
+  <li>Feasibility assessment (technical + schedule)</li>
+  <li>Proposal for the module interface (block/pin concept)</li>
+  <li>Proposal for the common form factor</li>
+  <li>Rough roadmap and commercial key data</li>
+</ul>
+
+</body>
+</html>
