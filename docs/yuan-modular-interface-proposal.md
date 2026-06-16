@@ -32,6 +32,9 @@ Lagerhaltung, Ersatzteil­aufwand und Qualifizierungs­aufwand.
 Kurz gesagt: **eine Basis – drei (oder mehr) steckbare Schnittstellen – mehrere
 Einbau-Plattformen.**
 
+**Zielvorgabe für alle Varianten: durchgängig 4K60 (3840 × 2160 @ 60 Hz) über
+10G-Ethernet (10 GbE).**
+
 ## 2. Konzept im Überblick
 
 ```
@@ -62,8 +65,8 @@ Einbau-Plattformen.**
 Die Basis-Baugruppe ist in allen Varianten **physisch und elektrisch
 identisch**. Sie enthält:
 
-- Video-Encoding/-Decoding (SDVoE-Kernfunktion)
-- IP-/Netzwerk-Anbindung (z. B. 1G/10G, je nach Bandbreitenbedarf)
+- Video-Encoding/-Decoding (SDVoE-Kernfunktion), ausgelegt für 4K60
+- **IP-/Netzwerk-Anbindung: 10G-Ethernet (10 GbE)**, durchgängig für 4K60 dimensioniert
 - Steuerung/Management (Konfiguration, Firmware-Update, Status)
 - Stromversorgung und Takt
 - **Einen standardisierten Modulsteckverbinder** zum Front-End-Modul
@@ -82,6 +85,8 @@ Jedes Modul ist eine kleine Tochterkarte, die ausschließlich das
 | HDMI-Modul  | HDMI                 | HDMI-PHY, HDMI-Buchse, HDCP-Handling       |
 | SDI-12G-Mod.| 12G-SDI (abwärtskomp.)| 12G-SDI-PHY, Cable Equalizer/Driver, BNC  |
 
+Alle Module sind durchgängig für **4K60 (3840 × 2160 @ 60 Hz)** ausgelegt.
+
 Anforderungen an die Module:
 
 - Gleicher mechanischer und elektrischer Modulstecker bei allen Varianten
@@ -96,14 +101,15 @@ Damit das Konzept tragfähig ist, muss Yuan eine **stabile, dokumentierte
 Schnittstelle** zwischen Basis und Modul definieren. Aus unserer Sicht relevant:
 
 - **Video-Datenpfad**: einheitlicher interner Videobus für alle Module
-  (z. B. paralleles/serielles Videointerface), ausgelegt auf die höchste
-  Datenrate (12G-SDI / 4K).
+  (z. B. paralleles/serielles Videointerface), ausgelegt für 4K60
+  (3840 × 2160 @ 60 Hz) bzw. 12G-SDI.
+- **Netzwerk**: 10G-Ethernet (10 GbE) als gemeinsame SDVoE-Transportschicht.
 - **Steuerung**: I²C/SPI für Konfiguration, EDID/HDCP, Modul-Erkennung.
 - **Versorgung**: definierte Spannungen und maximale Leistung pro Modul.
 - **Mechanik**: definierter Steckverbinder, Bauhöhe, Befestigung,
   Toleranzen.
 - **Detektion/ID**: eindeutige Kennung pro Modultyp + Revisionsstand.
-- **EMV/Signalintegrität**: ausgelegt bis 12G-SDI bzw. 4K-Videoraten.
+- **EMV/Signalintegrität**: ausgelegt für 4K60 bzw. 12G-SDI.
 
 ## 6. Plattform-Kompatibilität (IOI-Box und Clinios)
 
@@ -170,6 +176,9 @@ spare-part effort and qualification effort.
 In short: **one base – three (or more) pluggable interfaces – multiple host
 platforms.**
 
+**Target for all variants: 4K60 (3840 × 2160 @ 60 Hz) end-to-end over
+10G Ethernet (10 GbE).**
+
 ## 2. Concept Overview
 
 ```
@@ -200,8 +209,8 @@ platforms.**
 The base assembly is **physically and electrically identical** across all
 variants. It contains:
 
-- Video encoding/decoding (the SDVoE core function)
-- IP/network connectivity (e.g. 1G/10G, depending on bandwidth needs)
+- Video encoding/decoding (the SDVoE core function), dimensioned for 4K60
+- **IP/network connectivity: 10G Ethernet (10 GbE)**, dimensioned for 4K60 throughout
 - Control/management (configuration, firmware update, status)
 - Power supply and clocking
 - **One standardized module connector** towards the front-end module
@@ -220,6 +229,8 @@ front-end**:
 | HDMI module  | HDMI                   | HDMI PHY, HDMI connector, HDCP handling  |
 | SDI-12G mod. | 12G-SDI (backw. comp.) | 12G-SDI PHY, cable equalizer/driver, BNC |
 
+All modules are dimensioned for **4K60 (3840 × 2160 @ 60 Hz)** throughout.
+
 Requirements for the modules:
 
 - Identical mechanical and electrical module connector on all variants
@@ -234,13 +245,14 @@ For the concept to be viable, Yuan must define a **stable, documented
 interface** between base and module. From our point of view the relevant items:
 
 - **Video data path**: a common internal video bus for all modules
-  (e.g. parallel/serial video interface), dimensioned for the highest data rate
-  (12G-SDI / 4K).
+  (e.g. parallel/serial video interface), dimensioned for 4K60
+  (3840 × 2160 @ 60 Hz) / 12G-SDI.
+- **Network**: 10G Ethernet (10 GbE) as the common SDVoE transport layer.
 - **Control**: I²C/SPI for configuration, EDID/HDCP, module detection.
 - **Power**: defined voltages and maximum power per module.
 - **Mechanics**: defined connector, height, mounting, tolerances.
 - **Detection/ID**: unique identifier per module type + revision level.
-- **EMC/signal integrity**: rated up to 12G-SDI / 4K video rates.
+- **EMC/signal integrity**: rated for 4K60 / 12G-SDI.
 
 ## 6. Platform Compatibility (IOI Box and Clinios)
 

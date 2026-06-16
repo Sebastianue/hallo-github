@@ -131,16 +131,20 @@ def build_de():
     ]))
     s.append(Paragraph("Kurz gesagt: " + b("eine Basis – drei (oder mehr) steckbare Schnittstellen – "
                        "mehrere Einbau-Plattformen."), BODY))
+    s.append(Paragraph(b("Zielvorgabe für alle Varianten: durchgängig 4K60 "
+                       "(3840 × 2160 @ 60 Hz) über 10G-Ethernet (10 GbE)."), BODY))
 
     s.append(Paragraph("2. Konzept im Überblick", H2))
     s.append(Preformatted(DIAGRAM_DE, CODE))
+    s.append(Paragraph("Zielparameter: " + b("4K60 · 10G Ethernet") +
+                       " (durchgängig über alle Module und Plattformen).", BODY))
 
     s.append(Paragraph("3. Basis-Baugruppe (gemeinsamer Kern)", H2))
     s.append(Paragraph("Die Basis-Baugruppe ist in allen Varianten " +
                        b("physisch und elektrisch identisch") + ". Sie enthält:", BODY))
     s.append(bullets([
-        "Video-Encoding/-Decoding (SDVoE-Kernfunktion)",
-        "IP-/Netzwerk-Anbindung (z. B. 10G, je nach Bandbreitenbedarf)",
+        "Video-Encoding/-Decoding (SDVoE-Kernfunktion), ausgelegt für 4K60",
+        b("IP-/Netzwerk-Anbindung: 10G-Ethernet (10 GbE)") + ", durchgängig für 4K60 dimensioniert",
         "Steuerung/Management (Konfiguration, Firmware-Update, Status)",
         "Stromversorgung und Takt",
         b("Einen standardisierten Modulsteckverbinder") + " zum Front-End-Modul",
@@ -157,6 +161,8 @@ def build_de():
          ["HDMI-Modul", "HDMI", "HDMI-PHY, HDMI-Buchse, HDCP-Handling"],
          ["SDI-12G-Modul", "12G-SDI (abwärtskompatibel)", "12G-SDI-PHY, Cable Equalizer/Driver, BNC"]]))
     s.append(Spacer(1, 4))
+    s.append(Paragraph("Alle Module sind durchgängig für " +
+                       b("4K60 (3840 × 2160 @ 60 Hz)") + " ausgelegt.", BODY))
     s.append(Paragraph("Anforderungen an die Module:", BODY))
     s.append(bullets([
         "Gleicher mechanischer und elektrischer Modulstecker bei allen Varianten",
@@ -172,12 +178,13 @@ def build_de():
                        " zwischen Basis und Modul definieren. Aus unserer Sicht relevant:", BODY))
     s.append(bullets([
         b("Video-Datenpfad") + ": einheitlicher interner Videobus für alle Module "
-        "(z. B. paralleles/serielles Videointerface), ausgelegt auf die höchste Datenrate (12G-SDI / 4K).",
+        "(z. B. paralleles/serielles Videointerface), ausgelegt für 4K60 (3840 × 2160 @ 60 Hz) bzw. 12G-SDI.",
+        b("Netzwerk") + ": 10G-Ethernet (10 GbE) als gemeinsame SDVoE-Transportschicht.",
         b("Steuerung") + ": I²C/SPI für Konfiguration, EDID/HDCP, Modul-Erkennung.",
         b("Versorgung") + ": definierte Spannungen und maximale Leistung pro Modul.",
         b("Mechanik") + ": definierter Steckverbinder, Bauhöhe, Befestigung, Toleranzen.",
         b("Detektion/ID") + ": eindeutige Kennung pro Modultyp + Revisionsstand.",
-        b("EMV/Signalintegrität") + ": ausgelegt bis 12G-SDI bzw. 4K-Videoraten.",
+        b("EMV/Signalintegrität") + ": ausgelegt für 4K60 bzw. 12G-SDI.",
     ]))
 
     s.append(Paragraph("6. Plattform-Kompatibilität (IOI-Box und Clinios)", H2))
@@ -246,16 +253,20 @@ def build_en():
     ]))
     s.append(Paragraph("In short: " + b("one base – three (or more) pluggable interfaces – "
                        "multiple host platforms."), BODY))
+    s.append(Paragraph(b("Target for all variants: 4K60 (3840 × 2160 @ 60 Hz) end-to-end "
+                       "over 10G Ethernet (10 GbE)."), BODY))
 
     s.append(Paragraph("2. Concept Overview", H2))
     s.append(Preformatted(DIAGRAM_EN, CODE))
+    s.append(Paragraph("Target parameters: " + b("4K60 · 10G Ethernet") +
+                       " (consistent across all modules and platforms).", BODY))
 
     s.append(Paragraph("3. Base Assembly (Common Core)", H2))
     s.append(Paragraph("The base assembly is " + b("physically and electrically identical") +
                        " across all variants. It contains:", BODY))
     s.append(bullets([
-        "Video encoding/decoding (the SDVoE core function)",
-        "IP/network connectivity (e.g. 10G, depending on bandwidth needs)",
+        "Video encoding/decoding (the SDVoE core function), dimensioned for 4K60",
+        b("IP/network connectivity: 10G Ethernet (10 GbE)") + ", dimensioned for 4K60 throughout",
         "Control/management (configuration, firmware update, status)",
         "Power supply and clocking",
         b("One standardized module connector") + " towards the front-end module",
@@ -272,6 +283,8 @@ def build_en():
          ["HDMI module", "HDMI", "HDMI PHY, HDMI connector, HDCP handling"],
          ["SDI-12G module", "12G-SDI (backward compatible)", "12G-SDI PHY, cable equalizer/driver, BNC"]]))
     s.append(Spacer(1, 4))
+    s.append(Paragraph("All modules are dimensioned for " +
+                       b("4K60 (3840 × 2160 @ 60 Hz)") + " throughout.", BODY))
     s.append(Paragraph("Requirements for the modules:", BODY))
     s.append(bullets([
         "Identical mechanical and electrical module connector on all variants",
@@ -287,12 +300,13 @@ def build_en():
                        " between base and module. From our point of view the relevant items:", BODY))
     s.append(bullets([
         b("Video data path") + ": a common internal video bus for all modules "
-        "(e.g. parallel/serial video interface), dimensioned for the highest data rate (12G-SDI / 4K).",
+        "(e.g. parallel/serial video interface), dimensioned for 4K60 (3840 × 2160 @ 60 Hz) / 12G-SDI.",
+        b("Network") + ": 10G Ethernet (10 GbE) as the common SDVoE transport layer.",
         b("Control") + ": I²C/SPI for configuration, EDID/HDCP, module detection.",
         b("Power") + ": defined voltages and maximum power per module.",
         b("Mechanics") + ": defined connector, height, mounting, tolerances.",
         b("Detection/ID") + ": unique identifier per module type + revision level.",
-        b("EMC/signal integrity") + ": rated up to 12G-SDI / 4K video rates.",
+        b("EMC/signal integrity") + ": rated for 4K60 / 12G-SDI.",
     ]))
 
     s.append(Paragraph("6. Platform Compatibility (IOI Box and Clinios)", H2))
