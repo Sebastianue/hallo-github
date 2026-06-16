@@ -1,50 +1,52 @@
 # CLAUDE.md
 
-Guidance for AI assistants (and humans) working in this repository.
+Leitfaden für KI-Assistenten (und Menschen), die in diesem Repository arbeiten.
 
-## Project overview
+## Projektüberblick
 
-`hallo-github` is a personal starter project ("Mein erstes Projekt auf GitHub" —
-*My first project on GitHub*). As of this writing it is essentially a blank
-slate: there is no application code, build tooling, or test suite yet.
+`hallo-github` ist ein persönliches Einstiegsprojekt ("Mein erstes Projekt auf
+GitHub"). Zum jetzigen Zeitpunkt ist es im Wesentlichen eine leere Vorlage: Es
+gibt noch keinen Anwendungscode, keine Build-Werkzeuge und keine Testsuite.
 
-Current contents:
+Aktuelle Inhalte:
 
-- `README.md` — one-line project description (in German).
+- `README.md` — einzeilige Projektbeschreibung (auf Deutsch).
 - `LICENSE` — GNU General Public License v3.0 (GPLv3).
-- `CLAUDE.md` — this file.
+- `CLAUDE.md` — diese Datei.
 
-## Repository state
+## Zustand des Repositories
 
-This is an early-stage repository with a single commit. Because there is no
-source code yet, **do not invent or assume** a build system, framework, package
-manager, or directory layout. There are currently no commands to build, run,
-lint, or test.
+Dies ist ein Repository in einem frühen Stadium mit einem einzigen Commit. Da es
+noch keinen Quellcode gibt, **erfinde oder nimm nichts an** in Bezug auf
+Build-System, Framework, Paketmanager oder Verzeichnisstruktur. Derzeit gibt es
+keine Befehle zum Bauen, Ausführen, Linten oder Testen.
 
-When code is introduced, update this file to document:
+Sobald Code hinzugefügt wird, aktualisiere diese Datei und dokumentiere:
 
-- The language(s) and runtime(s) chosen.
-- How to install dependencies, build, run, and test.
-- The directory structure and where key modules live.
-- Any project-specific conventions (formatting, naming, commit style).
+- Die gewählte(n) Sprache(n) und Laufzeitumgebung(en).
+- Wie man Abhängigkeiten installiert, baut, ausführt und testet.
+- Die Verzeichnisstruktur und wo die wichtigsten Module liegen.
+- Projektspezifische Konventionen (Formatierung, Benennung, Commit-Stil).
 
-## Licensing
+## Lizenzierung
 
-The project is licensed under **GPLv3**. Keep this in mind when adding code:
+Das Projekt steht unter der **GPLv3**. Behalte dies beim Hinzufügen von Code im
+Hinterkopf:
 
-- New source files should be compatible with GPLv3.
-- Be cautious about pulling in dependencies under incompatible licenses.
-- Preserve the existing `LICENSE` file.
+- Neue Quelldateien sollten mit der GPLv3 kompatibel sein.
+- Sei vorsichtig beim Einbinden von Abhängigkeiten mit inkompatiblen Lizenzen.
+- Bewahre die bestehende Datei `LICENSE`.
 
-## Conventions
+## Konventionen
 
-- The README is written in German; match the existing language when editing
-  user-facing docs unless asked otherwise.
-- Keep changes small and focused, with clear, descriptive commit messages.
+- Die README ist auf Deutsch verfasst; behalte die bestehende Sprache beim
+  Bearbeiten benutzerseitiger Dokumentation bei, sofern nicht anders gewünscht.
+- Halte Änderungen klein und fokussiert, mit klaren, aussagekräftigen
+  Commit-Nachrichten.
 
-## Git workflow
+## Git-Workflow
 
-- Default branch: `master`.
-- Develop on a feature branch, commit with descriptive messages, and push with
-  `git push -u origin <branch-name>`.
-- Do not create pull requests unless explicitly requested.
+- Standard-Branch: `master`.
+- Entwickle auf einem Feature-Branch, committe mit aussagekräftigen Nachrichten
+  und pushe mit `git push -u origin <branch-name>`.
+- Erstelle keine Pull Requests, sofern nicht ausdrücklich darum gebeten wird.
