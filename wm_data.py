@@ -11,7 +11,7 @@ Kalibrierung: Buchmacher-Quoten + FIFA-Rangliste + Transfermarkt-Kaderwerte + Tu
 Fokus liegt auf Sieger- und Halbzeit-Tipp; das exakte Endergebnis ist statistisch kaum planbar.
 """
 
-STAND = "15. Juni 2026 (kalibriert mit Buchmacher-Quoten, FIFA-Rangliste & Transfermarkt-Kaderwerten; nach allen Spielen bis 14.06.)"
+STAND = "16. Juni 2026 (kalibriert mit Buchmacher-Quoten, FIFA-Rangliste & Transfermarkt-Kaderwerten; nach allen Spielen bis 16.06.)"
 
 # TIPPS je Spiel: (gruppe, datum, spieltag, heim, gast, sieger_tipp, ergebnis_tipp, wertigkeit%)
 # sieger_tipp == "Unentschieden" fuer Remis-Tipp, "—" = kein Tipp abgegeben.
@@ -115,6 +115,14 @@ ACTUAL = {
     ("Elfenbeinküste", "Ecuador"): ("1:0", "Elfenbeinküste", "Unentschieden", "0:0"),
     ("Niederlande", "Japan"): ("2:2", "Unentschieden", "Unentschieden", "0:0"),
     ("Schweden", "Tunesien"): ("5:1", "Schweden", "Schweden", "2:1"),
+    ("Belgien", "Ägypten"): ("1:1", "Unentschieden", None, None),
+    ("Iran", "Neuseeland"): ("2:2", "Unentschieden", None, None),
+    ("Spanien", "Kap Verde"): ("0:0", "Unentschieden", "Unentschieden", "0:0"),
+    ("Saudi-Arabien", "Uruguay"): ("1:1", "Unentschieden", "Saudi-Arabien", "1:0"),
+    ("Frankreich", "Senegal"): ("3:1", "Frankreich", None, None),
+    ("Irak", "Norwegen"): ("1:4", "Norwegen", None, None),
+    ("Argentinien", "Algerien"): ("3:0", "Argentinien", None, None),
+    ("Österreich", "Jordanien"): ("3:1", "Österreich", None, None),
 }
 
 
@@ -147,7 +155,8 @@ def _build_full():
             endstand, real_winner, real_hz_lead, _ = ACTUAL[(home, away)]
             if sieger != "—":
                 sieger_ok = (sieger == real_winner)
-                hz_ok = (hz_lead == real_hz_lead)
+                if real_hz_lead is not None:
+                    hz_ok = (hz_lead == real_hz_lead)
         rows.append((g, datum, st, home, away, sieger, erg, wert,
                      hz_lead, hz_score, hz_wert, played, endstand, sieger_ok, hz_ok))
     return rows
@@ -164,10 +173,11 @@ def review_summary():
         if played and sok is not None:
             sg += 1
             sk += 1 if sok else 0
-            hg += 1
-            hk += 1 if hok else 0
             eg += 1
             ex += 1 if erg == endstand else 0
+        if played and hok is not None:
+            hg += 1
+            hk += 1 if hok else 0
     return sk, sg, hk, hg, ex, eg
 
 

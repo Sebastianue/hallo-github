@@ -1,10 +1,10 @@
 # WM 2026 – Prognose: Tipp vs. echtes Ergebnis
 
-**Stand:** 15. Juni 2026 (kalibriert mit Buchmacher-Quoten, FIFA-Rangliste & Transfermarkt-Kaderwerten; nach allen Spielen bis 14.06.) · **Turnier:** 11.06.–19.07.2026 in USA, Kanada & Mexiko · 48 Teams, 12 Gruppen (A–L)
+**Stand:** 16. Juni 2026 (kalibriert mit Buchmacher-Quoten, FIFA-Rangliste & Transfermarkt-Kaderwerten; nach allen Spielen bis 16.06.) · **Turnier:** 11.06.–19.07.2026 in USA, Kanada & Mexiko · 48 Teams, 12 Gruppen (A–L)
 
 > ⚠️ **Fokus auf Sieger- und Halbzeit-Tipp + Wertigkeit (Tendenz).** Das exakte Endergebnis ist statistisch kaum planbar und steht nur noch als kleine Nebenangabe dabei. In jeder Zeile siehst du, **was ich getippt habe** und – sobald gespielt – **wie es wirklich ausging** (Spalten Endstand-echt und Treffer).
 
-**Bisherige Trefferquote:** Sieger **6/11** (~55 %) · Halbzeit-Führung **6/11** (~55 %) · exaktes Ergebnis **2/11** (~18 %)
+**Bisherige Trefferquote:** Sieger **10/19** (~53 %) · Halbzeit-Führung **6/13** (~46 %) · exaktes Ergebnis **2/19** (~11 %)
 
 ---
 
@@ -73,8 +73,8 @@
 ### Gruppe G — Belgien, Ägypten, Iran, Neuseeland
 | Datum | ST | Begegnung | Sieger-Tipp | HZ-Tipp | Wert. | Endstand (echt) | Treffer | Erg.-Tipp |
 |---|---|---|---|---|---|---|---|---|
-| 15.06. | 1 | Belgien – Ägypten | Belgien | Belgien (1:0) | 62 % | offen | offen | 2:1 |
-| 15.06. | 1 | Iran – Neuseeland | Iran | Iran (1:0) | 70 % | offen | offen | 2:0 |
+| 15.06. | 1 | Belgien – Ägypten | Belgien | Belgien (1:0) | 62 % | 1:1 | ✗ | 2:1 |
+| 15.06. | 1 | Iran – Neuseeland | Iran | Iran (1:0) | 70 % | 2:2 | ✗ | 2:0 |
 | 21.06. | 2 | Belgien – Iran | Belgien | Belgien (1:0) | 64 % | offen | offen | 2:0 |
 | 21.06. | 2 | Ägypten – Neuseeland | Ägypten | Ägypten (1:0) | 70 % | offen | offen | 2:0 |
 | 26.06. | 3 | Belgien – Neuseeland | Belgien | Belgien (2:0) | 85 % | offen | offen | 3:0 |
@@ -83,8 +83,8 @@
 ### Gruppe H — Spanien, Uruguay, Saudi-Arabien, Kap Verde
 | Datum | ST | Begegnung | Sieger-Tipp | HZ-Tipp | Wert. | Endstand (echt) | Treffer | Erg.-Tipp |
 |---|---|---|---|---|---|---|---|---|
-| 15.06. | 1 | Spanien – Kap Verde | Spanien | Spanien (2:0) | 88 % | offen | offen | 3:0 |
-| 15.06. | 1 | Saudi-Arabien – Uruguay | Uruguay | Uruguay (0:1) | 66 % | offen | offen | 0:2 |
+| 15.06. | 1 | Spanien – Kap Verde | Spanien | Spanien (2:0) | 88 % | 0:0 | ✗ | 3:0 |
+| 15.06. | 1 | Saudi-Arabien – Uruguay | Uruguay | Uruguay (0:1) | 66 % | 1:1 | ✗ | 0:2 |
 | 21.06. | 2 | Spanien – Saudi-Arabien | Spanien | Spanien (2:0) | 83 % | offen | offen | 3:0 |
 | 21.06. | 2 | Kap Verde – Uruguay | Uruguay | Uruguay (0:1) | 73 % | offen | offen | 0:2 |
 | 26.06. | 3 | Spanien – Uruguay | Spanien | Spanien (1:0) | 62 % | offen | offen | 2:1 |
@@ -93,8 +93,8 @@
 ### Gruppe I — Frankreich, Norwegen, Senegal, Irak
 | Datum | ST | Begegnung | Sieger-Tipp | HZ-Tipp | Wert. | Endstand (echt) | Treffer | Erg.-Tipp |
 |---|---|---|---|---|---|---|---|---|
-| 16.06. | 1 | Frankreich – Senegal | Frankreich | Unentschieden (0:0) | 58 % | offen | offen | 2:1 |
-| 16.06. | 1 | Irak – Norwegen | Norwegen | Norwegen (0:1) | 70 % | offen | offen | 0:2 |
+| 16.06. | 1 | Frankreich – Senegal | Frankreich | Unentschieden (0:0) | 58 % | 3:1 | ✓ | 2:1 |
+| 16.06. | 1 | Irak – Norwegen | Norwegen | Norwegen (0:1) | 70 % | 1:4 | ✓ | 0:2 |
 | 22.06. | 2 | Frankreich – Irak | Frankreich | Frankreich (2:0) | 82 % | offen | offen | 3:0 |
 | 22.06. | 2 | Senegal – Norwegen | Norwegen | Unentschieden (0:0) | 50 % | offen | offen | 1:2 |
 | 26.06. | 3 | Frankreich – Norwegen | Frankreich | Unentschieden (0:0) | 56 % | offen | offen | 2:1 |
@@ -103,8 +103,8 @@
 ### Gruppe J — Argentinien, Österreich, Algerien, Jordanien
 | Datum | ST | Begegnung | Sieger-Tipp | HZ-Tipp | Wert. | Endstand (echt) | Treffer | Erg.-Tipp |
 |---|---|---|---|---|---|---|---|---|
-| 16.06. | 1 | Argentinien – Algerien | Argentinien | Argentinien (1:0) | 72 % | offen | offen | 2:0 |
-| 16.06. | 1 | Österreich – Jordanien | Österreich | Österreich (1:0) | 68 % | offen | offen | 2:0 |
+| 16.06. | 1 | Argentinien – Algerien | Argentinien | Argentinien (1:0) | 72 % | 3:0 | ✓ | 2:0 |
+| 16.06. | 1 | Österreich – Jordanien | Österreich | Österreich (1:0) | 68 % | 3:1 | ✓ | 2:0 |
 | 22.06. | 2 | Argentinien – Österreich | Argentinien | Argentinien (1:0) | 66 % | offen | offen | 2:1 |
 | 22.06. | 2 | Algerien – Jordanien | Algerien | Algerien (1:0) | 64 % | offen | offen | 2:0 |
 | 27.06. | 3 | Argentinien – Jordanien | Argentinien | Argentinien (2:0) | 88 % | offen | offen | 3:0 |
