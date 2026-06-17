@@ -1,156 +1,191 @@
 """
-Volvo XC60 Gen1 (2009-2017) - Wireless Charger Unterlage
-Erzeugt handyhalter_xc60.stl via CadQuery
+Volvo XC60 Gen1 - Wireless Charger Unterlage
+Echte Masse (gemessen):
+  Becher-Innendurchmesser : 77 mm
+  Becher vorne Tiefe      : 72 mm (wird verwendet)
+  Becher hinten Tiefe     : 64 mm (wird weggelassen)
+  Achsabstand Mitte-Mitte : 105 mm
+  Konsole innen Breite    : 97 mm
+  Charger-Pad Durchmesser : 74 mm
+  Charger-Pad Dicke       : 9 mm
+  Kabeldurchmesser        : 9 mm
+  Platten-Dicke           : 21 mm
+  Charger-Aussparung      : 74 mm Durchmesser, 9 mm tief, mittig oben
 
-ECHTE FAHRZEUG-MAẞE (gemessen 2026-06-15):
-  - Becherhalter Innendurchmesser : 85 mm
-  - Becher 1 (tief)               : 100 mm
-  - Becher 2 (flach)              :  86 mm   <- 14 mm flacher!
-  - Achsabstand Mitte-Mitte       : 105 mm
-  - Konsole innen (Breite)        :  99 mm
-  - Charger-Pad aussen            :  74 mm
-  - Charger-Pad Dicke             :   9 mm
-  - Kabeldurchmesser              : 3,5 mm
+Konstruktion:
+  - EIN Zapfen geht in den vorderen Becherhalter (haelt die Platte)
+  - Breite Platte liegt auf dem Konsolenrand auf (seitlich gestuetzt)
+  - Charger-Pad-Aussparung (rund, 74 mm, 9 mm tief) mittig auf der Platte
+  - Kabel tritt an der Vorderkante unten aus (Schlitz 11 x 11 mm)
+  - Rollo schliesst mit 2 mm Luft ueber der Platte
 
-KONSTRUKTIONSPRINZIP:
-  * Zwei UNTERSCHIEDLICH lange Zapfen gleichen die zwei Tiefen aus,
-    damit die Ablageplatte exakt WAAGERECHT liegt.
-  * Beide Zapfen stehen auf dem jeweiligen Becherboden auf
-    -> definierte Hoehe, kein Absacken.
-  * Charger-Pad liegt buendig versenkt in runder Mulde
-    -> Rollo schliesst ueber Pad + Unterlage.
-  * Charger ist ein Non-Slip-Silikonpad -> Handy rutscht nicht,
-    daher keine separate Handymulde noetig.
-  * Kabelkanal: vom Pad senkrecht nach unten, seitlicher Austritt
-    tief unten (unterhalb der Rollo-Ebene).
+Hoehen-Schema (z=0 am vorderen Becherboden):
+  z = 72  Konsolenrand (Rollo-Ebene)
+  z = 70  Plattenoberseite = Charger-Pad-Oberseite
+  z = 61  Boden der Charger-Aussparung
+  z = 49  Plattenunterseite (Zapfen-Oberkante)
+  z =  0  Boden vorderer Becherhalter
+
+Druck (Bambulab P1S):
+  Material   : PETG
+  Ausrichtung: Plattenoberflaeche (mit Aussparung) NACH UNTEN aufs Druckbett
+               -> Zapfen zeigt nach OBEN, kein Support noetig ausser Charger-Mulde
+  Infill     : 25 % Gyroid
+  Wandstaerke: 3 Perimeter, Layer 0.2 mm
 """
 
 import cadquery as cq
 import os
 
 # ==================================================================
-# PARAMETER (alle in mm) - HIER ANPASSEN
+# PARAMETER
 # ==================================================================
-
-# --- Becherhalter (GEMESSEN) ---
-cup_id          = 85.0    # Innendurchmesser Becherhalter
-cup_tiefe_deep  = 100.0   # Tiefe Becher 1 (der tiefere)
-cup_tiefe_shall =  86.0   # Tiefe Becher 2 (der flachere)
-cup_abstand     = 105.0   # Achsabstand Mitte-Mitte (vorne-hinten)
-cup_spiel       =   1.0   # Radiales Spiel der Zapfen (1.0 = leicht einzufuehren)
-
-# --- Konsole (GEMESSEN) ---
-console_breite  =  99.0   # Lichte Weite der Konsole links-rechts
-
-# --- Wireless Charger Pad (GEMESSEN) ---
-charger_od      =  74.0   # Aussendurchmesser Charger-Pad
-charger_h       =   9.0   # Dicke des Charger-Pads
-kabel_od        =   3.5   # Kabeldurchmesser
-
-# --- System / Toleranzen ---
-rollo_luft      =   2.0   # Luft Charger-Oberkante -> Rollo (Annahme!)
-pad_spiel       =   1.0   # Spiel um das Charger-Pad in der Mulde
-pad_boden       =   3.0   # Bodenstaerke unter dem Charger-Pad
-wand            =   4.0   # Wandstaerke der Hohl-Zapfen
-plate_breite    = console_breite - 2.0   # Plattenbreite (2 mm Fitspiel) = 97
-ecken_r         =   5.0   # Eckenabrundung der Platte
+cup_id          = 77.0   # Innendurchmesser Becherhalter vorne
+cup_tiefe       = 72.0   # Tiefe Becherhalter vorne (ab Konsolenrand)
+cup_abstand     = 105.0  # Achsabstand Mitte-Mitte
+console_breite  = 97.0   # Konsole innen (links-rechts)
+charger_od      = 74.0   # Charger-Pad Aussendurchmesser
+charger_h       = 9.0    # Charger-Pad Dicke = Aussparungstiefe
+kabel_od        = 9.0    # Kabeldurchmesser
+plate_thick     = 21.0   # Plattendicke
+rollo_luft      = 2.0    # Luft Plattenoberseite -> Rollo
+cup_spiel       = 1.0    # Radiales Spiel Zapfen in Becher
+zapfen_wand     = 4.0    # Wandstaerke Hohlzapfen
 
 # ==================================================================
-# BERECHNETE GROESSEN
+# BERECHNETE WERTE
 # ==================================================================
-zapfen_r   = cup_id / 2.0 - cup_spiel          # 41.5 mm
-zapfen_ri  = zapfen_r - wand                    # 37.5 mm (Hohlraum)
-plate_dick = charger_h + pad_boden              # 12 mm Plattendicke
-plate_l    = cup_abstand + cup_id               # 190 mm (ueberspannt beide Becher)
-pad_r      = charger_od / 2.0 + pad_spiel       # 38 mm Mulden-Radius
+zapfen_r   = cup_id / 2.0 - cup_spiel        # 37.5 mm Zapfen-Aussenradius
+zapfen_ri  = zapfen_r - zapfen_wand           # 33.5 mm Zapfen-Innenradius (hohl)
+plate_w    = console_breite - 2.0             # 95 mm  (1 mm Spiel je Seite)
+plate_l    = cup_abstand + cup_id             # 182 mm (von Becherfront bis Hinterkante)
+charger_r  = charger_od / 2.0 + 1.0          # 38 mm  (1 mm Spiel)
+kabel_r    = kabel_od / 2.0 + 1.0            # 5.5 mm Kanalradius
 
-# Z-Aufbau: z = 0 am Boden des TIEFEN Bechers, nach oben positiv
-# Konsolenoberflaeche (Rollo-Ebene) liegt bei z = cup_tiefe_deep = 100
-z_surface   = cup_tiefe_deep                    # 100 (Rollo-Ebene)
-z_plate_top = z_surface - rollo_luft            # 98 (Plattenoberkante)
-z_plate_bot = z_plate_top - plate_dick          # 86 (Plattenunterkante)
-z_pocket_bot= z_plate_top - charger_h           # 89 (Mulden-Boden)
+# Z-Koordinaten (z=0 = Boden vorderer Becherhalter, z=72 = Konsolenrand)
+z_rim      = cup_tiefe                        # 72
+z_top      = z_rim - rollo_luft              # 70  <- Plattenoberseite
+z_bot      = z_top - plate_thick             # 49  <- Plattenunterseite
+zapfen_h   = z_bot                            # 49  <- Zapfenhoehe
+z_pocket   = z_top - charger_h               # 61  <- Aussparungsboden
 
-# Becherboeden relativ zu z=0
-z_deep_bot  = 0.0                                # tiefer Becher: Boden bei 0
-z_shall_bot = cup_tiefe_deep - cup_tiefe_shall   # flacher Becher: Boden bei 14
+# Y-Positionen (vorderer Becher bei y_front, Platte zentriert bei y=0)
+y_front    = -(cup_abstand / 2.0)            # -52.5 mm
 
-# Zapfenlaengen (vom Becherboden bis Plattenunterkante)
-len_deep    = z_plate_bot - z_deep_bot           # 86 mm
-len_shall   = z_plate_bot - z_shall_bot          # 72 mm
-
-# Zapfenpositionen (tiefer Becher hinten, flacher vorne - frei waehlbar)
-y_deep      = -cup_abstand / 2.0                 # -52.5
-y_shall     = +cup_abstand / 2.0                 # +52.5
-
-print("=== Volvo XC60 Charger-Unterlage ===")
-print(f"Zapfen-Aussenradius : {zapfen_r:.1f} mm  (Becher-ID {cup_id} mm)")
-print(f"Zapfen tief / flach : {len_deep:.0f} / {len_shall:.0f} mm")
-print(f"Plattenmasse        : {plate_breite:.0f} x {plate_l:.0f} x {plate_dick:.0f} mm")
-print(f"Charger-Mulde       : Radius {pad_r:.0f} mm, Tiefe {charger_h:.0f} mm")
-print(f"Plattenoberkante    : {z_plate_top:.0f} mm  (Rollo-Ebene {z_surface:.0f} mm)")
-print(f"Rollo-Luft ueber Pad: {z_surface - z_plate_top:.0f} mm")
-print(f"Gesamthoehe         : {z_plate_top:.0f} mm")
-print("Baue Modell ...")
+print("=== Volvo XC60 Charger-Unterlage (1 Zapfen) ===")
+print(f"Zapfen-Aussenradius  : {zapfen_r:.1f} mm")
+print(f"Zapfenhoehe          : {zapfen_h:.0f} mm  (in {cup_tiefe:.0f} mm tiefen Becher)")
+print(f"Plattengroesse       : {plate_w:.0f} x {plate_l:.0f} x {plate_thick:.0f} mm")
+print(f"Charger-Aussparung   : Ø {charger_od:.0f} mm, {charger_h:.0f} mm tief, mittig")
+print(f"Plattenoberseite z   : {z_top:.0f} mm  (Konsolenrand {z_rim:.0f} mm)")
+print(f"Rollo-Luft           : {z_rim - z_top:.0f} mm")
+print(f"Material unter Pad   : {plate_thick - charger_h:.0f} mm  (Plattendicke - Padtiefe)")
+print("Aufbau laeuft ...")
 
 # ==================================================================
-# GEOMETRIE
+# GEOMETRIE AUFBAUEN
 # ==================================================================
 
-def hohl_zapfen(y, z0, length):
-    """Hohler Zapfen, Boden bei z0, Laenge length, oben 3 mm Kappe."""
-    outer = (cq.Workplane("XY").circle(zapfen_r)
-             .extrude(length).translate((0, y, z0)))
-    inner = (cq.Workplane("XY").circle(zapfen_ri)
-             .extrude(length - 3.0).translate((0, y, z0)))
-    return outer.cut(inner)
+# --- 1. Hohlzapfen (vorderer Becherhalter) -----------------------
+# Leicht konisch (unten 1.5 mm schmaler) -> leichter einzufuehren
+zapfen_solid = (
+    cq.Workplane("XY")
+    .add(cq.Solid.makeCylinder(
+        radius=zapfen_r, height=zapfen_h,
+        angleDegrees=360
+    ))
+    .translate((0, y_front, 0))
+)
 
-# 1. Zwei Zapfen
-deep_peg  = hohl_zapfen(y_deep,  z_deep_bot,  len_deep)
-shall_peg = hohl_zapfen(y_shall, z_shall_bot, len_shall)
+# Alternativer Weg ohne Konus (stabiler fuer Boolean-Ops):
+zapfen_solid = (
+    cq.Workplane("XY")
+    .circle(zapfen_r).extrude(zapfen_h)
+    .translate((0, y_front, 0))
+)
 
-# 2. Versteifungssteg zwischen den Zapfen (verbindet beide Saeulen)
-web = (cq.Workplane("XY")
-       .box(16.0, cup_abstand, len_shall, centered=(True, True, False))
-       .translate((0, 0, z_shall_bot)))
+zapfen_hole = (
+    cq.Workplane("XY")
+    .circle(zapfen_ri).extrude(zapfen_h - 3)
+    .translate((0, y_front, 0))
+)
 
-# 3. Ablageplatte (volle Konsolenbreite, abgerundete Ecken)
-plate = (cq.Workplane("XY")
-         .box(plate_breite, plate_l, plate_dick, centered=(True, True, False))
-         .translate((0, 0, z_plate_bot))
-         .edges("|Z").fillet(ecken_r))
+zapfen = zapfen_solid.cut(zapfen_hole)
 
-body = deep_peg.union(shall_peg).union(web).union(plate)
+# --- 2. Platte (zentriert in X und Y, auf Zapfen aufgesetzt) -----
+# Erstelle Rechteck, extrude, dann Ecken abrunden
+plate = (
+    cq.Workplane("XY")
+    .rect(plate_w, plate_l)
+    .extrude(plate_thick)
+    .translate((0, 0, z_bot))
+    .edges("|Z")
+    .fillet(5.0)
+)
+
+# Koerper zusammenfuegen
+body = zapfen.union(plate)
 
 # ==================================================================
 # AUSSPARUNGEN
 # ==================================================================
 
-# 4. Charger-Pad-Mulde (rund, buendig mit Oberkante)
-pocket = (cq.Workplane("XY").circle(pad_r)
-          .extrude(charger_h + 1.0).translate((0, 0, z_pocket_bot)))
+# --- 3. Charger-Pad-Aussparung (Ø74mm, 9mm tief, mittig oben) ---
+charger_pocket = (
+    cq.Workplane("XY")
+    .workplane(offset=z_pocket - 0.1)
+    .circle(charger_r)
+    .extrude(charger_h + 0.2)
+)
 
-# 5. Kabelkanal senkrecht: Mulden-Boden -> Plattenunterseite
-cable_vert = (cq.Workplane("XY").circle(kabel_od / 2.0 + 1.0)
-              .extrude(charger_h + 2.0).translate((0, 0, z_plate_bot - 1.0)))
+# --- 4. Kabelschlitz an der Vorderkante unten -------------------
+# Kabel (9mm) tritt an der Vorderkante der Platte aus und laeuft
+# nach unten neben dem Zapfen zur USB-Quelle
+# Schlitz: 11 mm breit (kabel+2), 11 mm hoch, geht von Plattenvorderkante
+#          bis zur Charger-Aussparung durch
+kabel_schlitz_w = kabel_od + 2.0   # 11 mm
+kabel_schlitz_h = kabel_od + 2.0   # 11 mm
+schlitz_tiefe   = (plate_w / 2.0) - charger_r + 2.0  # von Wand bis Aussparung
 
-# 6. Kabelaustritt seitlich (Kanal von Mitte zur +X-Kante, tief unten)
-cable_side = (cq.Workplane("XY")
-              .box(plate_breite, kabel_od + 1.5, kabel_od + 1.5,
-                   centered=(False, True, True))
-              .translate((0, 0, z_plate_bot + (kabel_od + 1.5) / 2.0)))
+kabel_schlitz = (
+    cq.Workplane("XY")
+    .box(kabel_schlitz_w, schlitz_tiefe + 1.0, kabel_schlitz_h,
+         centered=(True, False, False))
+    .translate((0, -(plate_l / 2.0), z_bot))
+)
 
-result = body.cut(pocket).cut(cable_vert).cut(cable_side)
+# --- 5. Kabel-Fuehrungskanal durch den Zapfen (vertikal) ---------
+# Der Schlitz verbindet sich mit dem Zapfenhohlraum;
+# ein Kanal im Boden des Schlitzes fuehrt nach unten
+kabel_kanal = (
+    cq.Workplane("XY")
+    .workplane(offset=-0.5)
+    .center(0, y_front)
+    .circle(kabel_r)
+    .extrude(z_bot + 0.5)   # von Becherboden bis Plattenunterseite
+)
+
+# ==================================================================
+# ENDFORM
+# ==================================================================
+result = (
+    body
+    .cut(charger_pocket)
+    .cut(kabel_schlitz)
+    .cut(kabel_kanal)
+)
 
 # ==================================================================
 # EXPORT
 # ==================================================================
 out_path = os.path.expanduser("~/Downloads/handyhalter_xc60.stl")
 cq.exporters.export(result, out_path, tolerance=0.05, angularTolerance=0.1)
-print(f"\nOK - STL gespeichert: {out_path}")
-print(f"     Groesse: {os.path.getsize(out_path) / 1024:.0f} kB")
-print("\nDRUCK (Bambulab P1S):")
-print("  Material   : PETG (hitzebestaendig)")
-print("  Ausrichtung: PLATTE FLACH AUF DAS DRUCKBETT (Zapfen zeigen nach oben)")
-print("  Supports   : EIN - nur fuer die runde Charger-Mulde noetig")
-print("  Infill     : 20-25 % Gyroid, 3 Perimeter, Layer 0,2 mm")
+
+size_kb = os.path.getsize(out_path) // 1024
+print(f"\n  STL gespeichert: {out_path}  ({size_kb} kB)")
+print("\n  Druckhinweise:")
+print("  - Plattenoberflaeche (Charger-Aussparung) auf das Druckbett legen")
+print("  - Zapfen zeigt nach oben beim Drucken")
+print("  - Support nur fuer runde Charger-Aussparung (ist oben, also kein Support!)")
+print("  - Tatsaechlich: kein Support noetig wenn Platte unten liegt")
+print("  - PETG, 0.2 mm Layer, 25% Gyroid, 3 Perimeter")
