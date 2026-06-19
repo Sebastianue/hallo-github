@@ -99,13 +99,13 @@ ax0 = axes[0]
 
 # Abmessungen als Textbox
 dims_text = (
-    f"Platte         : 95 x 182 x 21 mm\n"
-    f"Zapfen (1x)    : Ø 75 mm, 49 mm tief\n"
-    f"Charger-Mulde  : Ø 74 mm, 9 mm tief\n"
-    f"Konsolenbreite : 97 mm  (Spiel: 1 mm)\n"
-    f"Kabel-Schlitz  : 11 x 11 mm vorne\n"
-    f"Rollo-Luft     : 2 mm  ✓\n"
-    f"Material unterm Pad: 12 mm"
+    f"Platte          : 95 x 182 x 21 mm\n"
+    f"Zapfen (1x)     : Ø 75 mm, 49 mm tief\n"
+    f"Pad-Aussparung  : 74 x 74 mm quadr.\n"
+    f"  Tiefe         : 9 mm, mittig oben\n"
+    f"Konsolenbreite  : 97 mm (Spiel 1 mm)\n"
+    f"Kabel-Schlitz   : 11 x 11 mm vorne\n"
+    f"Rollo-Luft      : 2 mm ✓"
 )
 fig.text(
     0.01, 0.18, dims_text,

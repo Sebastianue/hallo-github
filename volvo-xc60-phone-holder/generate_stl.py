@@ -130,12 +130,18 @@ body = zapfen.union(plate)
 # AUSSPARUNGEN
 # ==================================================================
 
-# --- 3. Charger-Pad-Aussparung (Ø74mm, 9mm tief, mittig oben) ---
+# --- 3. Charger-Pad-Aussparung (74x74mm quadratisch, 9mm tief, mittig oben) ---
+# Das Pad wird als Quadrat eingepasst (nicht als Kreis).
+# Leicht abgerundete Ecken (r=3mm) damit das Pad bequem eingesetzt werden kann.
+pad_size   = charger_od        # 74 mm (Kantenlaenge des quadratischen Pads)
+pad_corner = 3.0               # Eckenradius
 charger_pocket = (
     cq.Workplane("XY")
     .workplane(offset=z_pocket - 0.1)
-    .circle(charger_r)
+    .rect(pad_size, pad_size)
     .extrude(charger_h + 0.2)
+    .edges("|Z")
+    .fillet(pad_corner)
 )
 
 # --- 4. Kabelschlitz an der Vorderkante unten -------------------
@@ -143,9 +149,9 @@ charger_pocket = (
 # nach unten neben dem Zapfen zur USB-Quelle
 # Schlitz: 11 mm breit (kabel+2), 11 mm hoch, geht von Plattenvorderkante
 #          bis zur Charger-Aussparung durch
-kabel_schlitz_w = kabel_od + 2.0   # 11 mm
-kabel_schlitz_h = kabel_od + 2.0   # 11 mm
-schlitz_tiefe   = (plate_w / 2.0) - charger_r + 2.0  # von Wand bis Aussparung
+kabel_schlitz_w = kabel_od + 2.0          # 11 mm
+kabel_schlitz_h = kabel_od + 2.0          # 11 mm
+schlitz_tiefe   = (plate_w - pad_size) / 2.0 + 2.0  # von Plattenkante bis Pad-Rand
 
 kabel_schlitz = (
     cq.Workplane("XY")
