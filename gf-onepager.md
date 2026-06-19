@@ -29,6 +29,19 @@ Das im OP Gesprochene wird per Mikrofon aufgezeichnet, automatisch in Text umgew
 
 ---
 
+## 3a. „Wenn die Lücke so gut ist — warum macht es niemand?" (erwartete Rückfrage)
+
+Wichtig: Die Lücke ist frei, **weil der OP schwer ist — nicht, weil es sich nicht lohnt.**
+
+- **Technisch härter:** Lärm, Mikrofon-Abstand, Masken, mehrere Sprecher, Sterilität. Die Großen haben sich erst die einfachen, großen Töpfe geholt (Arztbrief, Arzt-Patient-Gespräch). → Eine hohe Hürde ist für uns ein **Schutz**, kein Ausschlusskriterium.
+- **Timing, nicht Desinteresse:** Die Großen wandern erkennbar Richtung Chirurgie — wir sind nur früher dran. → **Fenster ~12–24 Monate.**
+- **Regulatorik/Kultur sind im OP heikler** (Haftung, Betriebsrat, Patientenrechte). Das ist das **echte Risiko** — möglich, dass der Bedarf eher „strukturierte OP-Berichte per Sprache" ist als „alles aufzeichnen". Genau das klären die Gespräche.
+- **Bedarf ist bereits sichtbar:** Eine Klinik (UKE) hat sich selbst eine Lösung gebaut (ORPHEUS); eine Studie zeigt vollständigere OP-Berichte durch Direktdiktat; die TU München forscht daran; 98 % einer Umfrage halten OP-Sprachtechnik für wünschenswert.
+
+**Kurz:** Leere Lücke = beste Art von Chance, *solange* die Gespräche Zahlungsbereitschaft und den richtigen Zuschnitt (Total-Aufzeichnung vs. OP-Bericht) bestätigen.
+
+---
+
 ## 4. Was ich als Nächstes tue
 **In den nächsten 4 Wochen:** Gespräche mit ca. 5 Kliniken/OP-Teams, um zu klären:
 1. Ist das Problem real und teuer genug?
