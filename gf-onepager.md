@@ -43,29 +43,33 @@ Wichtig: Die Lücke ist frei, **weil der OP schwer ist — nicht, weil es sich n
 ---
 
 ## 4. Was ich als Nächstes tue
-**In den nächsten 4 Wochen:** Gespräche mit ca. 5 Kliniken/OP-Teams, um zu klären:
+**In den nächsten 6 Wochen:** Gespräche mit ca. 8–10 Kliniken/OP-Teams, parallel Recht/DSGVO prüfen und erste Pilot-Anbahnung, um zu klären:
 1. Ist das Problem real und teuer genug?
 2. Ist es datenschutz-/rechtlich zulässig?
 3. Würde jemand dafür zahlen?
 
 **Ergebnis:** klare Go/No-Go-Empfehlung mit Zahlen.
 
-### Zeitplan (4 Wochen)
+### Zeitplan (6 Wochen)
 
 ```mermaid
 gantt
-    title 4-Wochen-Validierung
+    title 6-Wochen-Validierung
     dateFormat YYYY-MM-DD
     axisFormat KW%V
     section Vorbereitung
-    Kontakte & Termine        :a1, 2026-06-22, 5d
+    Kontakte & Termine          :a1, 2026-06-22, 5d
     section Gespräche
-    ~5 OP-Interviews          :a2, after a1, 10d
-    section Recht
-    DSGVO / Recht prüfen      :a3, 2026-06-22, 14d
+    ~8–10 OP-Interviews         :a2, after a1, 13d
+    section Recht & Markt
+    DSGVO / Recht prüfen        :a3, 2026-06-22, 15d
+    Markt & Wettbewerb vertiefen :a3b, after a1, 10d
+    section Test & Pilot
+    Mockup / Solution-Test      :a4, 2026-07-13, 8d
+    LOI / Pilot anbahnen        :a5, 2026-07-18, 8d
     section Auswertung
-    Onepager mit Zahlen füllen :a4, after a2, 3d
-    Go/No-Go an GF            :milestone, m1, after a4, 0d
+    Onepager mit Zahlen füllen  :a6, 2026-07-27, 4d
+    Go/No-Go an GF              :milestone, m1, after a6, 0d
 ```
 
 ### So fällt die Entscheidung
@@ -87,14 +91,14 @@ flowchart TD
 ---
 
 ## 5. Was ich von euch brauche
-- [ ] **Zeit:** ~4 Wochen / X Tage meiner Kapazität
+- [ ] **Zeit:** ~6 Wochen / X Tage meiner Kapazität
 - [ ] **Budget:** gering / kein Entwicklungsbudget nötig in dieser Phase
 - [ ] **Kontakte:** ein bis zwei Klinik-Kontakte aus eurem Netzwerk wären Gold wert
 
 ---
 
 ## Die Entscheidung für euch
-> Kein „Lasst uns das bauen" — sondern „Gebt mir 4 Wochen, dann weiß ich, ob es sich lohnt." Risikoarm, mit klarem Ergebnis.
+> Kein „Lasst uns das bauen" — sondern „Gebt mir 6 Wochen, dann weiß ich, ob es sich lohnt." Risikoarm, mit klarem Ergebnis.
 
 ---
 
