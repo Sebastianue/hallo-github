@@ -44,16 +44,16 @@ flowchart LR
 
 ## Warum der Markt ernst ist
 
-- 💰 Microsoft kaufte Marktführer **Nuance für 19,7 Mrd. $**
-- 📈 Markt Spracherkennung Medizin: **~2,6 → 7,5 Mrd. $** (bis 2035)
-- 📈 „Ambient"-Doku: **3,8 → 18,6 Mrd. $** (bis 2034)
+- 💰 Microsoft kaufte Marktführer **Nuance für ≈ 18 Mrd. €**
+- 📈 Markt Spracherkennung Medizin: **~2,4 → 6,9 Mrd. €** (bis 2035)
+- 📈 „Ambient"-Doku: **3,5 → 17,2 Mrd. €** (bis 2034)
 
 ```mermaid
 xychart-beta
-    title "Marktgröße in Mrd. USD — heute vs. Prognose"
+    title "Marktgröße in Mrd. EUR — heute vs. Prognose"
     x-axis ["Spracherk. 2026", "Spracherk. 2035", "Ambient 2025", "Ambient 2034"]
-    y-axis "Mrd. USD" 0 --> 20
-    bar [2.6, 7.5, 3.8, 18.6]
+    y-axis "Mrd. EUR" 0 --> 18
+    bar [2.4, 6.9, 3.5, 17.2]
 ```
 
 *Beide Segmente verdrei- bis verfünffachen sich im nächsten Jahrzehnt.*
@@ -62,7 +62,7 @@ xychart-beta
 
 ## Warum wir das können — ohne großes Risiko
 
-- 🔌 **Sprach-Engine kaufen wir zu** (fertige API, EU/DSGVO-konform, ~0,0065 $/Min) — wir bauen nur den OP-/KIS-Layer
+- 🔌 **Sprach-Engine kaufen wir zu** (fertige API, EU/DSGVO-konform, ~0,006 €/Min) — wir bauen nur den OP-/KIS-Layer
 - 🇩🇪 **„Made in Germany / DSGVO"** ist im Klinikmarkt ein Verkaufsargument
 - ⏱️ **Fenster ist kurz (~12–24 Monate)** — die Großen wandern langsam Richtung Chirurgie
 

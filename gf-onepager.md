@@ -21,7 +21,7 @@ Das im OP Gesprochene wird per Mikrofon aufgezeichnet, automatisch in Text umgew
 ---
 
 ## 3. Warum wir das jetzt prüfen
-- **Markt wächst stark:** medizinische Spracherkennung ~2,6 → 7,5 Mrd. USD bis 2035; „Ambient"-Dokumentation 3,8 → 18,6 Mrd. USD bis 2034. Microsoft kaufte Nuance für 19,7 Mrd. USD — der Markt ist ernst.
+- **Markt wächst stark:** medizinische Spracherkennung ~2,4 → 6,9 Mrd. € bis 2035; „Ambient"-Dokumentation 3,5 → 17,2 Mrd. € bis 2034. Microsoft kaufte Nuance für ≈ 18 Mrd. € — der Markt ist ernst.
 - **Es gibt eine Lücke beim OP:** Alle großen Anbieter (Nuance/Microsoft, Solventum, Philips, Abridge) zielen auf Arztbrief und Arzt-Patient-Gespräch — **nicht** auf den Operationssaal. Der OP-Use-Case ist bislang nur Forschung/Einzellösung, kein Produkt. **Fenster ist kurz (~12–24 Monate).**
 - **Passt zu uns:** Die Sprach-Engine müssen wir nicht selbst bauen (gibt es als API, z. B. Corti, EU/DSGVO-konform). Unser Wert liegt in der **OP-/KIS-Integration** — genau unser API-First-Ansatz. „Made in Germany / DSGVO" ist im DACH-Markt ein Verkaufsargument.
 - **Sicherheit als Differenzierung:** Patientendaten sind hochsensibel (laut BKA 2–3 schwere Ransomware-Angriffe/Tag im Gesundheitswesen). Eine **sichere, standardisierte API mit Security by Design** (IEC 81001-5-1, MDR, CRA, DSGVO) ist Pflicht *und* Verkaufsargument — und genau unsere Stärke.
