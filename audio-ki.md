@@ -39,6 +39,7 @@ Jede Annahme muss durch Discovery bestätigt oder widerlegt werden. Spalte „Ri
 | A5 | Spracherkennung funktioniert in echter OP-Akustik (Lärm, Masken, mehrere Sprecher) | Hoch | offen | Pilot / PoC (Phase 5) |
 | A6 | Betriebsrat / Beschäftigtendatenschutz blockiert die Aufzeichnung nicht | Hoch | offen | frühe Gespräche (Phase 2) |
 | A7 | API-First-Integration ist ein echter Kaufgrund ggü. Insellösungen | Mittel | offen | Solution-Interviews (Phase 4) |
+| A8 | Security/Compliance (IEC 81001-5-1, MDR, CRA, DSGVO) ist erfüllbar und wirkt als Verkaufsargument | Hoch | offen | Security-/Rechts-Prüfung (Phase 2) |
 
 ---
 
@@ -100,17 +101,29 @@ flowchart TB
 
 ---
 
-## Phase 2 — Regulatorik & Datenschutz (parallel zu Phase 1)
+## Phase 2 — Regulatorik, Datenschutz & Security (parallel zu Phase 1)
 
 Im OP-/Healthcare-Umfeld ein potenzieller Show-Stopper — früh klären.
 
-- [ ] **DSGVO / Patientendaten:** Rechtsgrundlage, Auftragsverarbeitung, Speicherort (EU / On-Prem?), Löschkonzept
+- [ ] **DSGVO / Patientendaten:** Rechtsgrundlage, Auftragsverarbeitung, Speicherort (EU / On-Prem?), Löschkonzept, **Datenminimierung**
 - [ ] **Betriebsrat & Beschäftigtendatenschutz:** Mikrofonaufzeichnung von Mitarbeitenden ist mitbestimmungspflichtig
 - [ ] **MDR / Medizinprodukt:** reine Transkription meist *kein* Medizinprodukt — sobald klinische Entscheidungen abgeleitet werden, schon. Grenze sauber definieren
+- [ ] **Cybersecurity-Normen prüfen:** **IEC 81001-5-1** (Security vernetzter Medizinprodukte), **MDR**, **Cyber Resilience Act (CRA)**, ggf. **Radio Equipment Directive (RED)**
 - [ ] **Schweigepflicht / ggf. TI-Anbindung** je nach Markt
-- [ ] Fachkundige Einschätzung einholen (Datenschutz-/Medizinrechtsanwalt)
+- [ ] Fachkundige Einschätzung einholen (Datenschutz-/Medizinrechtsanwalt + Security)
 
 > Ein „Nein" hier killt das Produkt — das willst du *vor* der Entwicklung wissen.
+
+### Security als Pflicht *und* Verkaufsargument
+
+Patientendaten aus dem OP sind hochsensibel, und im Gesundheitswesen gibt es laut BKA **2–3 schwere Ransomware-Angriffe pro Tag**. Sicherheit „by Design" ist daher kein Nice-to-have, sondern Marktzugang und Differenzierung — gerade für eine **API-Lösung**.
+
+- **3 Schutzziele:** Integrität (Schutz vor Manipulation), Vertraulichkeit (strikte Zugriffskontrolle, Pseudonymisierung/Anonymisierung), Verfügbarkeit (Schutz vor Ausfall/Sabotage/Ransomware)
+- **Technisch:** Ende-zu-Ende-Verschlüsselung, **sichere & standardisierte APIs** mit klarer Authentifizierung/Autorisierung, Zero-Trust, rollenbasierte Zugriffe
+- **Organisatorisch:** Audit-Trails, Monitoring/Anomalieerkennung, Schulungen, geübte Incident-Response-Pläne
+- **Prozess:** **Security by Design / DevSecOps**, „Shift-left" — Sicherheit früh verankern. Spät gefundene Lücken sind technisch, organisatorisch *und* im Zulassungsprozess teurer; früh = bessere Time-to-Market
+
+*(Quelle/Anstoß: Fachbeitrag „Ohne Security keine KI", Manne Kreuzer / TQ-Group, 17.06.2026.)*
 
 ---
 
