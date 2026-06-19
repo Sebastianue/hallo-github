@@ -50,6 +50,40 @@ Wichtig: Die Lücke ist frei, **weil der OP schwer ist — nicht, weil es sich n
 
 **Ergebnis:** klare Go/No-Go-Empfehlung mit Zahlen.
 
+### Zeitplan (4 Wochen)
+
+```mermaid
+gantt
+    title 4-Wochen-Validierung
+    dateFormat YYYY-MM-DD
+    axisFormat KW%V
+    section Vorbereitung
+    Kontakte & Termine        :a1, 2026-06-22, 5d
+    section Gespräche
+    ~5 OP-Interviews          :a2, after a1, 10d
+    section Recht
+    DSGVO / Recht prüfen      :a3, 2026-06-22, 14d
+    section Auswertung
+    Onepager mit Zahlen füllen :a4, after a2, 3d
+    Go/No-Go an GF            :milestone, m1, after a4, 0d
+```
+
+### So fällt die Entscheidung
+
+```mermaid
+flowchart TD
+    Start([5 Gespräche geführt]) --> Q1{Problem real<br/>& teuer genug?}
+    Q1 -->|Nein| Stop[/No-Go<br/>günstig gelernt/]:::stop
+    Q1 -->|Ja| Q2{Rechtlich<br/>zulässig?}
+    Q2 -->|Nein| Stop
+    Q2 -->|Ja| Q3{Zahlungs-<br/>bereitschaft?}
+    Q3 -->|Nein| Stop
+    Q3 -->|Ja| Go[/Go<br/>Pilot mit 1–2 Kliniken/]:::go
+
+    classDef go fill:#d4f4dd,stroke:#28a745,color:#143,font-weight:bold
+    classDef stop fill:#ffd6d6,stroke:#d73a49,color:#611,font-weight:bold
+```
+
 ---
 
 ## 5. Was ich von euch brauche

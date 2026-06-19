@@ -8,6 +8,24 @@
 
 ---
 
+## Überblick: Die Phasen auf einen Blick
+
+```mermaid
+flowchart LR
+    P0[Phase 0<br/>Annahmen] --> P1[Phase 1<br/>Problem-<br/>Validierung]
+    P1 --> P4[Phase 4<br/>Lösung testen]
+    P4 --> P5[Phase 5<br/>Pilot / PoC]
+    P5 --> P6[Phase 6<br/>Geschäfts-<br/>modell]
+    P2[Phase 2<br/>Recht / DSGVO]:::par -.->|parallel| P1
+    P3[Phase 3<br/>Markt / Wettbewerb]:::par -.->|parallel| P1
+
+    classDef par fill:#fff4e6,stroke:#f0a500,color:#333
+```
+
+*Phasen 2 und 3 laufen parallel zur Problem-Validierung — nicht hintereinander.*
+
+---
+
 ## Kernannahmen (Assumption Map)
 
 Jede Annahme muss durch Discovery bestätigt oder widerlegt werden. Spalte „Risiko" = Schaden, falls die Annahme falsch ist.
@@ -43,6 +61,29 @@ Im OP gibt es nicht *einen* Kunden:
 - **Wirtschaftlicher Käufer:** Klinikleitung / kaufmännische Direktion
 - **Gatekeeper:** IT-Leitung, Datenschutzbeauftragte:r, Betriebsrat, Ärztlicher Direktor
 - **Beeinflusser:** OP-Manager, QM / MDK
+
+```mermaid
+flowchart TB
+    subgraph Anwender["👩‍⚕️ Anwender (täglich)"]
+        A1[Chirurg:in]
+        A2[OP-Pflege]
+        A3[Anästhesie]
+        A4[OP-Dokumentation]
+    end
+    subgraph Gatekeeper["🚧 Gatekeeper (können blockieren)"]
+        C1[IT-Leitung]
+        C2[Datenschutz]
+        C3[Betriebsrat]
+        C4[Ärztl. Direktor]
+    end
+    Anwender -->|Bedarf melden| K
+    Gatekeeper -->|Freigabe / Veto| K
+    K{{Klinikleitung /<br/>kaufm. Direktion<br/>= zahlt}}:::buyer
+
+    classDef buyer fill:#d4f4dd,stroke:#28a745,color:#143,font-weight:bold
+```
+
+*Wer den Schmerz hat (Anwender) und wer zahlt (Leitung) sind verschiedene Personen — und Gatekeeper können alles stoppen. Alle drei musst du adressieren.*
 
 ### To-dos
 - [ ] 15–25 Problem-Interviews führen (qualitativ, offen)

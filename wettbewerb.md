@@ -36,6 +36,14 @@
 - **Markt medizinische Spracherkennung:** ~2,6 Mrd. USD (2026) → ~7,5 Mrd. USD (2035), CAGR ~12 %. `[BELEGT]`
 - **Markt Ambient Clinical Documentation (Wachstumssegment):** 3,8 Mrd. USD (2025) → 18,6 Mrd. USD (2034). 100 % der US-Health-Systems haben Ambient-AI-Aktivitäten; 34 % der US-Ärzte nutzten Ambient-Scribing Ende 2025. `[BELEGT]`
 - **Funding boomt:** Abridge >800 Mio. USD gesamt (Bewertung 5,3 Mrd.), Nabla 120 Mio. (Series C u. a. von HV Capital/DE), Ambience 243 Mio. `[BELEGT]`
+```mermaid
+xychart-beta
+    title "Marktwachstum in Mrd. USD"
+    x-axis ["Spracherk. 2026", "Spracherk. 2035", "Ambient 2025", "Ambient 2034"]
+    y-axis "Mrd. USD" 0 --> 20
+    bar [2.6, 7.5, 3.8, 18.6]
+```
+
 - **DACH:** MediaInterface lokal etabliert, Nuance dominiert Befundung. US-Ambient-Scribes hatten lange wenig Traktion in DE (Sprache, DSGVO, KIS-Fragmentierung); ändert sich erst 2025/26 mit deutschen KI-Arztbrief-Startups. `[BELEGT/EINSCHÄTZUNG]`
 
 ## (c) Die Lücke beim OP-Use-Case — klares Ja

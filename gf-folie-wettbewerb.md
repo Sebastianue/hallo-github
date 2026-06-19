@@ -23,6 +23,23 @@
 
 *Der OP existiert bislang nur als Uni-Forschung (TUM, UKE) — als Produkt ist er frei.*
 
+```mermaid
+flowchart LR
+    A[Nuance / Microsoft]:::comp --> Z[Arztbrief &<br/>Arzt-Patient-Gespräch]:::busy
+    B[Solventum]:::comp --> Z
+    C[Philips]:::comp --> Z
+    D[Abridge / Nabla / Suki]:::comp --> Z
+    E[MediaInterface]:::comp --> Z
+    F[★ Unsere Idee]:::us --> G[OP-Saal<br/>intraoperativ + KIS]:::gap
+
+    classDef comp fill:#eef1f5,stroke:#9aa5b1,color:#333
+    classDef busy fill:#ffe9c7,stroke:#f0a500,color:#333
+    classDef us fill:#d4f4dd,stroke:#28a745,color:#143,font-weight:bold
+    classDef gap fill:#d4f4dd,stroke:#28a745,color:#143,font-weight:bold
+```
+
+*Alle drängen in denselben Topf (orange). Der OP-Saal (grün) ist frei.*
+
 ---
 
 ## Warum der Markt ernst ist
@@ -30,6 +47,16 @@
 - 💰 Microsoft kaufte Marktführer **Nuance für 19,7 Mrd. $**
 - 📈 Markt Spracherkennung Medizin: **~2,6 → 7,5 Mrd. $** (bis 2035)
 - 📈 „Ambient"-Doku: **3,8 → 18,6 Mrd. $** (bis 2034)
+
+```mermaid
+xychart-beta
+    title "Marktgröße in Mrd. USD — heute vs. Prognose"
+    x-axis ["Spracherk. 2026", "Spracherk. 2035", "Ambient 2025", "Ambient 2034"]
+    y-axis "Mrd. USD" 0 --> 20
+    bar [2.6, 7.5, 3.8, 18.6]
+```
+
+*Beide Segmente verdrei- bis verfünffachen sich im nächsten Jahrzehnt.*
 
 ---
 
