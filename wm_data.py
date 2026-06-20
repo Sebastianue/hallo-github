@@ -11,7 +11,7 @@ Kalibrierung: Buchmacher-Quoten + FIFA-Rangliste + Transfermarkt-Kaderwerte + Tu
 Fokus liegt auf Sieger- und Halbzeit-Tipp; das exakte Endergebnis ist statistisch kaum planbar.
 """
 
-STAND = "16. Juni 2026 (kalibriert mit Buchmacher-Quoten, FIFA-Rangliste & Transfermarkt-Kaderwerten; nach allen Spielen bis 16.06.)"
+STAND = "19. Juni 2026 (kalibriert mit Buchmacher-Quoten, FIFA-Rangliste & Transfermarkt-Kaderwerten; nach allen Spielen bis 19.06.)"
 
 # TIPPS je Spiel: (gruppe, datum, spieltag, heim, gast, sieger_tipp, ergebnis_tipp, wertigkeit%)
 # sieger_tipp == "Unentschieden" fuer Remis-Tipp, "—" = kein Tipp abgegeben.
@@ -123,6 +123,18 @@ ACTUAL = {
     ("Irak", "Norwegen"): ("1:4", "Norwegen", None, None),
     ("Argentinien", "Algerien"): ("3:0", "Argentinien", None, None),
     ("Österreich", "Jordanien"): ("3:1", "Österreich", None, None),
+    ("Portugal", "DR Kongo"): ("1:1", "Unentschieden", None, None),
+    ("Usbekistan", "Kolumbien"): ("1:3", "Kolumbien", None, None),
+    ("England", "Kroatien"): ("4:2", "England", None, None),
+    ("Ghana", "Panama"): ("1:0", "Ghana", None, None),
+    ("Tschechien", "Südafrika"): ("1:1", "Unentschieden", None, None),
+    ("Mexiko", "Südkorea"): ("1:0", "Mexiko", None, None),
+    ("Bosnien-Herz.", "Schweiz"): ("1:4", "Schweiz", None, None),
+    ("Kanada", "Katar"): ("6:0", "Kanada", None, None),
+    ("Marokko", "Schottland"): ("1:0", "Marokko", None, None),
+    ("Brasilien", "Haiti"): ("3:0", "Brasilien", None, None),
+    ("USA", "Australien"): ("2:0", "USA", None, None),
+    ("Paraguay", "Türkei"): ("1:0", "Paraguay", None, None),
 }
 
 
@@ -184,9 +196,9 @@ def review_summary():
 # Prognostizierte Endplatzierung: (gruppe, 1., 2., 3., 4.)
 STANDINGS = [
     ("A", "Mexiko", "Südkorea", "Tschechien", "Südafrika"),
-    ("B", "Schweiz", "Bosnien-Herz.", "Kanada", "Katar"),
+    ("B", "Kanada", "Schweiz", "Bosnien-Herz.", "Katar"),
     ("C", "Brasilien", "Marokko", "Schottland", "Haiti"),
-    ("D", "USA", "Australien", "Türkei", "Paraguay"),
+    ("D", "USA", "Australien", "Paraguay", "Türkei"),
     ("E", "Deutschland", "Elfenbeinküste", "Ecuador", "Curaçao"),
     ("F", "Niederlande", "Schweden", "Japan", "Tunesien"),
     ("G", "Belgien", "Ägypten", "Iran", "Neuseeland"),
