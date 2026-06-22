@@ -19,7 +19,10 @@
 | **Philips** | Sprach-Engine, Befundung | ❌ |
 | **Abridge / Nabla / Suki** (Startups) | „Ambient" Arzt-Patient-Doku | ❌ |
 | **MediaInterface** (DACH-Player) | Diktat „Made in Germany" | ❌ |
-| **➜ Unsere Idee** | **Intraoperative Doku, per API ins KIS** | ✅ |
+| **ORPHEUS** (IDM / UKE) | Med. Spracherkennung, OP-Berichte | ➖ |
+| **➜ Unsere Idee** | **Intraoperative Live-Doku, per API ins KIS** | ✅ |
+
+*➖ = teilweise: ORPHEUS deckt OP-**Berichte per Diktat** ab, aber keine sterile intraoperative Live-Doku und keine belegte KIS-API.*
 
 *Der OP existiert bislang nur als Uni-Forschung (TUM, UKE) — als Produkt ist er frei.*
 
