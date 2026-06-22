@@ -143,31 +143,17 @@ charger_pocket = (
     .fillet(pad_corner)
 )
 
-# --- 4. Kabelschlitz an der Vorderkante unten -------------------
-# Kabel (9mm) tritt an der Vorderkante der Platte aus und laeuft
-# nach unten neben dem Zapfen zur USB-Quelle
-# Schlitz: 11 mm breit (kabel+2), 11 mm hoch, geht von Plattenvorderkante
-#          bis zur Charger-Aussparung durch
-kabel_schlitz_w = kabel_od + 2.0          # 11 mm
-kabel_schlitz_h = kabel_od + 2.0          # 11 mm
-schlitz_tiefe   = (plate_w - pad_w) / 2.0 + 2.0  # von Plattenkante bis Pad-Rand
+# --- 4. Kabelschlitz linke Seite, mittig (Y=0), volle Plattenhoehe ----------
+# Schlitz ist von oben sichtbar und laeuft die linke Seitenflaeche herunter.
+# Tiefe: von der linken Plattenkante bis in die Pad-Aussparung (8.5mm + 5mm Ueberlapp)
+kabel_w      = kabel_od + 2.0                  # 11 mm in Y-Richtung
+schlitz_tief = (plate_w - pad_w) / 2.0 + 5.0  # 8.5 mm Wand + 5 mm Ueberlapp = 13.5 mm
 
 kabel_schlitz = (
     cq.Workplane("XY")
-    .box(kabel_schlitz_w, schlitz_tiefe + 1.0, kabel_schlitz_h,
-         centered=(True, False, False))
-    .translate((0, -(plate_l / 2.0), z_bot))
-)
-
-# --- 5. Kabel-Fuehrungskanal durch den Zapfen (vertikal) ---------
-# Der Schlitz verbindet sich mit dem Zapfenhohlraum;
-# ein Kanal im Boden des Schlitzes fuehrt nach unten
-kabel_kanal = (
-    cq.Workplane("XY")
-    .workplane(offset=-0.5)
-    .center(0, y_front)
-    .circle(kabel_r)
-    .extrude(z_bot + 0.5)   # von Becherboden bis Plattenunterseite
+    .box(schlitz_tief + 0.5, kabel_w, plate_thick + 0.2,
+         centered=(False, True, False))
+    .translate((-plate_w / 2.0 - 0.5, 0, z_bot))
 )
 
 # ==================================================================
@@ -177,7 +163,6 @@ result = (
     body
     .cut(charger_pocket)
     .cut(kabel_schlitz)
-    .cut(kabel_kanal)
 )
 
 # ==================================================================
