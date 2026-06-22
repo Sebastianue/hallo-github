@@ -37,7 +37,7 @@ Wichtig: Die Lücke ist frei, **weil der OP schwer ist — nicht, weil es sich n
 - **Technisch härter:** Lärm, Mikrofon-Abstand, Masken, mehrere Sprecher, Sterilität. Die Großen haben sich erst die einfachen, großen Töpfe geholt (Arztbrief, Arzt-Patient-Gespräch). → Eine hohe Hürde ist für uns ein **Schutz**, kein Ausschlusskriterium.
 - **Timing, nicht Desinteresse:** Die Großen wandern erkennbar Richtung Chirurgie — wir sind nur früher dran. → **Fenster ~12–24 Monate.**
 - **Regulatorik/Kultur sind im OP heikler** (Haftung, Betriebsrat, Patientenrechte). Das ist das **echte Risiko** — möglich, dass der Bedarf eher „strukturierte OP-Berichte per Sprache" ist als „alles aufzeichnen". Genau das klären die Gespräche.
-- **Bedarf ist bereits sichtbar:** Eine Klinik (UKE) hat sich selbst eine Lösung gebaut (ORPHEUS); eine Studie zeigt vollständigere OP-Berichte durch Direktdiktat; die TU München forscht daran; 98 % einer Umfrage halten OP-Sprachtechnik für wünschenswert.
+- **Bedarf ist bereits sichtbar:** Eine Klinik (Universitätsklinikum Hamburg-Eppendorf) hat sich selbst eine Lösung gebaut (ORPHEUS); eine Studie zeigt vollständigere OP-Berichte durch Direktdiktat; die Technische Universität München forscht an OP-Spracherkennung; und **98 % einer Umfrage halten Sprachtechnik für die Dokumentation für wünschenswert** (90 % erwarten OP-taugliche Genauigkeit) — *Fazit-Studie, berichtet via CIO.de*.
 
 **Kurz:** Leere Lücke = beste Art von Chance, *solange* die Gespräche Zahlungsbereitschaft und den richtigen Zuschnitt (Total-Aufzeichnung vs. OP-Bericht) bestätigen.
 

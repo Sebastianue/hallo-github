@@ -24,7 +24,7 @@
 
 *➖ = teilweise: ORPHEUS deckt OP-**Berichte per Diktat** ab, aber keine sterile intraoperative Live-Doku und keine belegte KIS-API.*
 
-*Der OP existiert bislang nur als Uni-Forschung (TUM, UKE) — als Produkt ist er frei.*
+*Der OP existiert bislang nur als Universitätsforschung (Technische Universität München, Universitätsklinikum Hamburg-Eppendorf) — als Produkt ist er frei.*
 
 ```mermaid
 flowchart LR
