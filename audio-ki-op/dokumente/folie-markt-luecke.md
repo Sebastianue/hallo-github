@@ -75,4 +75,4 @@ xychart-beta
 
 **Gebt mir 6 Wochen, um mit ~8–10 Kliniken zu sprechen. Danach lege ich eine klare Go/No-Go-Empfehlung mit Zahlen vor.**
 
-*Quellen & Details: `wettbewerb.md` · Vorgehen: `gf-onepager.md` · Fahrplan: `audio-ki.md`*
+*Quellen & Details: `wettbewerb.md` · Vorgehen: `onepager-gf.md` · Fahrplan: `fahrplan.md`*

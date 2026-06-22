@@ -104,4 +104,4 @@ flowchart TD
 ---
 
 ### Backup / Details
-Vollständiger Validierungs-Fahrplan, Annahmen, Interview-Leitfaden und Go/No-Go-Kriterien: siehe `audio-ki.md`.
+Vollständiger Validierungs-Fahrplan, Annahmen, Interview-Leitfaden und Go/No-Go-Kriterien: siehe `fahrplan.md`.
