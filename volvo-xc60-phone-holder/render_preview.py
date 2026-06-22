@@ -101,7 +101,7 @@ ax0 = axes[0]
 dims_text = (
     f"Platte          : 95 x 182 x 21 mm\n"
     f"Zapfen (1x)     : Ø 75 mm, 49 mm tief\n"
-    f"Pad-Aussparung  : 74 x 74 mm quadr.\n"
+    f"Pad-Aussparung  : 78 x 164 mm\n"
     f"  Tiefe         : 9 mm, mittig oben\n"
     f"Konsolenbreite  : 97 mm (Spiel 1 mm)\n"
     f"Kabel-Schlitz   : 11 x 11 mm vorne\n"

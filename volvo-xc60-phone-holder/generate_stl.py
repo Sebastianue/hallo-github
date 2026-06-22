@@ -44,8 +44,10 @@ cup_id          = 77.0   # Innendurchmesser Becherhalter vorne
 cup_tiefe       = 72.0   # Tiefe Becherhalter vorne (ab Konsolenrand)
 cup_abstand     = 105.0  # Achsabstand Mitte-Mitte
 console_breite  = 97.0   # Konsole innen (links-rechts)
-charger_od      = 74.0   # Charger-Pad Aussendurchmesser
 charger_h       = 9.0    # Charger-Pad Dicke = Aussparungstiefe
+pad_w           = 78.0   # Breite Pad-Aussparung (gemessen)
+pad_l           = 164.0  # Laenge Pad-Aussparung (gemessen)
+charger_od      = pad_w  # fuer Abwaertskompatibilitaet
 kabel_od        = 9.0    # Kabeldurchmesser
 plate_thick     = 21.0   # Plattendicke
 rollo_luft      = 2.0    # Luft Plattenoberseite -> Rollo
@@ -76,7 +78,7 @@ print("=== Volvo XC60 Charger-Unterlage (1 Zapfen) ===")
 print(f"Zapfen-Aussenradius  : {zapfen_r:.1f} mm")
 print(f"Zapfenhoehe          : {zapfen_h:.0f} mm  (in {cup_tiefe:.0f} mm tiefen Becher)")
 print(f"Plattengroesse       : {plate_w:.0f} x {plate_l:.0f} x {plate_thick:.0f} mm")
-print(f"Charger-Aussparung   : Ø {charger_od:.0f} mm, {charger_h:.0f} mm tief, mittig")
+print(f"Charger-Aussparung   : {pad_w:.0f} x {pad_l:.0f} mm, {charger_h:.0f} mm tief, mittig")
 print(f"Plattenoberseite z   : {z_top:.0f} mm  (Konsolenrand {z_rim:.0f} mm)")
 print(f"Rollo-Luft           : {z_rim - z_top:.0f} mm")
 print(f"Material unter Pad   : {plate_thick - charger_h:.0f} mm  (Plattendicke - Padtiefe)")
@@ -130,15 +132,12 @@ body = zapfen.union(plate)
 # AUSSPARUNGEN
 # ==================================================================
 
-# --- 3. Charger-Pad-Aussparung (74x74mm quadratisch, 9mm tief, mittig oben) ---
-# Das Pad wird als Quadrat eingepasst (nicht als Kreis).
-# Leicht abgerundete Ecken (r=3mm) damit das Pad bequem eingesetzt werden kann.
-pad_size   = charger_od        # 74 mm (Kantenlaenge des quadratischen Pads)
-pad_corner = 3.0               # Eckenradius
+# --- 3. Charger-Pad-Aussparung (78x164mm rechteckig, 9mm tief, mittig oben) ---
+pad_corner = 3.0           # Eckenradius
 charger_pocket = (
     cq.Workplane("XY")
     .workplane(offset=z_pocket - 0.1)
-    .rect(pad_size, pad_size)
+    .rect(pad_w, pad_l)
     .extrude(charger_h + 0.2)
     .edges("|Z")
     .fillet(pad_corner)
@@ -151,7 +150,7 @@ charger_pocket = (
 #          bis zur Charger-Aussparung durch
 kabel_schlitz_w = kabel_od + 2.0          # 11 mm
 kabel_schlitz_h = kabel_od + 2.0          # 11 mm
-schlitz_tiefe   = (plate_w - pad_size) / 2.0 + 2.0  # von Plattenkante bis Pad-Rand
+schlitz_tiefe   = (plate_w - pad_w) / 2.0 + 2.0  # von Plattenkante bis Pad-Rand
 
 kabel_schlitz = (
     cq.Workplane("XY")
