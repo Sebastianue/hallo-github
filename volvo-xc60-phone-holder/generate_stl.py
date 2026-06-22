@@ -153,7 +153,7 @@ kabel_schlitz = (
     cq.Workplane("XY")
     .box(schlitz_tief + 0.5, kabel_w, plate_thick + 0.2,
          centered=(False, True, False))
-    .translate((-plate_w / 2.0 - 0.5, 0, z_bot))
+    .translate((plate_w / 2.0 - schlitz_tief, 0, z_bot))
 )
 
 # ==================================================================
