@@ -28,7 +28,8 @@ Dokumentation im OP ist zeitaufwändig und unbeliebt. Spracherkennung ist techni
 | [`dokumente/onepager-gf.md`](dokumente/onepager-gf.md) | **Halbseite für die GF** — Vorlage zum Ausfüllen mit echten Zahlen |
 | [`dokumente/folie-markt-luecke.md`](dokumente/folie-markt-luecke.md) | Übersichtsfolie „Markt & Lücke" (Markdown-Variante) |
 | [`dokumente/fahrplan.md`](dokumente/fahrplan.md) | **Discovery-Playbook** — Annahmen, Phasen, Interview-Leitfaden, Go/No-Go |
-| [`dokumente/wettbewerb.md`](dokumente/wettbewerb.md) | Wettbewerbsanalyse mit Quellen (Backup) |
+| [`dokumente/wettbewerbsanalyse-orpheus.md`](dokumente/wettbewerbsanalyse-orpheus.md) | **Wettbewerbsanalyse mit Fokus ORPHEUS** (GF-tauglich, inkl. Management Summary) |
+| [`dokumente/wettbewerb.md`](dokumente/wettbewerb.md) | Breite Wettbewerbsanalyse mit Quellen (Backup) |
 | [`dokumente/kandidaten-orpheus-vs-sally.md`](dokumente/kandidaten-orpheus-vs-sally.md) | Bewertung der Kandidaten ORPHEUS vs. Sally |
 
 ---
