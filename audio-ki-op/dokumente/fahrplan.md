@@ -127,12 +127,13 @@ Patientendaten aus dem OP sind hochsensibel, und im Gesundheitswesen gibt es lau
 
 ---
 
-## Phase 3 — Markt & Wettbewerb (parallel, 2–3 Wochen)
+## Phase 3 — Markt, Wettbewerb & Partner (parallel, 2–3 Wochen)
 
 - [ ] **Wettbewerber analysieren:** Nuance Dragon Medical / DAX, Philips SpeechMagic, 3M/Solventum, KIS-Hersteller mit eigenen Modulen
 - [ ] Verstehen, *warum* diese im OP noch nicht dominieren → dort liegt die Lücke
 - [ ] **Marktgröße (DACH) bottom-up:** Anzahl Häuser × OP-Säle × dokumentationspflichtige Eingriffe
-- [ ] **Differenzierung schärfen:** API-First / Embeddable als Wedge — Krankenhäuser wollen keine weitere Insellösung
+- [ ] **Partner-Kandidaten bewerten & kontaktieren** (Engine-Integration statt Eigenbau): **ORPHEUS** (klinisch erprobt) und **Sally.io** (sehr anpassbar, bisher Konferenzen) — Fragen siehe `kandidaten-orpheus-vs-sally.md`
+- [ ] **Differenzierung schärfen:** unser OP-Live-/KIS-Layer als Mehrwert auf der Partner-Engine
 
 ---
 

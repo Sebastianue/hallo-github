@@ -1,8 +1,8 @@
-# Wettbewerbsanalyse — Fokus ORPHEUS
+# Markt- & Partneranalyse — Fokus ORPHEUS
 
 *Erstellt für die Geschäftsführung · Stand: Juni 2026 · Vertraulich*
 
-> **Kernaussage:** Von allen Anbietern steht **ORPHEUS (IDM / UKE)** unserem Vorhaben am nächsten — als ernstzunehmender Wettbewerber *und* möglicher Partner. Alle anderen (Nuance/Microsoft, Solventum, Philips, Abridge …) zielen auf Arztbrief und Arzt-Patient-Gespräch. ORPHEUS ist der Einzige mit echtem OP-Bezug — deckt aber nur **OP-Berichte per Diktat** ab. **Unsere Lücke: sterile, intraoperative Live-Doku + echte strukturierte KIS-API.**
+> **Kernaussage:** Wir wollen das Vorhaben über eine **Partner-Integration** umsetzen (Engine in unser System einbinden). Von allen Anbietern steht **ORPHEUS (IDM / Universitätsklinikum Hamburg-Eppendorf)** unserem OP-Use-Case am nächsten und ist unser **Partner-Kandidat A**. Alle großen Marktteilnehmer (Nuance/Microsoft, Solventum, Philips, Abridge …) zielen auf Arztbrief und Arzt-Patient-Gespräch — nicht auf den OP. ORPHEUS deckt den OP bislang nur per **Diktat von OP-Berichten** ab. **Unser Mehrwert in beiden Partner-Szenarien: sterile, intraoperative Live-Doku + echte strukturierte KIS-API.** (Zweiter Partner-Kandidat: Sally.io — sehr anpassbar, aber bisher nur Konferenzen; Details in `kandidaten-orpheus-vs-sally.md`.)
 
 ---
 
@@ -10,11 +10,11 @@
 
 | | |
 |---|---|
-| **Situation** | Der Markt für medizinische Spracherkennung wächst stark; im OP-Saal gibt es bislang keine vollständige Lösung. |
-| **Befund** | **ORPHEUS** ist der relevanteste Wettbewerber: reif, breit ausgerollt (UKE + 30+ Kliniken), DE-souverän — adressiert den OP aber nur per **nachgelagertem Diktat von OP-Berichten**, nicht als sterile Live-Dokumentation und ohne belegte strukturierte KIS-API. |
-| **Chance** | Genau diese zwei Punkte — **intraoperative Live-Doku** und **echte API** — sind unser Differenzierungsfeld und derzeit unbesetzt. |
-| **Empfehlung** | Zweigleisig vorgehen: (1) **Gespräch mit IDM** suchen (Partner-/Baustein-Option prüfen), (2) parallel den eigenen **OP-Live-/API-Layer als Moat** schärfen. Zeitfenster ~12–24 Monate. |
-| **Nächster Schritt** | IDM kontaktieren (Fragen siehe Abschnitt 8) und Differenzierung in den Klinik-Interviews gegentesten. |
+| **Situation** | Der Markt für medizinische Spracherkennung wächst stark; im OP-Saal gibt es bislang keine vollständige Lösung. Wir wollen nicht alles selbst bauen, sondern eine Engine integrieren. |
+| **Befund** | **ORPHEUS** ist der reifste, dem OP nächste Anbieter (Universitätsklinikum Hamburg-Eppendorf + 30+ Kliniken, DE-souverän) — adressiert den OP aber nur per **nachgelagertem Diktat**, ohne sterile Live-Doku und ohne belegte strukturierte KIS-API. |
+| **Chance** | Genau diese Punkte — **intraoperative Live-Doku** und **echte API** — ergänzen **wir** als eigenen Layer auf der Partner-Engine. Derzeit unbesetzt. |
+| **Empfehlung** | Vorhaben als **Partner-Integration** aufsetzen: Gespräche mit **ORPHEUS** (klinisch reif) und **Sally.io** (sehr anpassbar) führen und den eigenen **OP-Live-/KIS-Layer** als Mehrwert definieren. Zeitfenster ~12–24 Monate. |
+| **Nächster Schritt** | Beide Partner kontaktieren (Fragen siehe `kandidaten-orpheus-vs-sally.md`) und Mehrwert in den Klinik-Interviews gegentesten. |
 
 *Methodik & Belege: Aussagen sind als **[BELEGT]** (durch Quelle gedeckt) bzw. **[EINSCHÄTZUNG]** (eigene Bewertung) gekennzeichnet — bewusst transparent, damit die GF Faktenlage und Interpretation trennen kann. Quellen am Ende.*
 

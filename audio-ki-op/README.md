@@ -2,15 +2,17 @@
 
 **Idee:** Eine Lösung, die das während einer Operation Gesprochene per Mikrofon aufzeichnet, automatisch in Text umwandelt und **per API direkt ins Krankenhaus-Informationssystem (KIS)** schreibt.
 
-**Status:** 🟡 Discovery / Validierung — *vor* der Entwicklung. Ziel ist eine fundierte **Go/No-Go-Entscheidung** in 6 Wochen.
+**Status:** 🟡 Discovery / Validierung — *vor* der Entwicklung. Ziel ist eine fundierte **Go/No-Go-Entscheidung**.
+
+**Umsetzungs-Ansatz:** Wir bauen die Sprach-Engine **nicht selbst**, sondern integrieren einen **Partner** in unser System. Zwei Kandidaten: **ORPHEUS** (klinisch erprobt, DE-souverän) und **Sally.io** (sehr anpassbar, bisher nur Konferenzen). Unseren Mehrwert — **sterile OP-Live-Doku + strukturierte KIS-API** — ergänzen wir obendrauf.
 
 ---
 
 ## Worum geht es?
 
-Dokumentation im OP ist zeitaufwändig und unbeliebt. Spracherkennung ist technisch gelöst — der Engpass sind **Workflow-Integration, Datenschutz/Security und der Klinik-Einkauf**. Dieses Projekt prüft methodisch, ob sich eine eigene OP-Lösung lohnt und verkaufen lässt, bevor Entwicklungsbudget fließt.
+Dokumentation im OP ist zeitaufwändig und unbeliebt. Spracherkennung ist technisch gelöst — der Engpass sind **Workflow-Integration, Datenschutz/Security und der Klinik-Einkauf**. Dieses Projekt prüft methodisch, ob sich die OP-Lösung lohnt und verkaufen lässt, bevor Entwicklungsbudget fließt.
 
-**Die zentrale These:** Alle großen Anbieter (Nuance/Microsoft, Solventum, Philips, Abridge …) zielen auf Arztbrief und Arzt-Patient-Gespräch. Den **OP-Saal** bedient niemand vollständig — selbst ORPHEUS (UKE) nur per Diktat von OP-Berichten. **Sterile, intraoperative Live-Doku + echte KIS-API = unsere Lücke.**
+**Die zentrale These:** Alle großen Anbieter (Nuance/Microsoft, Solventum, Philips, Abridge …) zielen auf Arztbrief und Arzt-Patient-Gespräch. Den **OP-Saal** bedient niemand vollständig — selbst ORPHEUS (Universitätsklinikum Hamburg-Eppendorf) nur per Diktat von OP-Berichten. **Sterile, intraoperative Live-Doku + echte KIS-API = unser Mehrwert** auf der Partner-Engine.
 
 ---
 

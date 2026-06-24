@@ -1,8 +1,8 @@
-# Kandidaten-Bewertung: ORPHEUS vs. „Sally"
+# Kandidaten-Bewertung: ORPHEUS &amp; Sally.io (Partner-Optionen)
 
 *Stand: Juni 2026. Quellen 2024–2026. Legende: **[BELEGT]** = durch Quelle gedeckt · **[EINSCHÄTZUNG]** = eigene Bewertung.*
 
-> **Kernaussage:** Die beiden sind **keine vergleichbare Kategorie**. ORPHEUS ist eine **klinische** Spracherkennung (nah an unserem OP-Use-Case). Sally.io ist ein **allgemeiner Office-Meeting-Assistent** ohne Medizin-/KIS-Bezug. Für die OP-Lösung ist nur **ORPHEUS** wirklich relevant — als Wettbewerber *und* möglicher Partner.
+> **Kernaussage:** Wir bauen die Sprach-Engine nicht selbst, sondern wollen einen **Partner in unser System integrieren**. **ORPHEUS** und **Sally.io** sind die zwei Kandidaten dafür. Sie sind unterschiedlich gelagert: ORPHEUS ist **klinisch erprobt** (nah am OP-Use-Case), aber weniger flexibel; Sally.io ist **sehr anpassungsfähig**, aber bislang nur im **Konferenz-/Meeting-Bereich** tätig (kein Medizin-/OP-/KIS-Bezug). In beiden Fällen ergänzen **wir** den OP-Live-/KIS-Layer (sterile Live-Doku + strukturierte API).
 
 ---
 
@@ -44,24 +44,29 @@
 | „Made in Germany" | **Ja** | **Ja** |
 | Reifegrad (Klinik) | Hoch: UKE + 30+ Kliniken, 4,5 Mio. Audios | **0 Klinikrelevanz** |
 | Öffentliche Preise | Nein | Teilweise (SaaS) |
-| Rolle für uns | Wettbewerber / Vorbild / mögl. Partner | Für OP-Use-Case irrelevant |
+| Rolle für uns | **Partner-Kandidat A** (klinisch erprobt) | **Partner-Kandidat B** (anpassbar, Konferenz-Herkunft) |
 
 ---
 
 ## Einordnung & Empfehlung
 
-**ORPHEUS — relevant: Wettbewerber UND potenzieller Partner. [EINSCHÄTZUNG]**
-- **Als Wettbewerber/Vorbild:** gleiches Segment (DACH, medizinische Sprache, KIS-Kontext, DE-Hosting), hoher Reifegrad. Wer hier antritt, misst sich an ORPHEUS.
-- **Als Partner/Baustein:** IDM ist gemeinnützig und stellt Anwendungen explizit anderen Kliniken bereit → **Partnergespräch lohnt sich**, falls wir die Sprach-Engine (DE-souverän, on-prem-fähig) nicht selbst bauen wollen.
-- **Unsere Lücke / Differenzierung:** ORPHEUS deckt OP-**Berichte per Diktat** ab — aber **keine belegte sterile, intraoperative Live-Doku** und **keine belegte strukturierte KIS-API.** Genau das ist unser Mehrwertfeld.
+Beide sind **Partner-Kandidaten** für unser Vorhaben (Engine in unser System integrieren) — mit gegensätzlichen Profilen:
 
-**„Sally" (Sally.io) — für den OP-Use-Case nicht relevant. [BELEGT / EINSCHÄTZUNG]**
-- Kein Medizinprodukt, kein KIS, keine OP-Fähigkeit → weder Wettbewerber noch sinnvoller Baustein für die klinische Lösung. Allenfalls als generische Transkriptions-/DSGVO-Architektur-Referenz interessant.
+**ORPHEUS — der klinisch erprobte Kandidat. [EINSCHÄTZUNG]**
+- **Stärke:** medizinisch trainiert, DE-souverän, breit im Klinikbetrieb, schon mit OP-Bezug (OP-Berichte). Kürzester Weg zu klinischer Glaubwürdigkeit.
+- **Offen:** sterile intraoperative Live-Doku und eine echte strukturierte KIS-API sind nicht belegt → genau der Layer, den **wir** ergänzen.
+- **Partnerlogik:** IDM ist gemeinnützig und stellt Anwendungen anderen Kliniken bereit → Kooperationsgespräch naheliegend.
 
-## Drei offene Fragen an IDM (für ein Partnergespräch)
-1. Gibt es eine **echte strukturierte API (HL7/FHIR)** für KIS-Datenfluss — über das „Cursor-überall"-Modell hinaus?
-2. Wie verhält sich die Engine unter **realer OP-Akustik** (Lärm, Masken, mehrere Sprecher) und für **sterile, hands-free Live-Doku**?
-3. **Lizenz-/Partnermodell und Preise** für eine Einbettung in unsere Software?
+**Sally.io — der anpassbare Kandidat. [EINSCHÄTZUNG]**
+- **Stärke:** sehr flexibel/anpassbar, starke API-/Integrations-DNA, DSGVO/EU, „Made in Germany". Könnte viel für uns umsetzen.
+- **Offen:** bisher **nur Konferenzen/Meetings** — kein Medizin-/OP-/KIS-Bezug. Müsste für den klinischen/OP-Einsatz **substanziell angepasst** werden (Fachterminologie, OP-Akustik, KIS, regulatorisch).
+- **Partnerlogik:** als Entwicklungs-/Anpassungspartner denkbar, der mit uns in den klinischen Markt geht.
+
+**Kurz:** ORPHEUS = Geschwindigkeit & klinische Reife; Sally.io = Flexibilität & Anpassbarkeit. In beiden Fällen liegt **unser** Mehrwert im OP-Live-/KIS-Layer.
+
+## Offene Fragen an beide Partner (für die Gespräche)
+1. **ORPHEUS/IDM:** Echte strukturierte API (HL7/FHIR) über „Cursor-überall" hinaus? Verhalten unter realer OP-Akustik / sterile Live-Doku? Lizenz-/Partnermodell & Preise?
+2. **Sally.io/Aliru:** Bereitschaft & Aufwand für medizinische Anpassung (Fachterminologie, OP, KIS-Integration, regulatorisch)? Roadmap, Exklusivität, Konditionen?
 
 ### Quellen (Auswahl)
 IDM/ORPHEUS: idmedizin.de · medinfoweb.de · heise.de (UKE-Ausgründung) · uke.de (Digitale Helfer 2026, ARGO-PM) · gesundheitswirtschaft.at. Sally: sally.io (Start, About, GDPR). Verwechslung: sully.ai / ycombinator.com.
