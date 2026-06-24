@@ -2,7 +2,7 @@
 
 *Interview- &amp; Vorgehens-Leitfaden · Stand: Juni 2026*
 
-> **Warum das ganz am Anfang steht:** Hinter einem solchen Vorhaben müssen **echte Kunden** erkennbar sein. Die Geschäftsführung bewegt sich erst, wenn belegt ist, dass **Krankenhäuser das wirklich brauchen und dafür zahlen würden**. Deshalb ist der **erste Fokus**: Kontakte herstellen und OP-Interviews führen. Reden ist billig — wir suchen **harte Signale** (quantifizierter Schmerz, Budget, Zahlungsbereitschaft, Pilot-/LOI-Zusagen).
+> **Warum das ganz am Anfang steht:** Hinter einem solchen Vorhaben müssen **echte Kunden** erkennbar sein — Belege, dass **Krankenhäuser das brauchen und dafür zahlen würden**. Deshalb ist der **erste Fokus**: OP-Interviews führen. Reden ist billig — wir suchen **harte Signale** (quantifizierter Schmerz, Budget, Zahlungsbereitschaft, Pilot-/LOI-Zusagen).
 
 ---
 
@@ -23,12 +23,8 @@ Beweisen **oder** widerlegen — mit Belegen, nicht mit Bauchgefühl:
 - **Käufer/Entscheider:** kaufmännische Direktion, Klinikleitung
 - **Gatekeeper:** OP-Manager:in, IT-Leitung, Datenschutzbeauftragte:r, Betriebsrat, Ärztliche Direktion
 
-**Wo finde ich sie?**
-- Eigenes Netzwerk &amp; Empfehlungen (Tür-Öffner)
-- LinkedIn (gezielt OP-Manager:innen / Chefärzt:innen)
-- Befreundete / lokale Kliniken
-- Fachkongresse &amp; Verbände (z. B. DGCH, Berufsverband OP-Management)
-- Ggf. über die Partner-Kandidaten (IDM/ORPHEUS, Sally.io) eingeführt werden
+**Kontaktvermittlung**
+- Die Ansprechpartner werden über **unseren Vertrieb** an uns vermittelt.
 
 **Wie viele &amp; wie?**
 - Ziel: **8–10 Erstgespräche** (Puffer für Absagen einplanen)
