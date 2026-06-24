@@ -27,6 +27,7 @@ Dokumentation im OP ist zeitaufwändig und unbeliebt. Spracherkennung ist techni
 ### 📄 Dokumente
 | Datei | Zweck |
 |---|---|
+| [`dokumente/interview-leitfaden.md`](dokumente/interview-leitfaden.md) | **Interview- & Validierungs-Leitfaden** — wie vorgehen, 20 Fragen, Zahlungsbereitschaft-Fokus, Tracking-Vorlage |
 | [`dokumente/onepager-gf.md`](dokumente/onepager-gf.md) | **Halbseite für die GF** — Vorlage zum Ausfüllen mit echten Zahlen |
 | [`dokumente/folie-markt-luecke.md`](dokumente/folie-markt-luecke.md) | Übersichtsfolie „Markt & Lücke" (Markdown-Variante) |
 | [`dokumente/fahrplan.md`](dokumente/fahrplan.md) | **Discovery-Playbook** — Annahmen, Phasen, Interview-Leitfaden, Go/No-Go |
